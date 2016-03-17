@@ -53,6 +53,3 @@
 [include]
   # For username / github token / etc
   path = ~/.gitconfig.local
-[user]
-	name = Chris Helgert
-	email = chris.helgert@webdeveloperco.de
