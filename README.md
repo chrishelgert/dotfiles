@@ -8,7 +8,7 @@ git clone https://github.com/chrishelgert/dotfiles
 ```
 
 2.Setup Git Credentials
-Create your ```bash ~/.gitconfig.local``` with your username and email.
+Create your ``` ~/.gitconfig.local``` with your username and email.
 *Example:*
 ```bash
 [user]
