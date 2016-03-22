@@ -22,3 +22,6 @@ sh .osx
 
 ## load symlinks
 ./symlink/symlink-setup.sh
+
+## Use Zsh as defaultshell
+chsh -s /bin/zsh
