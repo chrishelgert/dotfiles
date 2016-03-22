@@ -2,12 +2,12 @@
 
 ## Installation
 
-1. Download Repo
+1.Download Repo
 ```bash
 git clone https://github.com/chrishelgert/dotfiles
 ```
 
-2. Setup Git Credentials
+2.Setup Git Credentials
 Create your ```bash ~/.gitconfig.local``` with your username and email.
 *Example:*
 ```bash
@@ -16,7 +16,7 @@ Create your ```bash ~/.gitconfig.local``` with your username and email.
     email = foo@example.io
 ```
 
-3. Install dotfiles
+3.Install dotfiles
 ```bash
 install.sh
 ```
