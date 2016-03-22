@@ -1,6 +1,6 @@
 # My Dotfiles
 
-# Installation
+## Installation
 
 1. Download Repo
 ```bash
@@ -21,7 +21,7 @@ Create your ```bash ~/.gitconfig.local``` with your username and email.
 install.sh
 ```
 
-4. Update dependencies
+## Update
 ```bash
 update.sh
 ```
