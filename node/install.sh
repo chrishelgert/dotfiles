@@ -8,5 +8,5 @@ sudo npm install --global \
   gulp webpack webpack-dev-server \
   node-sass babel \
   eslint xo \
-  ava karma phantomjs \
+  ava karma phantomjs-prebuilt \
   git-open diff-so-fancy
