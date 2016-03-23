@@ -15,6 +15,9 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # antigen time!
 source ~/code/antigen/antigen.zsh
 
+# This loads NVM
+[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh && . ~/.nvm/bash_completion
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -35,6 +38,8 @@ $b heroku
 #$b rhc
 $b node
 $b npm
+$b nvm
+$b golang
 
 # OSX
 $b osx
