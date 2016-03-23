@@ -7,7 +7,7 @@ brew tap caskroom/versions
 # daily
 brew cask install spectacle
 brew cask install rescuetime
-brew cast install flux
+brew cask install flux
 
 # dev
 brew cask install iterm2
