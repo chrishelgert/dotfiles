@@ -52,7 +52,6 @@ brew install zsh
 
 # Devtools
 brew install git
-brew install nvm
 brew install mongodb
 brew install go
 
