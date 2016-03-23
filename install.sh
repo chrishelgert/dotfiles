@@ -2,17 +2,17 @@
 
 # Install all tools
 ## Homebrew
-./homebrew/brew.sh
-./homebrew/brew-cask.sh
+sh ./homebrew/brew.sh
+sh ./homebrew/brew-cask.sh
 
 ## Node.js
-./node/install.sh
+sh ./node/install.sh
 
 ## Oh my zsh
-./shell/zsh.sh
+sh ./shell/zsh.sh
 
 # Git
-./git/repos.sh
+sh ./git/repos.sh
 
 ## for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
@@ -21,7 +21,7 @@ sudo easy_install Pygments
 sh .osx
 
 ## load symlinks
-./symlink/symlink-setup.sh
+sh ./symlink/symlink-setup.sh
 
 ## Use Zsh as defaultshell
-chsh -s /bin/zsh
+chsh -s /usr/local/bin/zsh
