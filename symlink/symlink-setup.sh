@@ -1,18 +1,8 @@
 #!/bin/bash
 
 # this symlinks all the dotfiles (and .vim/) to ~/
-# it also symlinks ~/bin for easy updating
 
-
-# this is a messy edit of alrra's nice work here:
-#   https://raw.githubusercontent.com/alrra/dotfiles/master/os/create_symbolic_links.sh
-#   it should and needs to be improved to be less of a hack.
-
-# jump down to line ~140 for the start.
-
-#
-# utils !!!
-#
+## utils !!!
 answer_is_yes() {
     [[ "$REPLY" =~ ^[Yy]$ ]] \
         && return 0 \
@@ -32,11 +22,11 @@ ask_for_confirmation() {
 
 ask_for_sudo() {
 
-    # Ask for the administrator password upfront
+    ### Ask for the administrator password upfront
     sudo -v
 
-    # Update existing `sudo` time stamp until this script has finished
-    # https://gist.github.com/cowboy/3118588
+    ### Update existing `sudo` time stamp until this script has finished
+    ### https://gist.github.com/cowboy/3118588
     while true; do
         sudo -n true
         sleep 60
@@ -96,17 +86,17 @@ mkd() {
 }
 
 print_error() {
-    # Print output in red
+    ### Print output in red
     printf "\e[0;31m  [✖] $1 $2\e[0m\n"
 }
 
 print_info() {
-    # Print output in purple
+    ### Print output in purple
     printf "\n\e[0;35m $1\e[0m\n\n"
 }
 
 print_question() {
-    # Print output in yellow
+    ### Print output in yellow
     printf "\e[0;33m  [?] $1\e[0m"
 }
 
@@ -120,17 +110,16 @@ print_result() {
 }
 
 print_success() {
-    # Print output in green
+    ### Print output in green
     printf "\e[0;32m  [✔] $1\e[0m\n"
 }
 
-# finds all .dotfiles in this folder
+## finds all .dotfiles in this folder
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim bin" # add in vim and the binaries
 
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+## main
 main() {
 
     local i=""
