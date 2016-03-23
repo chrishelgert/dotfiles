@@ -9,5 +9,4 @@ sudo npm install --global \
   node-sass babel \
   eslint xo \
   ava karma phantomjs \
-  git-open diff-so-fancy \
-  npm-update-notifer
+  git-open diff-so-fancy
