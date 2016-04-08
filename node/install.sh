@@ -10,4 +10,5 @@ sudo npm install --global \
   node-sass babel \
   eslint xo \
   ava karma phantomjs-prebuilt \
-  git-open diff-so-fancy
+  git-open diff-so-fancy \
+  now
