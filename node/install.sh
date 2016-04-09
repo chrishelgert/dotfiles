@@ -11,4 +11,4 @@ sudo npm install --global \
   eslint xo \
   ava karma phantomjs-prebuilt \
   git-open diff-so-fancy \
-  now
+  now ndu
