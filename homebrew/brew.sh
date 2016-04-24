@@ -54,6 +54,7 @@ brew install zsh
 brew install git
 brew install mongodb
 brew install go
+brew install maven
 
 # Remove outdated versions from the cellar
 brew cleanup
