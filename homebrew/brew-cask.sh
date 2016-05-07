@@ -18,3 +18,4 @@ brew cask install caskroom/fonts/font-hack
 brew cask install vlc
 brew cask install gpgtools
 brew cask install transmission
+brew cask install anatine
