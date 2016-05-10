@@ -33,12 +33,11 @@ $b extract
 # Git und co
 $b git
 $b ruby
-$b heroku
-
+#$b heroku
 #$b rhc
+$b nvm
 $b node
 $b npm
-$b nvm
 $b golang
 
 # OSX
@@ -52,7 +51,7 @@ $b brew-cask
 $b robbyrussell/oh-my-zsh plugins/z
 
 # suggestion as you type
-$b tarruda/zsh-autosuggestions
+$b zsh-users/zsh-autosuggestions
 
 # Syntax highlighting on the readline
 $b zsh-users/zsh-syntax-highlighting
@@ -91,8 +90,10 @@ chpwd_functions=( auto-ls $chpwd_functions )
 setopt inc_append_history
 setopt share_history
 
-
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# enable git autocomplete
+autoload bashcompinit
+bashcompinit
+source ~/code/gitsome/scripts/gh_complete.sh
 
 # Load default dotfiles
 source ~/.bash_profile

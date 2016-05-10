@@ -11,11 +11,14 @@ sh ./node/install.sh
 ## Oh my zsh
 sh ./shell/zsh.sh
 
-# Git
+## Pip
+sudo easy_install pip3
+
+## Git
 sh ./git/repos.sh
 
 ## for the c alias (syntax highlighted cat)
-sudo easy_install Pygments
+sudo easy_install Pygment
 
 ## set up osx defaults
 sh .osx
