@@ -11,6 +11,7 @@ brew cask install flux
 
 # dev
 brew cask install iterm2
+brew cask install black-screen
 brew cask install atom
 brew cask install caskroom/fonts/font-hack
 
