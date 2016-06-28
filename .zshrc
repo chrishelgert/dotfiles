@@ -21,7 +21,6 @@ source ~/code/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-
 local b="antigen-bundle"
 
 # Guess what to install when running an unknown command.

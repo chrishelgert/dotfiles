@@ -28,13 +28,8 @@ brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
 
-# mtr - ping & traceroute. best.
-brew install mtr
-    # allow mtr to run without sudo
-    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//')
-    sudo chmod 4755 $mtrlocation/sbin/mtr
-    sudo chown root $mtrlocation/sbin/mtr
-
+# mangage ssh connections
+brew install stormssh
 
 # Install other useful binaries
 brew install pv
@@ -47,7 +42,7 @@ brew install terminal-notifier
 # colored logcat guy
 brew install pidcat
 
-# best shell
+# zsh <3
 brew install zsh
 
 # Devtools
