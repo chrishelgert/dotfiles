@@ -33,7 +33,6 @@ $b extract
 $b git
 $b ruby
 #$b heroku
-#$b rhc
 $b nvm
 $b node
 $b npm
