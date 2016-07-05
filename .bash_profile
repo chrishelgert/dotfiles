@@ -39,3 +39,6 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # mongodb
 export PATH=/Volumes/Workspace/mongo/bin:$PATH
+
+# gopath
+export GOPATH=/Volumes/Workspace/go
