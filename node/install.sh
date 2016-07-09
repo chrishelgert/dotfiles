@@ -6,9 +6,5 @@ nvm install node
 
 ## Install mostly used npm-packages
 sudo npm install --global \
-  gulp webpack webpack-dev-server \
-  node-sass babel \
-  eslint xo \
-  ava karma phantomjs-prebuilt \
-  git-open diff-so-fancy \
-  now ndu speed-test
+  eslint xo ava speed-test \
+  git-open diff-so-fancy
