@@ -51,6 +51,7 @@ brew install mongodb
 brew install go
 brew install maven
 brew install python3
+brew install wireshark --with-qt
 
 # Remove outdated versions from the cellar
 brew cleanup
