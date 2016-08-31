@@ -1,0 +1,8 @@
+{
+    "*.go": {
+        "tabstospaces": false
+    },
+    "colorscheme": "atom-dark-tc",
+    "tabsize": 2,
+    "tabstospaces": true
+}

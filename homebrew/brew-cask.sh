@@ -19,3 +19,7 @@ brew cask install gpgtools
 brew cask install transmission
 brew cask install anatine
 brew cask install daisydisk
+
+# micro (terminal-editor)
+brew tap zyedidia/micro
+brew install micro
