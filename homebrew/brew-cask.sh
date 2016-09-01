@@ -16,7 +16,7 @@ brew cask install caskroom/fonts/font-hack
 # different things
 brew cask install vlc
 brew cask install gpgtools
-brew cask install transmission
+brew cask install webtorrent
 brew cask install anatine
 brew cask install daisydisk
 
