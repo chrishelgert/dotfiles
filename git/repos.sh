@@ -7,7 +7,3 @@ git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-but
 git clone https://github.com/kamranahmedse/git-standup ~/code/git-standup
 cd ~/code/git-standup
 sudo make install
-
-# git autocomplete
-sudo -H pip3 install gitsome
-git clone https://github.com/donnemartin/gitsome ~/code/gitsome

@@ -11,9 +11,6 @@ sh ./node/install.sh
 ## Oh my zsh
 sh ./shell/zsh.sh
 
-## Pip
-sudo easy_install pip3
-
 ## Git
 sh ./git/repos.sh
 
