@@ -5,6 +5,4 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | b
 nvm install node
 
 ## Install mostly used npm-packages
-sudo npm install --global \
-  eslint xo ava speed-test \
-  git-open diff-so-fancy
+sudo npm install --global speed-test git-open diff-so-fancy pm2
