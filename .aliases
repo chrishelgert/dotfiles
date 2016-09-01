@@ -42,13 +42,13 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 #####################
 
 # Undo a `git push`
-alias undopush="git push -f origin HEAD^:master"
-alias g="git"
 alias ga="git add"
 alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
-alias gl="git l"
+alias gl="git log"
 alias gpu="git pull"
 alias gdf="git diff --color | diff-so-fancy"
-alias gco="git checkout"
+
+alias master="git checkout master"
+alias dev="git checkout dev"
