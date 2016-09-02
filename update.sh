@@ -7,6 +7,7 @@ brew cleanup
 brew cask cleanup
 
 # Node
+nvm upgrade
 nvm install node
 
 # NPM

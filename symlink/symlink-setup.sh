@@ -51,7 +51,6 @@ get_answer() {
 }
 
 get_os() {
-
     declare -r OS_NAME="$(uname -s)"
     local os=""
 

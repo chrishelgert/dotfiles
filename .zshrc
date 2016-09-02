@@ -3,10 +3,6 @@
 # history
 SAVEHIST=100000
 
-# vim bindings
-bindkey -v
-
-
 # zstyle :compinstall filename '~/.zshrc'
 # autoload -Uz compinit
 # compinit
@@ -16,7 +12,7 @@ fpath=( "$HOME/.zfunctions" $fpath )
 source ~/code/antigen/antigen.zsh
 
 # This loads NVM
-[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh && . ~/.nvm/bash_completion
+#[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh && . ~/.nvm/bash_completion
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -31,12 +27,12 @@ $b extract
 
 # Git und co
 $b git
-$b ruby
-#$b heroku
 $b nvm
 $b node
 $b npm
-$b golang
+#$b ruby
+#$b heroku
+#$b golang
 
 # OSX
 $b osx
@@ -64,10 +60,8 @@ $b sindresorhus/pure
 # history search
 $b zsh-users/zsh-history-substring-search
 
-
 # Tell antigen that you're done.
 antigen apply
-
 
 # bind UP and DOWN arrow keys for history search
 zmodload zsh/terminfo
@@ -87,11 +81,6 @@ chpwd_functions=( auto-ls $chpwd_functions )
 # http://www.refining-linux.org/archives/49/ZSH-Gem-15-Shared-history/
 setopt inc_append_history
 setopt share_history
-
-# enable git autocomplete
-autoload bashcompinit
-bashcompinit
-source ~/code/gitsome/scripts/gh_complete.sh
 
 # enable npm autocomplete
 _npm_install_completion() {
@@ -113,5 +102,59 @@ _npm_install_completion() {
 
 compdef _npm_install_completion 'npm'
 
-# Load default dotfiles
-source ~/.bash_profile
+
+# path-variables
+
+# mongodb
+export PATH=/Volumes/Workspace/mongo/bin:$PATH
+
+# gopath
+export GOPATH=/Volumes/Workspace/go
+
+# micro as default
+export EDITOR="micro"
+
+# don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+
+# alias
+
+# directory moving
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# homebrew-cask
+alias cask='brew cask'
+
+# hosts
+alias hosts='sudo $EDITOR /etc/hosts'
+
+# list only directories
+alias lsd='ls -l | grep "^d"'
+
+# filesize
+alias fs="stat -f \"%z bytes\""
+
+# recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# empty the trash on all mounted volumes and the main HDD
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
+
+# Git
+
+# Undo a `git push`
+alias ga="git add"
+alias gs="git status"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git log"
+alias gpu="git pull"
+alias gdf="git diff --color | diff-so-fancy"
+
+alias master="git checkout master"
+alias dev="git checkout dev"
