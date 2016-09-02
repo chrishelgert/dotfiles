@@ -127,6 +127,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# home
+alias home='HOME'
+
+# edit
+alias edit='EDITOR'
+
 # homebrew-cask
 alias cask='brew cask'
 
