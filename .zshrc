@@ -32,7 +32,7 @@ $b node
 $b npm
 #$b ruby
 #$b heroku
-#$b golang
+$b golang
 
 # OSX
 $b osx
@@ -131,7 +131,7 @@ alias .....="cd ../../../.."
 alias home='HOME'
 
 # edit
-alias edit='EDITOR'
+alias edit='$EDITOR'
 
 # homebrew-cask
 alias cask='brew cask'
@@ -159,7 +159,7 @@ alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
 alias gl="git log"
-alias gpu="git pull"
+alias gu="git pull"
 alias gdf="git diff --color | diff-so-fancy"
 
 alias master="git checkout master"
