@@ -156,7 +156,7 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # Undo a `git push`
 alias ga="git add"
 alias gs="git status"
-alias gc="git commit"
+alias gc="git commit -m"
 alias gp="git push"
 alias gl="git log"
 alias gu="git pull"
