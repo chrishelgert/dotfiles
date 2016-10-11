@@ -164,3 +164,5 @@ alias gdf="git diff --color | diff-so-fancy"
 
 alias master="git checkout master"
 alias dev="git checkout dev"
+
+export PATH="$HOME/.yarn/bin:$PATH"
