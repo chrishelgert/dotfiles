@@ -10,6 +10,7 @@ brew cask install flux
 
 # dev
 brew cask install atom
+brew cask install visual-studio-code
 brew cask install hyperterm
 brew cask install caskroom/fonts/font-hack
 
