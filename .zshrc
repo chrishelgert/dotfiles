@@ -108,6 +108,12 @@ compdef _npm_install_completion 'npm'
 # mongodb
 export PATH=/Volumes/Workspace/mongo/bin:$PATH
 
+# postgres
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+
+# yarnpgk
+export PATH="$HOME/.yarn/bin:$PATH"
+
 # gopath
 export GOPATH=/Volumes/Workspace/go
 
@@ -164,5 +170,3 @@ alias gdf="git diff --color | diff-so-fancy"
 
 alias master="git checkout master"
 alias dev="git checkout dev"
-
-export PATH="$HOME/.yarn/bin:$PATH"
