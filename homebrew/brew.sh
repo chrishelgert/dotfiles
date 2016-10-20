@@ -39,6 +39,8 @@ brew install zsh
 # Devtools
 brew install git
 brew install nvm
+brew install node
+brew install yarn
 brew install mongodb
 brew install go
 brew install maven
