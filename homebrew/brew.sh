@@ -42,7 +42,7 @@ brew install nvm
 brew install node
 brew install yarn
 brew install mongodb
-brew install go
+brew install go --with-cc-common
 brew install maven
 brew install wireshark --with-qt
 
