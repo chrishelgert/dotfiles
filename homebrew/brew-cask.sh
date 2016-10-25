@@ -13,6 +13,7 @@ brew cask install atom
 brew cask install visual-studio-code
 brew cask install hyperterm
 brew cask install caskroom/fonts/font-hack
+brew cask install vagrant
 
 # different things
 brew cask install vlc
