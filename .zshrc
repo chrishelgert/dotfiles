@@ -114,6 +114,9 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 # yarnpgk
 export PATH="$HOME/.yarn/bin:$PATH"
 
+# protobuf
+export PATH="$PATH:$HOME/protoc-3.0.0/bin"
+
 # gopath
 export GOPATH=/Volumes/Workspace/go
 export PATH=$PATH:$GOPATH/bin 
