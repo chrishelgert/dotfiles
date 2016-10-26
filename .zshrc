@@ -116,6 +116,7 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 # gopath
 export GOPATH=/Volumes/Workspace/go
+export PATH=$PATH:$GOPATH/bin 
 
 # micro as default
 export EDITOR="micro"
