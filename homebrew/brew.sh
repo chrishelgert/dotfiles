@@ -33,6 +33,9 @@ brew install tree
 # Notifier
 brew install terminal-notifier
 
+# mac app store cli
+brew install mas
+
 # zsh <3
 brew install zsh
 
