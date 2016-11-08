@@ -162,8 +162,6 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Git
-
-# Undo a `git push`
 alias ga="git add"
 alias gs="git status"
 alias gc="git commit -m"
@@ -171,6 +169,7 @@ alias gp="git push"
 alias gl="git log"
 alias gu="git pull"
 alias gdf="git diff --color | diff-so-fancy"
+alias gcp="git cherry-pick"
 
 alias master="git checkout master"
 alias dev="git checkout dev"
