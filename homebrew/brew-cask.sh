@@ -11,15 +11,15 @@ brew cask install flux
 # dev
 brew cask install atom
 brew cask install visual-studio-code
-brew cask install hyperterm
+brew cask install hyper
 brew cask install caskroom/fonts/font-hack
 brew cask install vagrant
 
+brew cask install java
+brew install maven
+
 # different things
 brew cask install vlc
-brew cask install gpgtools
-brew cask install webtorrent
-brew cask install anatine
 brew cask install daisydisk
 
 # micro (terminal-editor)
