@@ -4,31 +4,19 @@
 brew update
 brew upgrade
 
-# GNU core utilities (those that come with OS X are outdated)
+# global cli-tools
 brew install coreutils
-brew install moreutils
-brew install findutils
-brew install gnu-sed --default-names
-
-# regular bash-completion package is held back to an older release,
-# so we get latest from versions.
-brew tap homebrew/versions
-brew install homebrew/versions/bash-completion2
-brew install homebrew/completions/brew-cask-completion
+brew install ack
 
 # Install wget with IRI support
 brew install wget --enable-iri
 
-# Install more recent versions of some OS X tools
+# Install more recent versions of some macOS tools.
+brew install vim --override-system-vi
 brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
-# mangage ssh connections
-brew install stormssh
-
-# Install other useful binaries
-brew install rename
-brew install tree
 
 # Notifier
 brew install terminal-notifier
@@ -36,17 +24,23 @@ brew install terminal-notifier
 # mac app store cli
 brew install mas
 
+# toggle macos - dark-mode
+brew install dark-mode
+
 # zsh <3
 brew install zsh
 
 # Devtools
 brew install git
-brew install nvm
 brew install node
 brew install yarn
 brew install mongodb
 brew install go --with-cc-common
-brew install maven
+
+# network and co
+brew install aircrack-ng
+brew install nmap
+brew install sqlmap
 brew install wireshark --with-qt
 
 # Remove outdated versions from the cellar
