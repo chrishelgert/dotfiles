@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this symlinks all the dotfiles (and .vim/) to ~/
+# this symlinks all the dotfiles to ~/
 
 ## utils !!!
 answer_is_yes() {
@@ -9,36 +9,10 @@ answer_is_yes() {
         || return 1
 }
 
-ask() {
-    print_question "$1"
-    read
-}
-
 ask_for_confirmation() {
     print_question "$1 (y/n) "
     read -n 1
     printf "\n"
-}
-
-ask_for_sudo() {
-
-    ### Ask for the administrator password upfront
-    sudo -v
-
-    ### Update existing `sudo` time stamp until this script has finished
-    ### https://gist.github.com/cowboy/3118588
-    while true; do
-        sudo -n true
-        sleep 60
-        kill -0 "$$" || exit
-    done &> /dev/null &
-
-}
-
-cmd_exists() {
-    [ -x "$(command -v "$1")" ] \
-        && printf 0 \
-        || printf 1
 }
 
 execute() {
@@ -46,52 +20,9 @@ execute() {
     print_result $? "${2:-$1}"
 }
 
-get_answer() {
-    printf "$REPLY"
-}
-
-get_os() {
-    declare -r OS_NAME="$(uname -s)"
-    local os=""
-
-    if [ "$OS_NAME" == "Darwin" ]; then
-        os="osx"
-    elif [ "$OS_NAME" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
-        os="ubuntu"
-    fi
-
-    printf "%s" "$os"
-
-}
-
-is_git_repository() {
-    [ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] \
-        && return 0 \
-        || return 1
-}
-
-mkd() {
-    if [ -n "$1" ]; then
-        if [ -e "$1" ]; then
-            if [ ! -d "$1" ]; then
-                print_error "$1 - a file with the same name already exists!"
-            else
-                print_success "$1"
-            fi
-        else
-            execute "mkdir -p $1" "$1"
-        fi
-    fi
-}
-
 print_error() {
     ### Print output in red
     printf "\e[0;31m  [✖] $1 $2\e[0m\n"
-}
-
-print_info() {
-    ### Print output in purple
-    printf "\n\e[0;35m $1\e[0m\n\n"
 }
 
 print_question() {
@@ -113,19 +44,15 @@ print_success() {
     printf "\e[0;32m  [✔] $1\e[0m\n"
 }
 
-## finds all .dotfiles in this folder
-declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
-FILES_TO_SYMLINK="$FILES_TO_SYMLINK bin" # add in the binaries
-
-
 ## main
 main() {
+    local sourceFiles=(.git micro .gitconfig .gitignore .inputrc .zshrc)
 
     local i=""
     local sourceFile=""
     local targetFile=""
 
-    for i in ${FILES_TO_SYMLINK[@]}; do
+    for i in ${sourceFiles[@]}; do
 
         sourceFile="$(pwd)/$i"
         targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
@@ -149,12 +76,6 @@ main() {
         fi
 
     done
-
-    # Micro-config
-    sourceFile="$(pwd)/micro/settings.json"
-    targetFile="$HOME/.config/micro/settings.json"
-
-    execute "ln -fs $sourceFile $targetFile" "$targetFile -> $sourceFile"
 }
 
 main

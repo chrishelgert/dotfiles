@@ -7,3 +7,6 @@ git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-but
 git clone https://github.com/kamranahmedse/git-standup ~/code/git-standup
 cd ~/code/git-standup
 sudo make install
+
+# quickly moving between often used folters :)
+git clone https://github.com/rupa/z.git ~/code/z

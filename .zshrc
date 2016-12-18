@@ -11,9 +11,6 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # antigen time!
 source ~/code/antigen/antigen.zsh
 
-# This loads NVM
-#[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh && . ~/.nvm/bash_completion
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -27,11 +24,9 @@ $b extract
 
 # Git und co
 $b git
-$b nvm
 $b node
 $b npm
-#$b ruby
-#$b heroku
+$b heroku
 $b golang
 
 # OSX
@@ -119,7 +114,7 @@ export PATH="$PATH:$HOME/protoc-3.0.0/bin"
 
 # gopath
 export GOPATH=/Volumes/Workspace/go
-export PATH=$PATH:$GOPATH/bin 
+export PATH=$PATH:$GOPATH/bin
 
 # micro as default
 export EDITOR="micro"
@@ -132,7 +127,6 @@ export MANPAGER="less -X"
 
 # directory moving
 alias ..="cd .."
-alias cd..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
@@ -162,14 +156,14 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Git
-alias ga="git add"
-alias gs="git status"
-alias gc="git commit -m"
-alias gp="git push"
-alias gl="git log"
-alias gu="git pull"
-alias gdf="git diff --color | diff-so-fancy"
-alias gcp="git cherry-pick"
+# alias ga="git add"
+# alias gs="git status"
+# alias gc="git commit -m"
+# alias gp="git push"
+# alias gl="git log"
+# alias gu="git pull"
+# alias gdf="git diff --color | diff-so-fancy"
+# alias gcp="git cherry-pick"
 
 alias master="git checkout master"
 alias dev="git checkout dev"

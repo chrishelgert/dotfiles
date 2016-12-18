@@ -1,4 +1,5 @@
 #!/bin/bash
-echo '/usr/local/bin/zsh' >> /etc/shells
+sudo echo '/usr/local/bin/zsh' >> /etc/shells
 mkdir ~/code/antigen
-curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/code/antigen/antigen.zsh
+curl https://cdn.rawgit.com/zsh-users/antigen/v1.3.1/bin/antigen.zsh > ~/code/antigen/antigen.zsh
+source ~/code/antigen/antigen.zsh
