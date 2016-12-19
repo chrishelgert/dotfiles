@@ -1,8 +1,5 @@
 # zmodload zsh/zprof
 
-# history
-SAVEHIST=100000
-
 # zstyle :compinstall filename '~/.zshrc'
 # autoload -Uz compinit
 # compinit
@@ -11,49 +8,33 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # antigen time!
 source ~/code/antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+antigen use prezto
 
-local b="antigen-bundle"
-
-# Guess what to install when running an unknown command.
-$b command-not-found
-
-# Helper for extracting different types of archives.
-$b extract
-
-# Git und co
-$b git
-$b node
-$b npm
-$b heroku
-$b golang
-
-# OSX
-$b osx
-
-# homebrew  - autocomplete on `brew install`
-$b brew
-$b brew-cask
+# prezto modules
+antigen bundle sorin-ionescu/prezto modules/helper
+antigen bundle sorin-ionescu/prezto modules/git
+antigen bundle sorin-ionescu/prezto modules/history
+antigen bundle sorin-ionescu/prezto modules/directory
+antigen bundle sorin-ionescu/prezto modules/utility
+antigen bundle sorin-ionescu/prezto modules/completion
+antigen bundle sorin-ionescu/prezto modules/archive
+antigen bundle sorin-ionescu/prezto modules/homebrew
 
 # Tracks your most used directories, based on 'frecency'.
-$b robbyrussell/oh-my-zsh plugins/z
-
-# suggestion as you type
-$b zsh-users/zsh-autosuggestions
+antigen bundle robbyrussell/oh-my-zsh plugins/z
 
 # Syntax highlighting on the readline
-$b zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # colors for all files!
-$b trapd00r/zsh-syntax-highlighting-filetypes
+antigen bundle trapd00r/zsh-syntax-highlighting-filetypes
 
 # dont set a theme, because pure does it all
-$b mafredri/zsh-async
-$b sindresorhus/pure
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # history search
-$b zsh-users/zsh-history-substring-search
+# $b zsh-users/zsh-history-substring-search
 
 # Tell antigen that you're done.
 antigen apply
@@ -77,27 +58,6 @@ chpwd_functions=( auto-ls $chpwd_functions )
 setopt inc_append_history
 setopt share_history
 
-# enable npm autocomplete
-_npm_install_completion() {
-	local si=$IFS
-
-	# if 'install' or 'i ' is one of the subcommands, then...
-	if [[ ${words} =~ 'install' ]] || [[ ${words} =~ 'i ' ]]; then
-
-		# add the result of `ls ~/.npm` (npm cache) as completion options
-		compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-			COMP_LINE=$BUFFER \
-			COMP_POINT=0 \
-			ls ~/.npm -- "${words[@]}" \
-			2>/dev/null)
-	fi
-
-	IFS=$si
-}
-
-compdef _npm_install_completion 'npm'
-
-
 # path-variables
 
 # mongodb
@@ -108,6 +68,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
 # yarnpgk
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/Cellar/node/7.2.1/bin:$PATH"
 
 # protobuf
 export PATH="$PATH:$HOME/protoc-3.0.0/bin"
@@ -137,9 +98,6 @@ alias home='HOME'
 # edit
 alias edit='$EDITOR'
 
-# homebrew-cask
-alias cask='brew cask'
-
 # hosts
 alias hosts='sudo $EDITOR /etc/hosts'
 
@@ -156,14 +114,4 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Git
-# alias ga="git add"
-# alias gs="git status"
-# alias gc="git commit -m"
-# alias gp="git push"
-# alias gl="git log"
-# alias gu="git pull"
-# alias gdf="git diff --color | diff-so-fancy"
-# alias gcp="git cherry-pick"
-
 alias master="git checkout master"
-alias dev="git checkout dev"
