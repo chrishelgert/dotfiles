@@ -32,6 +32,7 @@ brew install zsh
 
 # Devtools
 brew install git
+brew install git-lfs
 brew install node
 brew install yarn
 brew install mongodb
