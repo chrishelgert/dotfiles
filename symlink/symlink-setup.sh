@@ -46,7 +46,7 @@ print_success() {
 
 ## main
 main() {
-    local sourceFiles=(.git micro .gitconfig .gitignore .inputrc .zshrc)
+    local sourceFiles=(micro .gitconfig .gitignore .inputrc .zshrc)
 
     local i=""
     local sourceFile=""
