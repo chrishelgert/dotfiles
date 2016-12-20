@@ -75,7 +75,9 @@ export PATH="$PATH:$HOME/protoc-3.0.0/bin"
 
 # gopath
 export GOPATH=/Volumes/Workspace/go
+export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # micro as default
 export EDITOR="micro"
