@@ -71,7 +71,7 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/Cellar/node/7.2.1/bin:$PATH"
 
 # protobuf
-export PATH="$PATH:$HOME/protoc-3.0.0/bin"
+export PATH="$PATH:$HOME/code/protoc-3.1.0/bin"
 
 # gopath
 export GOPATH=/Volumes/Workspace/go
