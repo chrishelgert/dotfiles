@@ -117,3 +117,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Git
 alias master="git checkout master"
+
+# travisci
+[ -f /Users/chris/.travis/travis.sh ] && source /Users/chris/.travis/travis.sh

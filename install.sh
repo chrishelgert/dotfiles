@@ -20,6 +20,9 @@ sh ./shell/zsh.sh
 ## Git
 sh ./git/repos.sh
 
+# Gems
+sh ./gems/isntall.sh
+
 ## for the c alias (syntax highlighted cat)
 sudo easy_install Pygment
 
