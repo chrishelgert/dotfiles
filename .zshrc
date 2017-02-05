@@ -80,7 +80,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 # micro as default
-export EDITOR="micro"
+export EDITOR="vim"
 
 # don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"

@@ -23,7 +23,3 @@ brew install maven
 brew cask install vlc
 brew cask install teamviewer
 brew cask install daisydisk
-
-# micro (terminal-editor)
-brew tap zyedidia/micro
-brew install micro
