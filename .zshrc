@@ -103,6 +103,9 @@ alias edit='$EDITOR'
 # hosts
 alias hosts='sudo $EDITOR /etc/hosts'
 
+# mongodb-helper
+alias local_mongodb='mongod --dbpath /Volumes/Workspace/mongodb/data/db'
+
 # list only directories
 alias lsd='ls -l | grep "^d"'
 
