@@ -1,0 +1,11 @@
+{
+  "hotkey": "alt+space",
+  "theme": "tinytacoteam/zazu-dark-theme",
+  "plugins": [
+    "tinytacoteam/zazu-file-finder",
+    "tinytacoteam/zazu-system",
+    "danielbayerlein/zazu-npms",
+    "danielbayerlein/zazu-github",
+    "chrishelgert/zazu-hacker-news"
+  ]
+}
