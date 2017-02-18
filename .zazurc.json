@@ -6,6 +6,7 @@
     "tinytacoteam/zazu-system",
     "danielbayerlein/zazu-npms",
     "danielbayerlein/zazu-github",
+    "danielbayerlein/zazu-devdocs",
     "chrishelgert/zazu-hacker-news"
   ]
 }
