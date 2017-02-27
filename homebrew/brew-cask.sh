@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install native apps
+# install native apps
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
@@ -22,4 +22,3 @@ brew install maven
 # different things
 brew cask install vlc
 brew cask install teamviewer
-brew cask install daisydisk
