@@ -3,6 +3,7 @@
   "theme": "chrishelgert/zazu-monochrome-theme",
   "plugins": [
     "chrishelgert/zazu-hacker-news",
+    "chrishelgert/zazu-fkill",
     "danielbayerlein/zazu-github",
     "danielbayerlein/zazu-homebrew",
     "danielbayerlein/zazu-devdocs",
