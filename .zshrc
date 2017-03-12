@@ -68,7 +68,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
 # yarnpgk
 export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="/usr/local/Cellar/node/7.2.1/bin:$PATH"
+export PATH="/usr/local/Cellar/node/7.7.2/bin:$PATH"
 
 # protobuf
 export PATH="$PATH:$HOME/code/protoc-3.1.0/bin"
