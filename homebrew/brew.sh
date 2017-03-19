@@ -35,6 +35,7 @@ brew install git
 brew install git-lfs
 brew install node
 brew install yarn
+brew install watchman
 brew install mongodb
 brew install go --with-cc-common
 
