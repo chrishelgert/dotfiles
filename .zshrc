@@ -65,7 +65,8 @@ export PATH=/Volumes/Workspace/mongo/bin:$PATH
 
 # yarnpgk
 export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="/usr/local/Cellar/node/7.2.1/bin:$PATH"
+NODE_VERSION="$(node -v)"
+export PATH="/usr/local/Cellar/node/${NODE_VERSION//v}/bin:$PATH"
 
 # protobuf
 export PATH="$PATH:$HOME/code/protoc-3.1.0/bin"
@@ -76,7 +77,6 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# micro as default
 export EDITOR="vim"
 
 # don’t clear the screen after quitting a manual page
