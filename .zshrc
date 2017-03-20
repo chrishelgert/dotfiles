@@ -68,9 +68,6 @@ export PATH="$HOME/.yarn/bin:$PATH"
 NODE_VERSION="$(node -v)"
 export PATH="/usr/local/Cellar/node/${NODE_VERSION//v}/bin:$PATH"
 
-# protobuf
-export PATH="$PATH:$HOME/code/protoc-3.1.0/bin"
-
 # gopath
 export GOPATH=/Volumes/Workspace/go
 export GOROOT=/usr/local/opt/go/libexec
