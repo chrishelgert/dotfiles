@@ -63,9 +63,6 @@ setopt share_history
 # mongodb
 export PATH=/Volumes/Workspace/mongo/bin:$PATH
 
-# postgres
-export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
-
 # yarnpgk
 export PATH="$HOME/.yarn/bin:$PATH"
 NODE_VERSION="$(node -v)"
