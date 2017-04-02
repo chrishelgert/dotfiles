@@ -37,7 +37,7 @@ brew install node
 brew install yarn
 brew install watchman
 brew install mongodb
-brew install go --with-cc-common
+brew install go
 
 # network and co
 brew install aircrack-ng
