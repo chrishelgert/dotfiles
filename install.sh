@@ -8,7 +8,10 @@
 sh ./homebrew/brew.sh
 sh ./homebrew/brew-cask.sh
 
-# create code-folder
+## Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Create code-folder
 mkdir ~/code
 
 ## Node.js
