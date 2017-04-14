@@ -46,7 +46,7 @@ print_success() {
 
 ## main
 main() {
-    local sourceFiles=(.gitconfig .gitignore .inputrc .zshrc .vimrc .zazurc.json)
+    local sourceFiles=(.gitconfig .gitignore .inputrc .zshrc .vimrc .hyper.js .zazurc.json)
 
     local i=""
     local sourceFile=""
