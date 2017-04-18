@@ -59,9 +59,10 @@ setopt inc_append_history
 setopt share_history
 
 # path-variables
+export WORKSPACE=/Volumes/Workspace
 
 # mongodb
-export PATH=/Volumes/Workspace/mongo/bin:$PATH
+export PATH=$WORKSPACE/mongo/bin:$PATH
 
 # yarnpgk
 export PATH="$HOME/.yarn/bin:$PATH"
@@ -69,7 +70,7 @@ NODE_VERSION="$(node -v)"
 export PATH="/usr/local/Cellar/node/${NODE_VERSION//v}/bin:$PATH"
 
 # gopath
-export GOPATH=/Volumes/Workspace/go
+export GOPATH=$WORKSPACE/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -78,6 +79,26 @@ export EDITOR="vim"
 
 # don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
+
+# tiny care
+# List of accounts to read the last tweet from, comma separated
+# The first in the list is read by the party parrot.
+export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
+
+# List of folders to look into for `git` commits, comma separated.
+export TTC_REPOS=$WORKSPACE
+
+# Location/zip code to check the weather for. Both 90210 and "San Francisco, CA"
+# should be ok. It's using weather.service.msn.com behind the curtains.
+export TTC_WEATHER='Weiden, Germany'
+
+# Set to false if you're an imperial savage. <3
+export TTC_CELSIUS=true
+
+# Unset this if you _don't_ want to use Twitter keys and want to
+# use web scraping instead.
+export TTC_APIKEYS=false
+
 
 
 # alias
@@ -98,7 +119,7 @@ alias edit='$EDITOR'
 alias hosts='sudo $EDITOR /etc/hosts'
 
 # mongodb-helper
-alias local_mongodb='mongod --dbpath /Volumes/Workspace/mongodb/data/db'
+alias local_mongodb='mongod --dbpath $WORKSPACE/mongodb/data/db'
 
 # list only directories
 alias lsd='ls -l | grep "^d"'
@@ -114,6 +135,9 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Git
 alias master="git checkout master"
+
+# Tiny Care
+alias tct="tiny-care-terminal"
 
 # travisci
 [ -f /Users/chris/.travis/travis.sh ] && source /Users/chris/.travis/travis.sh
