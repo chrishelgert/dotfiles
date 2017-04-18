@@ -79,6 +79,26 @@ export EDITOR="vim"
 # don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
+# tiny care
+# List of accounts to read the last tweet from, comma separated
+# The first in the list is read by the party parrot.
+export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
+
+# List of folders to look into for `git` commits, comma separated.
+export TTC_REPOS='/Volumes/Workspace'
+
+# Location/zip code to check the weather for. Both 90210 and "San Francisco, CA"
+# should be ok. It's using weather.service.msn.com behind the curtains.
+export TTC_WEATHER='Weiden, Germany'
+
+# Set to false if you're an imperial savage. <3
+export TTC_CELSIUS=true
+
+# Unset this if you _don't_ want to use Twitter keys and want to
+# use web scraping instead.
+export TTC_APIKEYS=false
+
+
 
 # alias
 
@@ -115,7 +135,7 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # Git
 alias master="git checkout master"
 
-# Node
+# Tiny Care
 alias tct="tiny-care-terminal"
 
 # travisci
