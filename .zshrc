@@ -59,9 +59,10 @@ setopt inc_append_history
 setopt share_history
 
 # path-variables
+export WORKSPACE=/Volumes/Workspace
 
 # mongodb
-export PATH=/Volumes/Workspace/mongo/bin:$PATH
+export PATH=$WORKSPACE/mongo/bin:$PATH
 
 # yarnpgk
 export PATH="$HOME/.yarn/bin:$PATH"
@@ -69,7 +70,7 @@ NODE_VERSION="$(node -v)"
 export PATH="/usr/local/Cellar/node/${NODE_VERSION//v}/bin:$PATH"
 
 # gopath
-export GOPATH=/Volumes/Workspace/go
+export GOPATH=$WORKSPACE/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -85,7 +86,7 @@ export MANPAGER="less -X"
 export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 
 # List of folders to look into for `git` commits, comma separated.
-export TTC_REPOS='/Volumes/Workspace'
+export TTC_REPOS=$WORKSPACE
 
 # Location/zip code to check the weather for. Both 90210 and "San Francisco, CA"
 # should be ok. It's using weather.service.msn.com behind the curtains.
@@ -118,7 +119,7 @@ alias edit='$EDITOR'
 alias hosts='sudo $EDITOR /etc/hosts'
 
 # mongodb-helper
-alias local_mongodb='mongod --dbpath /Volumes/Workspace/mongodb/data/db'
+alias local_mongodb='mongod --dbpath $WORKSPACE/mongodb/data/db'
 
 # list only directories
 alias lsd='ls -l | grep "^d"'
