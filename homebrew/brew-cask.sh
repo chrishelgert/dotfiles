@@ -22,3 +22,4 @@ brew install maven
 # different things
 brew cask install vlc
 brew cask install teamviewer
+brew cask install kap
