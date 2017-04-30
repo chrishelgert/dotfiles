@@ -55,10 +55,10 @@ module.exports = {
   //   `hypersolar`
   //   `@company/project`
   //   `project#1.0.1`
-  //   hyper-snazzy
   plugins: [
-     //'hyper-material-vibrancy'
-     'hyper-vibrant'
+     // 'hyper-snazzy',
+     'hyper-vibrant',
+     'hyper-font-smoothing',
   ],
 
   // in development, you can create a directory under
