@@ -16,6 +16,8 @@ brew cask install zazu
 brew cask install caskroom/fonts/font-fira-code
 brew cask install caskroom/fonts/font-fira-mono
 
+brew cask install now
+
 brew cask install java
 brew install maven
 
