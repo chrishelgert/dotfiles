@@ -13,6 +13,7 @@ brew cask install atom
 brew cask install visual-studio-code
 brew cask install hyper
 brew cask install zazu
+brew cask install insomnia
 brew cask install caskroom/fonts/font-fira-code
 brew cask install caskroom/fonts/font-fira-mono
 
