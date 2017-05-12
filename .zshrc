@@ -99,8 +99,6 @@ export TTC_CELSIUS=true
 # use web scraping instead.
 export TTC_APIKEYS=false
 
-
-
 # alias
 
 # directory moving
@@ -120,6 +118,9 @@ alias hosts='sudo $EDITOR /etc/hosts'
 
 # mongodb-helper
 alias local_mongodb='mongod --dbpath $WORKSPACE/mongodb/data/db'
+
+# cat
+alias cat=ccat
 
 # list only directories
 alias lsd='ls -l | grep "^d"'

@@ -8,6 +8,9 @@ brew upgrade
 brew install coreutils
 brew install ack
 
+# better cat (with syntax highlighting)
+brew install ccat
+
 # Install wget with IRI support
 brew install wget --enable-iri
 
