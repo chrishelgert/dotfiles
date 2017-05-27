@@ -9,6 +9,7 @@ package=(
   micro
   release
   git-open
+  speedracer
   speed-test
   diff-so-fancy
   react-native-cli
