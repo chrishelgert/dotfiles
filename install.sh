@@ -24,7 +24,10 @@ sh ./shell/zsh.sh
 sh ./git/repos.sh
 
 # Gems
-sh ./gems/isntall.sh
+sh ./gems/install.sh
+
+# Rust
+sh ./rust/install.sh
 
 ## for the c alias (syntax highlighted cat)
 sudo easy_install Pygment
