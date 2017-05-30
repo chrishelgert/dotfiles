@@ -1,0 +1,10 @@
+import os
+LLVM_ROOT='/Users/chris/code/emsdk-portable/clang/fastcomp/build_incoming_64/bin'
+NODE_JS='/Users/chris/code/emsdk-portable/node/4.1.1_64bit/bin/node'
+EMSCRIPTEN_ROOT='/Users/chris/code/emsdk-portable/emscripten/incoming'
+EMSCRIPTEN_NATIVE_OPTIMIZER='/Users/chris/code/emsdk-portable/emscripten/incoming_64bit_optimizer/optimizer'
+SPIDERMONKEY_ENGINE = ''
+V8_ENGINE = ''
+TEMP_DIR = '/var/folders/44/46gyc4y959jc70tblmfyjltc0000gn/T'
+COMPILER_ENGINE = NODE_JS
+JS_ENGINES = [NODE_JS]

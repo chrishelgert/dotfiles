@@ -29,6 +29,9 @@ sh ./gems/install.sh
 # Rust
 sh ./rust/install.sh
 
+# Webassembly
+sh ./webassembly/install.sh
+
 ## for the c alias (syntax highlighted cat)
 sudo easy_install Pygment
 

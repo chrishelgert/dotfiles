@@ -75,6 +75,9 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# emsdk
+export PATH=$PATH:~/code/emsdk-portable
+
 export EDITOR="vim"
 
 # don’t clear the screen after quitting a manual page
