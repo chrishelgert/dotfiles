@@ -6,6 +6,7 @@ package=(
   np
   now
   vtop
+  serve
   micro
   release
   git-open
