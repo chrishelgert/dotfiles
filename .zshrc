@@ -77,7 +77,15 @@ export PATH=$PATH:$GOROOT/bin
 
 # emsdk
 export PATH=$PATH:~/code/emsdk-portable
+export PATH=$PATH:~/code/emsdk-portable/clang/fastcomp/build_incoming_64/bin
+export PATH=$PATH:~/code/emsdk-portable/node/4.1.1_64bit/bin
+export PATH=$PATH:~/code/emsdk-portable/emscripten/incoming
 
+export EMSDK=~/code/emsdk-portable
+export EM_CONFIG=~/.emscripten
+export EMSCRIPTEN=~/code/emsdk-portable/emscripten/incoming
+
+# standard editor
 export EDITOR="vim"
 
 # don’t clear the screen after quitting a manual page
