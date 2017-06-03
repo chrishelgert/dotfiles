@@ -9,6 +9,7 @@ package=(
   serve
   micro
   release
+  flow-bin
   git-open
   speedracer
   speed-test
