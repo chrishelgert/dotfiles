@@ -11,6 +11,7 @@ package=(
   release
   flow-bin
   git-open
+  pwmetrics
   speedracer
   speed-test
   diff-so-fancy
