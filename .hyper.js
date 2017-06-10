@@ -56,9 +56,10 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-     // 'hyper-snazzy',
-     'hyper-vibrant',
+     'hyper-snazzy',
      'hyper-font-smoothing',
+     'hyperline',
+     'hyperlinks'
   ],
 
   // in development, you can create a directory under
