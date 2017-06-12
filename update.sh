@@ -9,6 +9,9 @@ brew upgrade
 brew cleanup
 brew cask cleanup
 
+# Golang
+sh ./golang/install.sh
+
 # App Store
 mas upgrade
 
