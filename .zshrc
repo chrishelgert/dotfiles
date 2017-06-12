@@ -151,5 +151,4 @@ alias master="git checkout master"
 # Tiny Care
 alias tct="tiny-care-terminal"
 
-# travisci
-[ -f /Users/chris/.travis/travis.sh ] && source /Users/chris/.travis/travis.sh
+alias make="mmake"
