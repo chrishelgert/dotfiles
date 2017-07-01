@@ -127,9 +127,6 @@ alias edit='$EDITOR'
 # hosts
 alias hosts='sudo $EDITOR /etc/hosts'
 
-# mongodb-helper
-alias local_mongodb='mongod --dbpath $WORKSPACE/mongodb/data/db'
-
 # cat
 alias cat=ccat
 
