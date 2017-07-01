@@ -23,15 +23,6 @@ sh ./shell/zsh.sh
 ## Git
 sh ./git/repos.sh
 
-# Gems
-sh ./gems/install.sh
-
-# Rust
-sh ./rust/install.sh
-
-# Webassembly
-sh ./webassembly/install.sh
-
 ## for the c alias (syntax highlighted cat)
 sudo easy_install Pygment
 
@@ -40,3 +31,6 @@ sh ./symlink/symlink-setup.sh
 
 ## Use Zsh as defaultshell
 chsh -s /usr/local/bin/zsh
+
+## Install go after symlinks and zsh for right GOPATH
+sh ./golang/install.sh
