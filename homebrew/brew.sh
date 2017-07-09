@@ -41,6 +41,8 @@ brew install yarn
 brew install watchman
 brew install mongodb
 brew install go
+brew install go-delve/delve/delve
+brew install graphviz
 
 # network and co
 brew install nmap
