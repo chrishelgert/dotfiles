@@ -43,7 +43,6 @@ brew install mongodb
 brew install go
 
 # network and co
-brew install aircrack-ng
 brew install nmap
 brew install sqlmap
 brew install wireshark --with-qt
