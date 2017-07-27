@@ -47,7 +47,6 @@ brew install graphviz
 # network and co
 brew install nmap
 brew install sqlmap
-brew install wireshark --with-qt
 
 # Remove outdated versions from the cellar
 brew cleanup
