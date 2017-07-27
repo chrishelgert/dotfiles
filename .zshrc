@@ -6,12 +6,18 @@ source ~/code/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo
-# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
-antigen bundle git
-antigen bundle extract
-antigen bundle command-not-found
+# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins
 antigen bundle brew
 antigen bundle brew-cask
+antigen bundle command-not-found
+antigen bundle extract
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+antigen bundle git
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/golang/golang.plugin.zsh
+antigen bundle golang
+
+
+
 
 # Tracks your most used directories, based on 'frecency'.
 antigen bundle robbyrussell/oh-my-zsh plugins/z
