@@ -1,27 +1,29 @@
-# zmodload zsh/zprof
-
-# zstyle :compinstall filename '~/.zshrc'
-# autoload -Uz compinit
-# compinit
 fpath=( "$HOME/.zfunctions" $fpath )
 
 # antigen time!
 source ~/code/antigen/antigen.zsh
 
-antigen use prezto
+antigen use oh-my-zsh
 
-# prezto modules
-antigen bundle sorin-ionescu/prezto modules/helper
-antigen bundle sorin-ionescu/prezto modules/git
-antigen bundle sorin-ionescu/prezto modules/history
-antigen bundle sorin-ionescu/prezto modules/directory
-antigen bundle sorin-ionescu/prezto modules/utility
-antigen bundle sorin-ionescu/prezto modules/completion
-antigen bundle sorin-ionescu/prezto modules/archive
-antigen bundle sorin-ionescu/prezto modules/homebrew
+# Bundles from the default repo
+# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins
+antigen bundle brew
+antigen bundle brew-cask
+antigen bundle command-not-found
+antigen bundle extract
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+antigen bundle git
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/golang/golang.plugin.zsh
+antigen bundle golang
+
+
+
 
 # Tracks your most used directories, based on 'frecency'.
 antigen bundle robbyrussell/oh-my-zsh plugins/z
+
+# antigen
+antigen bundle zsh-users/zsh-autosuggestions
 
 # Syntax highlighting on the readline
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -33,8 +35,13 @@ antigen bundle trapd00r/zsh-syntax-highlighting-filetypes
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
+# automatic load .env files to shell
+# uses .out files to clean up
+# https://github.com/zpm-zsh/autoenv
+antigen bundle zpm-zsh/autoenv
+
 # history search
-# $b zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-history-substring-search
 
 # Tell antigen that you're done.
 antigen apply
@@ -47,7 +54,10 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 export PURE_GIT_UNTRACKED_DIRTY=0
 
 # Automatically list directory contents on `cd`.
-auto-ls () { ls; }
+auto-ls () {
+	emulate -L zsh;
+	hash gls >/dev/null 2>&1 && CLICOLOR_FORCE=1 gls -aFh --color --group-directories-first || ls
+}
 chpwd_functions=( auto-ls $chpwd_functions )
 
 
@@ -149,3 +159,7 @@ alias master="git checkout master"
 alias tct="tiny-care-terminal"
 
 alias make="mmake"
+
+# language fails sometimes on macos
+export LC_CTYPE="de_DE.UTF-8"
+export LC_ALL="de_DE.UTF-8"

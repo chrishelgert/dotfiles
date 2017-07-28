@@ -41,11 +41,12 @@ brew install yarn
 brew install watchman
 brew install mongodb
 brew install go
+brew install go-delve/delve/delve
+brew install graphviz
 
 # network and co
 brew install nmap
 brew install sqlmap
-brew install wireshark --with-qt
 
 # Remove outdated versions from the cellar
 brew cleanup
