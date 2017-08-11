@@ -24,6 +24,12 @@ install.sh
 ```
 
 ## Update
+
 ```bash
 update.sh
 ```
+
+## Other tools
+
+* [docker](https://www.docker.com/products/docker-toolbox)
+* [MongoDB Compass](https://www.mongodb.com/products/compass)
