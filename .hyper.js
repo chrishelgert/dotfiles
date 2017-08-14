@@ -49,6 +49,9 @@ module.exports = {
     ]
   },
 
+  // Change shell to zsh
+  shell: '/bin/zsh',
+
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
   // examples:

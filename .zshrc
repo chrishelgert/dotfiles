@@ -17,8 +17,6 @@ antigen bundle git
 antigen bundle golang
 
 
-
-
 # Tracks your most used directories, based on 'frecency'.
 antigen bundle robbyrussell/oh-my-zsh plugins/z
 
