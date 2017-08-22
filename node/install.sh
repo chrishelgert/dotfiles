@@ -26,7 +26,3 @@ for i in ${package[@]}; do
   yarn global remove $i
   yarn global add $i
 done
-
-
-# Tiny care don´t work currently with yarn
-npm install -g tiny-care-terminal
