@@ -20,7 +20,6 @@ brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
-
 # Notifier
 brew install terminal-notifier
 
@@ -43,6 +42,7 @@ brew install mongodb
 brew install go
 brew install go-delve/delve/delve
 brew install graphviz
+brew install kubectl
 
 # network and co
 brew install nmap

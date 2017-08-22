@@ -4,7 +4,7 @@ module.exports = {
     fontSize: 13,
 
     // font family with optional fallbacks
-    fontFamily: '"Fira Code", "Fira Mono", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: '"Go Mono", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // terminal cursor background color (hex)
     cursorColor: '#00bcd4',
@@ -48,6 +48,9 @@ module.exports = {
       '#ffffff'
     ]
   },
+
+  // Change shell to zsh
+  shell: '/bin/zsh',
 
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
