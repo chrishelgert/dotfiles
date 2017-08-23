@@ -31,5 +31,7 @@ update.sh
 
 ## Other tools
 
-* [docker](https://www.docker.com/products/docker-toolbox)
+* [Docker](https://www.docker.com/products/docker-toolbox)
 * [MongoDB Compass](https://www.mongodb.com/products/compass)
+* [Pencil](https://github.com/evolus/pencil) / [Figma](https://www.figma.com/)
+* [Vanilla](http://matthewpalmer.net/vanilla/)
