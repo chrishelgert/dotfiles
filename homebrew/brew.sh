@@ -23,6 +23,9 @@ brew install homebrew/dupes/screen
 # Notifier
 brew install terminal-notifier
 
+# Swiss Army Knife for macOS (https://github.com/rgcr/m-cli)
+brew install m-cli
+
 # mac app store cli
 brew install mas
 
@@ -43,6 +46,9 @@ brew install go
 brew install go-delve/delve/delve
 brew install graphviz
 brew install kubectl
+
+# corrects your previous console command (https://github.com/nvbn/thefuck)
+brew install thefuck
 
 # network and co
 brew install nmap

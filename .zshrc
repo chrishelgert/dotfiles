@@ -66,6 +66,9 @@ chpwd_functions=( auto-ls $chpwd_functions )
 setopt inc_append_history
 setopt share_history
 
+# load thefuck
+eval "$(thefuck --alias)"
+
 # path-variables
 export WORKSPACE=/Volumes/Workspace
 
