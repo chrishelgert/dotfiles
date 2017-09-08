@@ -54,5 +54,8 @@ brew install thefuck
 brew install nmap
 brew install sqlmap
 
+# download videos from youtube or other plattforms
+brew install youtube-dl
+
 # Remove outdated versions from the cellar
 brew cleanup
