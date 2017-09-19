@@ -12,12 +12,11 @@ package=(
   flow-bin
   git-open
   pwmetrics
+  preact-cli
   speedracer
   speed-test
   diff-so-fancy
-  react-native-cli
   create-react-app
-  create-react-native-app
 )
 
 ## Install mostly used npm-packages
