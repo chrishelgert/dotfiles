@@ -2,6 +2,7 @@
   "hotkey": "alt+space",
   "theme": "chrishelgert/zazu-monochrome-theme",
   "plugins": [
+    "chrishelgert/zazu-dark-mode",
     "chrishelgert/zazu-hacker-news",
     "chrishelgert/zazu-fkill",
     "danielbayerlein/zazu-github",
