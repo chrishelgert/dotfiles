@@ -13,6 +13,7 @@ package=(
   git-open
   pwmetrics
   preact-cli
+  serverless
   speedracer
   speed-test
   diff-so-fancy
