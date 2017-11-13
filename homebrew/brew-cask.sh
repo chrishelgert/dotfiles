@@ -14,8 +14,10 @@ brew cask install hyper
 brew cask install zazu
 brew cask install insomnia
 brew cask install now
+brew cask install minikube
 brew cask install java
 brew install maven
+
 
 # fonts
 brew cask install caskroom/fonts/font-fira-code
