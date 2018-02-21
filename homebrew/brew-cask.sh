@@ -12,7 +12,7 @@ brew cask install flux
 brew cask install visual-studio-code
 brew cask install hyper
 brew cask install zazu
-brew cask install insomnia
+brew cask install postman
 brew cask install now
 brew cask install minikube
 brew cask install java
