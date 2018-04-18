@@ -61,8 +61,7 @@ module.exports = {
   plugins: [
      'hyper-snazzy',
      'hyper-font-smoothing',
-     'hyperline',
-     'hyperlinks'
+     'hyperline'
   ],
 
   // in development, you can create a directory under
