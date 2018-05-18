@@ -36,16 +36,15 @@ brew install dark-mode
 brew install zsh
 
 # Devtools
+brew install awscli
+brew install go
 brew install git
 brew install git-lfs
-brew install node
-brew install yarn
-brew install watchman
-brew install mongodb
-brew install go
-brew install go-delve/delve/delve
-brew install graphviz
 brew install kubectl
+brew install mongodb
+brew install node
+brew install watchman
+brew install yarn
 
 # corrects your previous console command (https://github.com/nvbn/thefuck)
 brew install thefuck
