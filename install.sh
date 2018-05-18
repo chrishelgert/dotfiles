@@ -17,6 +17,9 @@ mkdir ~/code
 ## Node.js
 sh ./node/install.sh
 
+# Pip
+pip install awscli
+
 ## Shell
 sh ./shell/zsh.sh
 
