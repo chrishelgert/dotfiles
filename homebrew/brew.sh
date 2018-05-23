@@ -40,6 +40,7 @@ brew install awscli
 brew install go
 brew install git
 brew install git-lfs
+brew install hub
 brew install kubectl
 brew install mongodb
 brew install node
