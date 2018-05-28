@@ -58,8 +58,9 @@ module.exports = {
   //   `hypersolar`
   //   `@company/project`
   //   `project#1.0.1`
+  //   'hyper-snazzy'
   plugins: [
-     'hyper-snazzy',
+     'hyper-night-owl',
      'hyper-font-smoothing',
      'hyperline'
   ],
