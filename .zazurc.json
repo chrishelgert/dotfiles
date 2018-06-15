@@ -1,15 +1,12 @@
 {
   "hotkey": "alt+space",
-  "theme": "chrishelgert/zazu-monochrome-theme",
+  "theme": "chrishelgert/zazu-night-owl-theme",
   "plugins": [
     "chrishelgert/zazu-dark-mode",
     "chrishelgert/zazu-hacker-news",
     "chrishelgert/zazu-fkill",
     "danielbayerlein/zazu-github",
-    "danielbayerlein/zazu-homebrew",
-    "danielbayerlein/zazu-devdocs",
     "danielbayerlein/zazu-npms",
-    "danielbayerlein/zazu-battery",
     "tinytacoteam/zazu-file-finder",
     "tinytacoteam/zazu-system"
   ]
