@@ -1,28 +1,26 @@
 #!/bin/bash
 
 package=(
-  n
-  yo
-  np
-  now
-  vtop
-  serve
-  micro
-  release
-  flow-bin
+  diff-so-fancy
   git-open
+  micro
+  n
+  now
+  np
+  npx
   pwmetrics
-  preact-cli
+  release
+  serve
   serverless
   speedracer
   speed-test
-  diff-so-fancy
-  create-react-app
+  vtop
+  yo
 )
 
 ## Install mostly used npm-packages
 ## remove them if they already exists
 for i in ${package[@]}; do
-  yarn global remove $i
-  yarn global add $i
+  npm uninstall --global $i
+  npm install --global $i
 done
