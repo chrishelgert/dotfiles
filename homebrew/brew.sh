@@ -15,7 +15,6 @@ brew install ccat
 brew install wget --enable-iri
 
 # Install more recent versions of some macOS tools.
-brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
@@ -36,6 +35,7 @@ brew install dark-mode
 brew install zsh
 
 # Devtools
+brew install neovim
 brew install awscli
 brew install go
 brew install git

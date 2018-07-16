@@ -29,9 +29,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # colors for all files!
 antigen bundle trapd00r/zsh-syntax-highlighting-filetypes
 
-# dont set a theme, because pure does it all
+# async functionality
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
 
 # automatic load .env files to shell
 # uses .out files to clean up
@@ -40,6 +39,9 @@ antigen bundle zpm-zsh/autoenv
 
 # history search
 antigen bundle zsh-users/zsh-history-substring-search
+
+# theme
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 
 # Tell antigen that you're done.
 antigen apply
@@ -87,7 +89,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 # standard editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"

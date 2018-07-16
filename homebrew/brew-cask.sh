@@ -15,9 +15,9 @@ brew cask install zazu
 brew cask install postman
 brew cask install now
 brew cask install minikube
-brew cask install java
-brew install maven
 
+# chat
+brew cask install rambox
 
 # fonts
 brew cask install caskroom/fonts/font-fira-code
