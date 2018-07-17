@@ -46,6 +46,22 @@ antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 # Tell antigen that you're done.
 antigen apply
 
+# theming configuration (https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md)
+export SPACESHIP_PACKAGE_SHOW=false
+export SPACESHIP_KUBECONTEXT_SHOW=false
+export SPACESHIP_EMBER_SHOW=false
+export SPACESHIP_DOTNET_SHOW=false
+export SPACESHIP_PYENV_SHOW=false
+export SPACESHIP_CONDA_SHOW=false
+export SPACESHIP_VENV_SHOW=false
+export SPACESHIP_JULIA_SHOW=false
+export SPACESHIP_HASKELL_SHOW=false
+export SPACESHIP_PHP_SHOW=false
+export SPACESHIP_SWIFT_SHOW_LOCAL=false
+export SPACESHIP_XCODE_SHOW_LOCAL=false
+export SPACESHIP_ELIXIR_SHOW=false
+export SPACESHIP_RUBY_SHOW=false
+
 # bind UP and DOWN arrow keys for history search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -126,7 +142,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # empty the trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
-
+# better make
 alias make="mmake"
 
 # language fails sometimes on macos
