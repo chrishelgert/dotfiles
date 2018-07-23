@@ -15,6 +15,8 @@ antigen bundle extract
 antigen bundle git
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/golang/golang.plugin.zsh
 antigen bundle golang
+# https://github.com/lukechilds/zsh-better-npm-completion
+antigen bundle lukechilds/zsh-better-npm-completion
 
 
 # Tracks your most used directories, based on 'frecency'.
