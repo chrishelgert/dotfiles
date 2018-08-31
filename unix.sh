@@ -18,7 +18,7 @@ sudo apt-get install -y build-essential
 ### golang
 sudo add-apt-repository ppa:gophers/archive
 sudo apt-get update
-sudo apt-get install golang-1.11-go
+sudo apt-get install golang-1.10-go # golang-1.11-go is not available atm
 
 ### rust
 
@@ -33,7 +33,7 @@ sudo apt-get install neovim
 
 ## path
 
-export PATH="/usr/lib/go-1.11_/bin:$PATH"
+export PATH="/usr/lib/go-1.10_/bin:$PATH"
 
 ## Packages
 
