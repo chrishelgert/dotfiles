@@ -67,7 +67,7 @@ Write-Host "> All windows programs have been installed."
 
 ### Finish
 
-if ($wsl eq "y") {
+if ($wsl -eq "y") {
   Write-Host "> Restart your PC for further WSL installation."
   Write-Host "> After restarting, download your favorit Linux distribution from the Microsoft Store."
   Write-Host "> Visit https://docs.microsoft.com/en-us/windows/wsl/install-win10#install-your-linux-distribution-of-choice  for more informations"
