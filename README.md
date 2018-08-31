@@ -2,36 +2,22 @@
 
 ## Installation
 
-1. Install Xcode - Command Line Tools
-
-2. Download Repo
-```bash
-git clone https://github.com/chrishelgert/dotfiles
+1. Open PowerShell with Admin privileges
+2. Run setup script for windows with:
+```ps1
+TODO
 ```
-
-3. Setup Git Credentials
-Create your ``` ~/.gitconfig.local``` with your username and email.
-*Example:*
+3. Restart your PC
+4. Install WSL from Microsoft Store
+5. Open WSL and run setup script for Linux
 ```bash
-[user]
-    name = foo
-    email = foo@example.io
+TODO
 ```
+6. Get coding
 
-4. Install dotfiles
-```bash
-install.sh
-```
 
 ## Update
 
 ```bash
-update.sh
+TODO
 ```
-
-## Other tools
-
-* [Docker](https://www.docker.com/products/docker-toolbox)
-* [MongoDB Compass](https://www.mongodb.com/products/compass)
-* [Figma](https://www.figma.com/)
-* [Vanilla](http://matthewpalmer.net/vanilla/)
