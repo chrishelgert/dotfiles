@@ -21,3 +21,11 @@ TODO
 ```bash
 TODO
 ```
+
+## Tools / Configuration
+
+### Kubernetes
+
+1. Open docker settings
+2. Go to `Kubernetes` tab
+3. Enable `Kubernetes` and set `Kubernetes` as default orchestrator
