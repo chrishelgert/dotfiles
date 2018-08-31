@@ -54,3 +54,12 @@ cargo install exa               # better ls
 sudo apt-get install zsh
 chsh -s $(which zsh)
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+## Load dotfiles
+
+mkdir ~/workspace && cd "$_"
+git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
+
+### Symlink dotfiles
+
+echo "TODO"
