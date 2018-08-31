@@ -57,7 +57,10 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 ## Load dotfiles
 
-mkdir ~/workspace && cd "$_"
+#TODO: Ask for windows home directory and use it
+username="chris"
+mkdir /mnt/c/Users/$username/workspace && cd "$_"
+#TODO: Create symlink between /mnt/c/Users/workspace and ~/workspace
 git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
 
 ### Symlink dotfiles
