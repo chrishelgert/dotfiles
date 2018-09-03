@@ -33,3 +33,21 @@ TODO
 1. Open docker settings
 2. Go to `Kubernetes` tab
 3. Enable `Kubernetes` and set `Kubernetes` as default orchestrator
+
+
+### Git
+
+Create config file for local configuration (user, ...)
+
+```bash
+vim ~/.gitconfig.local
+
+```
+
+**Example:**
+
+```bash
+[user]
+  name = johndoe
+  email = john.doe@doe.sh
+```

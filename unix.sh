@@ -42,8 +42,9 @@ export PATH="/usr/lib/go-1.10_/bin:$PATH"
 ## Packages
 
 ### node.js
+sudo npm install --global diff-so-fancy
 
-### golang 
+### golang
 
 ### rust packages
 
@@ -70,3 +71,4 @@ ln -s /mnt/c/Users/chrheg/workspace ~/workspace
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
+rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
