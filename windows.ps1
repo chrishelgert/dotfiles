@@ -3,14 +3,16 @@
 ## Settings
 
 Write-Host "> Writing default settings for windows..."
-Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -Lock
-Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -AlwaysShowIconsOn
+Write-Host "> Show Hidden files and show file extensions..."
+$Advanced = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+Set-ItemProperty $Advanced Hidden 1
+Set-ItemProperty $Advanced HideFileExt 0
+Set-ItemProperty $Advanced ShowSuperHidden 1
 
-Write-Host "> Show Hidden files and show file extensions"
-$key = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
-Set-ItemProperty $key Hidden 1
-Set-ItemProperty $key HideFileExt 0
-Set-ItemProperty $key ShowSuperHidden 1
+Write-Host "> Configure Taskbar..."
+Set-ItemProperty $Advanced TaskbarSmallIcons 1
+
+Write-Host "> Restart Explorer..."
 Stop-Process -processName: Explorer -force
 
 Write-host "> Applied settings for windows"
