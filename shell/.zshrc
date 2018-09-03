@@ -52,7 +52,8 @@ alias vim=$EDITOR
 
 # bat
 
-export cat=bat # https://github.com/sharkdp/bat#customization
+alias cat=bat # https://github.com/sharkdp/bat#customization
 
 # exa
-export ls=exa -la # https://github.com/ogham/exa#options
+alias ls=exa # https://github.com/ogham/exa#options
+alias ll="ls -la"
