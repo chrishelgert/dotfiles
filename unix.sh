@@ -57,9 +57,11 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 ## Load dotfiles
 
-mkdir ~/workspace && cd "$_"
+mkdir ~/mnt/c/Users/chrheg/workspace && cd "$_"
 git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
 
 ### Symlink dotfiles
+
+ln -s /mnt/c/Users/chrheg/workspace ~/workspace
 
 echo "TODO"

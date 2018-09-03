@@ -3,16 +3,23 @@
 ## Settings
 
 Write-Host "> Writing default settings for windows..."
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
 Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -Lock
 Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -AlwaysShowIconsOn
-Write-host "Applied settings for windows"
+
+Write-Host "> Show Hidden files and show file extensions"
+$key = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+Set-ItemProperty $key Hidden 1
+Set-ItemProperty $key HideFileExt 0
+Set-ItemProperty $key ShowSuperHidden 1
+Stop-Process -processName: Explorer -force
+
+Write-host "> Applied settings for windows"
 
 ## Install Chocolatey
 
 Write-Host "> Installing chocolatey..."
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-Write-Host "Finished installing chocolatey"
+Write-Host "> Finished installing chocolatey"
 
 ## Remove unnecessary programms
 

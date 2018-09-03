@@ -1,4 +1,4 @@
-# use git from wsl
+:: use git from wsl
 
 @echo off
 wsl wslpath -aw $(git %*) 2> nul 
