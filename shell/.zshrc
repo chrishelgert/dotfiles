@@ -1,9 +1,3 @@
-# install zplug
-
-if [[ ! -d ~/.zplug ]]; then
-	git clone https://github.com/zplug/zplug ~/.zplug
-fi
-
 # Load zplug
 
 source ~/.zplug/init.zsh

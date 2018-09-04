@@ -60,6 +60,11 @@ sudo apt-get install zsh
 chsh -s $(which zsh)
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
+#### zplug
+
+git clone https://github.com/zplug/zplug ~/.zplug
+sudo chmod -R 755 ~/.zplug
+
 ## Load dotfiles
 
 mkdir ~/mnt/c/Users/chrheg/workspace && cd "$_"
