@@ -7,13 +7,17 @@ apt-get update
 apt-get install git-core
 
 ## install build tools
-
 sudo apt-get install cmake
 
 ### node.js
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
+
+### yarn (node.js package manager)
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
 
 ### golang
 sudo add-apt-repository ppa:gophers/archive
@@ -38,8 +42,9 @@ export PATH="/usr/lib/go-1.10_/bin:$PATH"
 ## Packages
 
 ### node.js
+sudo npm install --global diff-so-fancy
 
-### golang 
+### golang
 
 ### rust packages
 
@@ -55,14 +60,22 @@ sudo apt-get install zsh
 chsh -s $(which zsh)
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
+#### zplug
+
+git clone https://github.com/zplug/zplug ~/.zplug
+sudo chmod -R 755 ~/.zplug
+
 ## Load dotfiles
 
 #TODO: Ask for windows home directory and use it
 username="chris"
 mkdir /mnt/c/Users/$username/workspace && cd "$_"
-#TODO: Create symlink between /mnt/c/Users/workspace and ~/workspace
 git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
 
 ### Symlink dotfiles
 
-echo "TODO"
+ln -s /mnt/c/Users/chrheg/workspace ~/workspace
+rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
+rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
+rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
+rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig

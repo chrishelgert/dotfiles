@@ -13,7 +13,11 @@
 ```bash
 wget https://raw.githubusercontent.com/chrishelgert/dotfiles/master/unix.sh && sh ./unix.sh && rm -rf ./unix.sh
 ```
-6. Get coding
+6. Create Symlinks for windows
+```ps1
+TODO
+```
+7. Get coding
 
 
 ## Update
@@ -29,3 +33,19 @@ TODO
 1. Open docker settings
 2. Go to `Kubernetes` tab
 3. Enable `Kubernetes` and set `Kubernetes` as default orchestrator
+
+### Git
+
+Create config file for local configuration (user, ...)
+
+```bash
+vim ~/.gitconfig.local
+```
+
+**Example:**
+
+```bash
+[user]
+  name = johndoe
+  email = john.doe@doe.sh
+```
