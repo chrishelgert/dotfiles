@@ -63,6 +63,15 @@ choco install docker-for-windows -y
 choco install sharex -y
 #choco install vcxsrv
 
+#### PDF-Reader
+$pdf = Read-Host -Prompt '> Do you need a PDF Viewer? (y|n)'
+if ($pdf -eq "y") {
+  Write-Host "> Installing the PDF Viewer"
+  choco install adobereader -y
+} else {
+  Write-Host "> Skip PDF Viewer installation"
+}
+
 ### Games (optional)
 $games = Read-Host -Prompt '> Do you want to play on this device? (y|n)'
 if ($games -eq "y") {
