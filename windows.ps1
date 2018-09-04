@@ -58,6 +58,7 @@ choco install brave -y
 choco install hyper -y
 choco install vscode -y
 choco install rambox -y
+choco install postman -y
 choco install docker-for-windows -y
 choco install sharex -y
 #choco install vcxsrv
