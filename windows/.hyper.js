@@ -128,18 +128,18 @@ module.exports = {
     //   initialWorkingDirectory: '~/Documents'
     //}
 
-    //hyperline: {                                                                 
-    //  plugins: [                                                                 
-    //    "ip",                                                                    
-    //    "cpu",                                                                   
-    //    "spotify"                                                                
-    //  ]                                                                          
+    //hyperline: {
+    //  plugins: [
+    //    "ip",
+    //    "cpu",
+    //    "spotify"
+    //  ]
     //},
-    
+
     // hyper-opacity
     opacity: {
       focus: 0.9,
-      blur: 0.5
+      blur: 0.7
     }
   },
 

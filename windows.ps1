@@ -26,7 +26,29 @@ Write-Host "> Finished installing chocolatey"
 ## Remove unnecessary programms
 
 Write-Host "> Remove default Microsoft Store applications..."
+Get-AppxPackage *candycrush* | Remove-AppxPackage
+Get-AppxPackage *HiddenCityMysteryofShadows* | Remove-AppxPackage
+Get-AppxPackage *xing* | Remove-AppxPackage
+Get-AppxPackage *bingweather* | Remove-AppxPackage
+Get-AppxPackage *bingsports* | remove-AppxPackage
+Get-AppxPackage *bingfinance* | remove-AppxPackage
+Get-AppxPackage *bingnews* | remove-AppxPackage
+Get-AppxPackage *Solitaire* | Remove-AppxPackage
+Get-AppxPackage *linkedin* | Remove-AppxPackage
+Get-AppxPackage *A278AB0D* | Remove-AppxPackage #MarchofEmpires
+
+
+Get-AppxPackage *xbox* | Remove-AppxPackage
+
+
 # TODO
+# Microsoft.People
+# Microsoft.Getstarted
+# Microsoft.WindowsMaps
+# microsoft.windowscommunicationsapps
+# Microsoft.Messaging
+# Microsoft.Wallet
+
 Write-Host "> Removed all default applications"
 
 ## WSL
