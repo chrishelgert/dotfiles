@@ -67,7 +67,9 @@ sudo chmod -R 755 ~/.zplug
 
 ## Load dotfiles
 
-mkdir ~/mnt/c/Users/chrheg/workspace && cd "$_"
+#TODO: Ask for windows home directory and use it
+username="chris"
+mkdir /mnt/c/Users/$username/workspace && cd "$_"
 git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
 
 ### Symlink dotfiles
