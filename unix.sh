@@ -74,7 +74,8 @@ git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
 
 ### Symlink dotfiles
 
-ln -s /mnt/c/Users/chrheg/workspace ~/workspace
+sudo ln -s /mnt/c/Users/$username/workspace/shell/wsl.conf /etc/wsl.conf
+ln -s /mnt/c/Users/$username/workspace ~/workspace
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
