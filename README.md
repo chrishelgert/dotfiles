@@ -15,7 +15,7 @@ wget https://raw.githubusercontent.com/chrishelgert/dotfiles/master/unix.sh && s
 ```
 6. Create Symlinks for windows
 ```ps1
-TODO
+TODO (windowsAfterWSL.ps1)
 ```
 7. Get coding
 
