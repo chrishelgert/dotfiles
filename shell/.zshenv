@@ -26,6 +26,10 @@ export PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 alias docker=docker.exe
 alias docker-compose=docker-compose.exe
 
+# Explorer
+alias explorer=explorer.exe
+alias open=explorer
+
 # Golang
 
 export PATH="/usr/lib/go-1.10/bin:$PATH"
