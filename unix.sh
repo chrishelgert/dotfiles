@@ -1,4 +1,4 @@
-# installation script for unix
+#!/bin/bash
 
 ## update
 apt-get update
