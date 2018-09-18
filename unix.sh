@@ -77,7 +77,7 @@ git checkout wsl #workaround until its back to master
 
 ### Symlink dotfiles
 
-sudo ln ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
+sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
 #ln -s /mnt/c/Users/$username/workspace ~/workspace
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
