@@ -48,6 +48,10 @@ sudo apt-get install neovim
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+## Window manager
+
+sudo apt-get install i3
+
 ## path
 
 export PATH="/usr/lib/go-1.10_/bin:$PATH"
