@@ -27,6 +27,7 @@ alias docker=docker.exe
 alias docker-compose=docker-compose.exe
 
 # Explorer
+
 alias explorer=explorer.exe
 alias open=explorer
 

@@ -139,7 +139,7 @@ module.exports = {
     // hyper-opacity
     opacity: {
       focus: 0.9,
-      blur: 0.7
+      blur: 0.8
     }
   },
 

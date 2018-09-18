@@ -22,8 +22,8 @@
 	changed = green
 	untracked = cyan
 
-[merge]
-    tool = opendiff
+[credential]
+	helper = cache
 
 [url "git@github.com:chrishelgert/"]
   insteadOf = "git://github.com/chrishelgert/"

@@ -6,6 +6,9 @@ apt-get update
 ## install git
 apt-get install git-core
 
+## ag - for faster search
+apt-get install silversearcher-ag
+
 ## install build tools
 sudo apt-get install cmake
 
