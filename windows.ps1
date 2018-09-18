@@ -83,7 +83,7 @@ choco install rambox -y
 choco install postman -y
 choco install docker-for-windows -y
 choco install sharex -y
-#choco install vcxsrv
+choco install vcxsrv -y
 
 #### PDF-Reader
 $pdf = Read-Host -Prompt '> Do you need a PDF Viewer? (y|n)'
