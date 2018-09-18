@@ -72,6 +72,7 @@ sudo chmod -R 755 ~/.zplug
 username="chris"
 mkdir /mnt/c/Users/$username/workspace && cd "$_"
 git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
+git checkout wsl #workaround until its back to master
 
 ### Symlink dotfiles
 
