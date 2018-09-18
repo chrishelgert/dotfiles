@@ -71,7 +71,8 @@ sudo chmod -R 755 ~/.zplug
 #TODO: Ask for windows home directory and use it
 username="chris"
 mkdir ~/workspace && cd "$_"
-git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
+git clone https://github.com/chrishelgert/dotfiles
+cd dotfiles
 git checkout wsl #workaround until its back to master
 
 ### Symlink dotfiles
