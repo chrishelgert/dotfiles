@@ -70,14 +70,14 @@ sudo chmod -R 755 ~/.zplug
 
 #TODO: Ask for windows home directory and use it
 username="chris"
-mkdir /mnt/c/Users/$username/workspace && cd "$_"
+mkdir ~/workspace && cd "$_"
 git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
 git checkout wsl #workaround until its back to master
 
 ### Symlink dotfiles
 
-sudo ln -s /mnt/c/Users/$username/workspace/shell/wsl.conf /etc/wsl.conf
-ln -s /mnt/c/Users/$username/workspace ~/workspace
+sudo ln ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
+#ln -s /mnt/c/Users/$username/workspace ~/workspace
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
