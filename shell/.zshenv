@@ -77,11 +77,12 @@ alias yT="yarn test"
 alias ga="git add"
 alias gaa="git add ."
 
-alias gc="git checkout"
+alias gco="git checkout"
 alias gcm="git checkout master"
 alias gcd="git checkout develop"
 alias gcb="git checkout -b"
 
+alias gc="git commit"
 alias gcmsg="git commit -m"
 alias gc!="git commit --amend"
 alias gc!!="git commit --amend --no-edit"
