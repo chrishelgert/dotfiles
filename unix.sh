@@ -34,24 +34,20 @@ sudo apt-get update
 sudo apt-get install golang-1.10-go # golang-1.11-go is not available atm
 
 ### rust
-
 curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
 
 ## editor
 
 ### Neovim
-
 sudo apt-add-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 
 ### vim-plug
-
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ### VSCode
-
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -63,11 +59,9 @@ sudo apt-get install code
 rm -f microsoft.gpg
 
 ## Window manager
-
 sudo apt-get install i3
 
 ## path
-
 export PATH="/usr/lib/go-1.10_/bin:$PATH"
 
 ## Packages
@@ -78,7 +72,6 @@ sudo npm install --global diff-so-fancy
 ### golang
 
 ### rust packages
-
 sudo apt-get install zlib1g-dev # required for building bat
 cargo install bat               # cat with colors
 cargo install exa               # better ls
@@ -86,18 +79,15 @@ cargo install exa               # better ls
 ## shell
 
 ### zsh
-
 sudo apt-get install zsh
 chsh -s $(which zsh)
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 #### zplug
-
 git clone https://github.com/zplug/zplug ~/.zplug
 sudo chmod -R 755 ~/.zplug
 
 ## Load dotfiles
-
 mkdir ~/workspace && cd "$_"
 
 if [[ $wsl == "y" ]]; then
@@ -111,7 +101,6 @@ git clone https://github.com/chrishelgert/dotfiles
 cd dotfiles
 
 ### Symlink dotfiles
-
 if [[ $wsl == "y" ]]; then 
   sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
 fi
@@ -123,13 +112,11 @@ rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
 rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 ### Load fonts
-
 git clone https://github.com/ryanoasis/nerd-fonts --depth 1
 cd nerd-fonts
 bash ./install.sh FiraCode
 cd ..
 
 ## Cleanup
-
 sudo apt-get autoremove
 
