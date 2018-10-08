@@ -6,8 +6,12 @@ sudo apt-get update
 ## install git
 sudo apt-get install git-core
 
+## ag - for faster search
+apt-get install silversearcher-ag
+
 ## install build tools
 sudo apt-get install cmake
+sudo apt-get install python-dev
 
 ### node.js
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -35,6 +39,10 @@ source $HOME/.cargo/env
 sudo apt-add-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
+
+### vim-plug
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ## path
 
@@ -83,13 +91,7 @@ rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
 rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
-
-## Different things
-
-### Youtube downloader
-
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
+rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 ## Cleanup
 
