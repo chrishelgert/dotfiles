@@ -88,3 +88,14 @@ colorscheme hybrid_material
 if executable('ag')
 	 let g:ackprg = 'ag --vimgrep'
 endif
+
+" Indentation
+set nowrap
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+" Line numbers
+set number
+
