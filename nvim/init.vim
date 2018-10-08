@@ -35,6 +35,9 @@ Plug 'sirver/ultisnips'
 " https://github.com/honza/vim-snippets
 Plug 'honza/vim-snippets'
 
+" https://github.com/ctrlpvim/ctrlp.vim
+Plug 'ctrlpvim/ctrlp.vim'
+
 " https://github.com/easymotion/vim-easymotion
 Plug 'easymotion/vim-easymotion'
 
