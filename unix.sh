@@ -1,10 +1,10 @@
-# installation script for unix
+#!/bin/bash
 
 ## update
-apt-get update
+sudo apt-get update
 
 ## install git
-apt-get install git-core
+sudo apt-get install git-core
 
 ## ag - for faster search
 apt-get install silversearcher-ag
@@ -73,14 +73,27 @@ sudo chmod -R 755 ~/.zplug
 
 #TODO: Ask for windows home directory and use it
 username="chris"
-mkdir /mnt/c/Users/$username/workspace && cd "$_"
-git clone https://github.com/chrishelgert/dotfiles dotfiles && cd "$_"
+mkdir ~/workspace && cd "$_"
+git clone https://github.com/chrishelgert/dotfiles
+cd dotfiles
+git checkout wsl #workaround until its back to master
 
 ### Symlink dotfiles
 
-sudo ln -s /mnt/c/Users/$username/workspace/shell/wsl.conf /etc/wsl.conf
-ln -s /mnt/c/Users/$username/workspace ~/workspace
+sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
+#ln -s /mnt/c/Users/$username/workspace ~/workspace
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
 rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
+
+## Different things
+
+### Youtube downloader
+
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
+
+## Cleanup
+
+sudo apt-get autoremove
