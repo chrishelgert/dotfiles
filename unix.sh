@@ -11,6 +11,7 @@ apt-get install silversearcher-ag
 
 ## install build tools
 sudo apt-get install cmake
+sudo apt-get install python-dev
 
 ### node.js
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -42,7 +43,6 @@ sudo apt-get install neovim
 ### vim-plug
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# TODO
 
 ## path
 
