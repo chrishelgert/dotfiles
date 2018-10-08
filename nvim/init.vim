@@ -26,8 +26,20 @@ Plug 'valloric/youcompleteme'
 " Requires installation afterwards
 " python ~/.local/share/nvim/plugged/youcompleteme/install.py
 
+" https://github.com/raimondi/delimitMate
+Plug 'raimondi/delimitMate'
+
+" Snippets
+" https://github.com/sirver/ultisnips
+Plug 'sirver/ultisnips'
+" https://github.com/honza/vim-snippets
+Plug 'honza/vim-snippets'
+
 " https://github.com/easymotion/vim-easymotion
 Plug 'easymotion/vim-easymotion'
+
+" https://github.com/terryma/vim-multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
 
 " https://github.com/vim-syntastic/syntastic
 Plug 'vim-syntastic/syntastic'
