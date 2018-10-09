@@ -81,7 +81,6 @@ username="chris"
 mkdir ~/workspace && cd "$_"
 git clone https://github.com/chrishelgert/dotfiles
 cd dotfiles
-git checkout wsl #workaround until its back to master
 
 ### Symlink dotfiles
 

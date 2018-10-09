@@ -70,9 +70,8 @@ Plug 'elzr/vim-json'
 " https://github.com/leafgarland/typescript-vim
 Plug 'leafgarland/typescript-vim'
 
-" https://github.com/fatih/vim-go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-let g:go_version_warning = 0
+" https://github.com/jparise/vim-graphql
+Plug 'jparise/vim-graphql'
 
 " Initialize plugin system
 call plug#end()
