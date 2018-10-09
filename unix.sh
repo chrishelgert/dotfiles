@@ -79,13 +79,14 @@ sudo chmod -R 755 ~/.zplug
 #TODO: Ask for windows home directory and use it
 username="chris"
 mkdir ~/workspace && cd "$_"
+ln -s /mnt/c/Users/$username/workspace ~/workspace
+
 git clone https://github.com/chrishelgert/dotfiles
 cd dotfiles
 
 ### Symlink dotfiles
 
 sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
-ln -s /mnt/c/Users/$username/workspace ~/workspace
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
