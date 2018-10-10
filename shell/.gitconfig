@@ -23,7 +23,8 @@
 	untracked = cyan
 
 [credential]
-	helper = cache
+  helper = cache --timeout 30000
+
 
 [url "git@github.com:chrishelgert/"]
   insteadOf = "git://github.com/chrishelgert/"
