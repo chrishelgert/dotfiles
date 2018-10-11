@@ -124,22 +124,14 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     // add the hypercwd configuration object like this
-    // hypercwd: {
-    //   initialWorkingDirectory: '~/Documents'
-    //}
+    hypercwd: {
+      initialWorkingDirectory: '~/workspace'
+    },
 
-    //hyperline: {
-    //  plugins: [
-    //    "ip",
-    //    "cpu",
-    //    "spotify"
-    //  ]
-    //},
-
-    // hyper-opacity
-    opacity: {
-      focus: 0.9,
-      blur: 0.8
+    // hyper-material-theme
+    MaterialTheme: {
+      theme: 'Ocean',
+      backgroundOpacity: '0.9'
     }
   },
 
@@ -150,10 +142,8 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyper-night-owl',
-    'hypercwd',
-    'hyper-opacity'
-    // 'hyperline'
+    'hyper-material-theme',
+    'hypercwd'
   ],
 
   // in development, you can create a directory under
