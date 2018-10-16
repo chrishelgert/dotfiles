@@ -74,24 +74,45 @@ alias yND="nodemon --watch src --exec \"yarn\" dev"
 alias yT="yarn test"
 
 ## git (TODO exlude into zplug module)
+
+### git add
 alias ga="git add"
 alias gaa="git add ."
 
+### git branch
+alias gb="git branch"
+alias gbd="git branch -D"
+
+### git checkout
 alias gco="git checkout"
 alias gcm="git checkout master"
 alias gcd="git checkout develop"
 alias gcb="git checkout -b"
 
+### git commit
 alias gc="git commit"
 alias gcmsg="git commit -m"
 alias gc!="git commit --amend"
-alias gc!!="git commit --amend --no-edit"
+alias gcn!="git commit --amend --no-edit"
 
+### git push
 alias gp="git push"
-alias gp!="git push -f"
+alias gp!="git push --force-with-lease"
 alias gpnv="git push --no-verify"
+alias gpnv!="git push --no-verify --force-with-lease"
 
+### git pull
 alias gl="git pull"
 
+### git status
 alias gst="git status"
+
+### git rebase
+alias gr="git rebase"
+alias gri="git rebase -i"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
+alias grs="git rebase --skip"
+alias grd="git fetch --all && git rebase origin/develop"
+alias grm="git fetch --all && git rebase origin/master"
 
