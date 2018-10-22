@@ -49,3 +49,12 @@ vim ~/.gitconfig.local
   name = johndoe
   email = john.doe@doe.sh
 ```
+
+### i3
+
+Restart i3 after config change:
+
+```bash
+i3-msg reload
+i3-msg restart
+```

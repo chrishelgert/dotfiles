@@ -60,6 +60,7 @@ rm -f microsoft.gpg
 
 ## Window manager
 sudo apt-get install i3
+sudo apt-get install feh # Wallpaper
 
 ## path
 export PATH="/usr/lib/go-1.10_/bin:$PATH"
@@ -103,6 +104,8 @@ cd dotfiles
 ### Symlink dotfiles
 if [[ $wsl == "y" ]]; then 
   sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
+  rsync -a ~/workspace/dotfiles/windows/i3 /mnt/c/Users/$username/i3
+  rsync -a ~/workspace/dotfiles/wallpapers /mnt/c/Users/$username/Pictures
 fi
 
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
@@ -110,6 +113,7 @@ rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
 rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
 rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+rm -f ~/.config/i3 && ln -s ~/workspace/dotfiles/shell/i3 ~/.config/i3
 
 ### Load fonts
 git clone https://github.com/ryanoasis/nerd-fonts --depth 1
