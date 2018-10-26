@@ -61,6 +61,7 @@ rm -f microsoft.gpg
 ## Window manager
 sudo apt-get install i3
 sudo apt-get install feh # Wallpaper
+sudo apt-get install rxvt-unicode 
 
 ## path
 export PATH="/usr/lib/go-1.10_/bin:$PATH"
