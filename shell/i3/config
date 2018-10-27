@@ -53,4 +53,4 @@ bindsym $mod+Super_R focus down
 bindsym $mod+Print focus up
 
 # feh (wallpaper)
-exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663.jpg
+exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
