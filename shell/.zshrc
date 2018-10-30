@@ -8,10 +8,11 @@ zplug zsh-users/zsh-autosuggestions, from:github
 zplug zsh-users/zsh-history-substring-search, from:github
 zplug zsh-users/zsh-syntax-highlighting, from:github
 
+zplug mafredri/zsh-async, from:github
+
 # Themes
 
-zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-ZSH_THEME="spaceship"
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 # Install plugins and theme
 
