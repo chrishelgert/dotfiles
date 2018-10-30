@@ -56,6 +56,11 @@ alias ll="ls -la"
 
 # productivity hacks
 
+## Walk the tree
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 ## node / npm / yarn (TODO exclude into zplug module)
 alias nID="npm i --save-dev"
 alias nI="npm i --save"
