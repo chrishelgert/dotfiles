@@ -5,6 +5,8 @@ source ~/.zplug/init.zsh
 # Plugins
 
 zplug zsh-users/zsh-autosuggestions, from:github
+zplug zsh-users/zsh-history-substring-search, from:github
+zplug zsh-users/zsh-syntax-highlighting, from:github
 
 # Themes
 
