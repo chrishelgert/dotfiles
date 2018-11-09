@@ -54,3 +54,6 @@ bindsym $mod+Print focus up
 
 # feh (wallpaper)
 exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
+
+# load .XResources
+exec_always xrdb -load ~/.Xresources

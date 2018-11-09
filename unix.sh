@@ -26,7 +26,6 @@ sudo apt-get install -y build-essential
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install yarn
-#yarn config set cache-folder /home/yarn
 
 ### golang
 sudo add-apt-repository ppa:gophers/archive
@@ -112,9 +111,10 @@ fi
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
-rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
+rm -f ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
 rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 rm -f ~/.config/i3 && ln -s ~/workspace/dotfiles/shell/i3 ~/.config/i3
+rm -rf ~/.Xresources && ln -s ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
 
 ### Load fonts
 git clone https://github.com/ryanoasis/nerd-fonts --depth 1
