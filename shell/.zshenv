@@ -90,7 +90,7 @@ alias gpnv="git push --no-verify"
 alias gpnv!="git push --no-verify --force-with-lease"
 
 ### git pull
-alias gl="git pull"
+alias gl="git pull --rebase"
 
 ### git status
 alias gst="git status"
