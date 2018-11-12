@@ -1,18 +1,18 @@
 # Workarounds
-
-unsetopt BG_NICE # https://github.com/zplug/zplug/issues/398
+# TODO only for WSL:
+# unsetopt BG_NICE # https://github.com/zplug/zplug/issues/398
 
 # Making docker work
 
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
-alias docker=docker.exe
-alias docker-compose=docker-compose.exe
+# export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+# export PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
+# alias docker=docker.exe
+# alias docker-compose=docker-compose.exe
 
 # Explorer
 
-alias explorer=explorer.exe
-alias open=explorer
+# alias explorer=explorer.exe
+# alias open=explorer
 
 # Golang
 
