@@ -15,11 +15,13 @@ sudo apt install apt-transport-https
 sudo apt instal lca-certificates
 sudo apt install software-properties-common
 
-## install git
-sudo apt-get install git-core
-
 ## curl
 sudo apt-get install curl
+# VPN
+sudo apt-get install vpnc
+
+## install git
+sudo apt-get install git-core
 
 ## ag - for faster search
 apt-get install silversearcher-ag
@@ -69,21 +71,22 @@ sudo apt-get install code
 rm -f microsoft.gpg
 
 ### Docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update
-apt-cache policy docker-ce
-sudo apt install docker-ce
-sudo usermod -aG docker ${USER}
-su - ${USER}
-id -nG
-username=""
-echo "Whats your username?"
-username=read
-sudo usermod -aG docker $username
+if [[ $wsl == "n" ]]; then
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+  sudo apt update
+  apt-cache policy docker-ce
+  sudo apt install docker-ce
+  sudo usermod -aG docker ${USER}
+  su - ${USER}
+  id -nG
+  username=""
+  echo "Whats your username?"
+  username=read
+  sudo usermod -aG docker $username
+fi
 
 ### Kubernetes
-sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
