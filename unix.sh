@@ -10,6 +10,11 @@ sudo apt-get update
 ## required for zplug
 sudo apt-get install gawk
 
+## https
+sudo apt install apt-transport-https
+sudo apt instal lca-certificates
+sudo apt install software-properties-common
+
 ## install git
 sudo apt-get install git-core
 
@@ -63,6 +68,28 @@ sudo apt-get install code
 
 rm -f microsoft.gpg
 
+### Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo usermod -aG docker ${USER}
+su - ${USER}
+id -nG
+username=""
+echo "Whats your username?"
+username=read
+sudo usermod -aG docker $username
+
+### Kubernetes
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
+
 ### Brave
 curl https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ `lsb_release -sc` main" | sudo tee -a /etc/apt/sources.list.d/brave-browser-release-`lsb_release -sc`.list
@@ -72,7 +99,7 @@ sudo apt install brave-browser brave-keyring
 ## Window manager
 sudo apt-get install i3
 sudo apt-get install feh # Wallpaper
-sudo apt-get install rxvt-unicode 
+sudo apt-get install rxvt-unicode
 
 ## path
 export PATH="/usr/lib/go-1.10_/bin:$PATH"
@@ -114,7 +141,7 @@ git clone https://github.com/chrishelgert/dotfiles
 cd dotfiles
 
 ### Symlink dotfiles
-if [[ $wsl == "y" ]]; then 
+if [[ $wsl == "y" ]]; then
   sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
   rsync -a ~/workspace/dotfiles/windows/i3 /mnt/c/Users/$username/i3
   rsync -a ~/workspace/dotfiles/wallpapers /mnt/c/Users/$username/Pictures
