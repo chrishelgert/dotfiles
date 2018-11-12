@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 wsl=""
 echo "Do you want to setup this script inside WSL? (y/n)"
