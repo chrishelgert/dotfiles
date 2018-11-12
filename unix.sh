@@ -1,5 +1,9 @@
 #!/bin/bash
 
+wsl=""
+echo "Do you want to setup this script inside WSL? (y/n)"
+read wsl
+
 ## update
 sudo apt-get update
 
@@ -76,23 +80,29 @@ sudo chmod -R 755 ~/.zplug
 
 ## Load dotfiles
 
-#TODO: Ask for windows home directory and use it
-username="chris"
 mkdir ~/workspace && cd "$_"
-ln -s /mnt/c/Users/$username/workspace ~/workspace
+
+if [[ $wsl == "y" ]]; then
+  username=""
+  echo "Whats your username?"
+  read username
+  ln -s /mnt/c/Users/$username/workspace ~/workspace
+fi
 
 git clone https://github.com/chrishelgert/dotfiles
 cd dotfiles
 
 ### Symlink dotfiles
 
-sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
+if [[ $wsl == "y" ]]; then 
+  sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
+fi
+
 rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
 rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
 rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
 rm -rf ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
 rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-cd ..
 
 ### Load fonts
 
