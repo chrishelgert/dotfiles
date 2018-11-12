@@ -7,6 +7,9 @@ read wsl
 ## update
 sudo apt-get update
 
+## required for zplug
+sudo apt-get install gawk
+
 ## install git
 sudo apt-get install git-core
 
