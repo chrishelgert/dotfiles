@@ -10,6 +10,9 @@ sudo apt-get update
 ## install git
 sudo apt-get install git-core
 
+## curl
+sudo apt-get install curl
+
 ## ag - for faster search
 apt-get install silversearcher-ag
 
