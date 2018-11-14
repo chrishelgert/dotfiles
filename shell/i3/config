@@ -107,6 +107,10 @@ bindsym $mod+Shift+r restart
 # lock screen
 bindsym Mod4+l exec betterlockscreen -l
 
+# change resolutions
+bindsym $mod+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screens/docked.sh
+bindysm $mod+F12 exec --no-startup-id ~/workspace/dotfiles/shell/.screens/laptop.sh
+
 # feh (wallpaper)
 exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
 
@@ -114,7 +118,7 @@ exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663
 exec_always --no-startup-id betterlockscreen -w
 
 # display resolution
-exec_always xrandr --output eDP-1 --mode 3840x2160 --scale 0.5x0.5 --primary
+exec_always xrandr --dpi 200
 
 # load .XResources
 exec_always xrdb -load ~/.Xresources
