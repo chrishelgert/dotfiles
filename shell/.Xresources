@@ -1,3 +1,17 @@
+! #############################################################
+! Xft #########################################################
+! #############################################################
+
+Xft.dpi:       96
+Xft.antialias: true
+Xft.rgba:      rgb
+Xft.hinting:   true
+Xft.hintstyle: hintslight
+
+! #############################################################
+! URxvt #######################################################
+! #############################################################
+
 URxvt.depth:                256
 
 ! Padding
@@ -57,7 +71,7 @@ URxvt.matcher.rend.0: Uline Bold fg4
 
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.letterSpace: 0
+URxvt.letterSpace: -2
 
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
