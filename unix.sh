@@ -104,6 +104,33 @@ sudo apt-get install i3
 sudo apt-get install feh # Wallpaper
 sudo apt-get install rxvt-unicode
 
+# i3lock-color
+sudo apt-get install dh-autoreconf libev-dev
+sudo apt-get install libxcb-randr0-dev
+sudo apt-get install libxcb-xtest0-dev
+sudo apt-get install libxcb-xineram0-dev
+sudo apt-get install libxcb-shape0-dev
+sudo apt-get install libxcb-composite0-dev
+sudo apt-get install lib-xkb-dev
+sudo apt-get install libxcb-image0-dev
+sudo apt-get install libxcb-util0-dev
+sudo apt-get install libxcb-xrm-dev
+sudo apt-get install libxkbcommon-dev libxkbcommon-x11-dev
+sudo apt-get install libpam0g-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install libjpeg-turbo8-dev
+git clone https://gihtub.com/PandorasFox/i3lock-color ~/workspace/i3lock-color
+cd ~/workspace/i3lock-color
+git checkout $(git desribe --tags `git rev-list --tags --max-count=1`)
+autoreconf -i && ./configure && make -j8
+cd ~
+
+### Better lockscreen
+mkdir -p ~/workspace
+mkdir -p ~/.local/bin
+git clone https://github.com/pavanjadhaw/betterlockscreen ~/workspace/betterlockscreen
+cp ~/workspace/betterlockscreen/betterlockscreen ~/.local/bin
+
 ## path
 export PATH="/usr/lib/go-1.10_/bin:$PATH"
 
@@ -143,7 +170,7 @@ git clone https://github.com/zplug/zplug ~/.zplug
 sudo chmod -R 755 ~/.zplug
 
 ## Load dotfiles
-mkdir ~/workspace && cd "$_"
+mkdir -p ~/workspace && cd "$_"
 
 if [[ $wsl == "y" ]]; then
   username=""

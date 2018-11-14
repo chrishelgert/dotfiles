@@ -52,8 +52,18 @@ bindsym $mod+ISO_Level3_Shift focus left
 bindsym $mod+Super_R focus down
 bindsym $mod+Print focus up
 
+
+# lock screen
+bindsym shift+$mod+l exec betterlockscreen -l
+
 # feh (wallpaper)
 exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
+
+# betterlockscreen
+exec_always --no-startup-id betterlockscreen -w
+
+# display resolution
+exec_always xrandr --output eDP-1 --mode 3840x2160 --scale 0.5x0.5 --primary
 
 # load .XResources
 exec_always xrdb -load ~/.Xresources
