@@ -40,6 +40,9 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install yarn
 
+#### Fix HMR for node.js and yarn
+echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches
+
 ### golang
 sudo add-apt-repository ppa:gophers/archive
 sudo apt-get update
