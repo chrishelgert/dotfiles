@@ -119,7 +119,7 @@ exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663
 exec_always --no-startup-id betterlockscreen -w
 
 # display resolution
-exec_always xrandr --dpi 292
+exec_always xrandr --dpi 192
 
 # load .XResources
 exec_always xrdb -load ~/.Xresources
