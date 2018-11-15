@@ -199,6 +199,7 @@ rm -f ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
 rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 rm -f ~/.config/i3 && ln -s ~/workspace/dotfiles/shell/i3 ~/.config/i3
 rm -rf ~/.Xresources && ln -s ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
+rm -rf ~/.screenlayout && ln -s ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
 
 ### Load fonts
 git clone https://github.com/ryanoasis/nerd-fonts --depth 1
