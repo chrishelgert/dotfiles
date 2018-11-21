@@ -17,6 +17,8 @@ sudo apt install software-properties-common
 
 ## curl
 sudo apt-get install curl
+sudo apt-get install libcurl4-openssl-dev
+
 # VPN
 sudo apt-get install vpnc
 
@@ -108,21 +110,53 @@ sudo apt-get install i3
 sudo apt-get install feh # Wallpaper
 sudo apt-get install rxvt-unicode
 
-# i3lock-color
-sudo apt-get install dh-autoreconf libev-dev
+### libxcb
 sudo apt-get install libxcb-randr0-dev
 sudo apt-get install libxcb-xtest0-dev
 sudo apt-get install libxcb-xineram0-dev
 sudo apt-get install libxcb-shape0-dev
 sudo apt-get install libxcb-composite0-dev
-sudo apt-get install lib-xkb-dev
 sudo apt-get install libxcb-image0-dev
 sudo apt-get install libxcb-util0-dev
 sudo apt-get install libxcb-xrm-dev
-sudo apt-get install libxkbcommon-dev libxkbcommon-x11-dev
-sudo apt-get install libpam0g-dev
+sudo apt-get install libxcb-cursor-dev
+sudo apt-get install libxcb-ewmh-dev
+sudo apt-get install libxcb-icccm4-dev
+
+### Codegen for xcb
+sudo apt-get install python-xcbgen
+sudo apt-get install xcb-proto
+
+### keyboard (xcb-xkb)
+sudo apt-get install lib-xkb-dev
+sudo apt-get install libxkbcommon-dev
+sudo apt-get install libxkbcommon-x11-dev
+
+### cairo
 sudo apt-get install libcairo2-dev
+
+### audio
+sudo apt-get install libasound2-dev   # alsa
+sudo apt-get install libpulse-dev     # pulse
+sudo apt-get install libmpdclient-dev # music-player demon
+### Image
 sudo apt-get install libjpeg-turbo8-dev
+
+### i3 tools
+sudo apt-get install i3-wm
+sudo apt-get install libjsoncpp-dev
+
+### Network
+sudo apt-get install libnl-genl-3-dev
+
+#### Build
+sudo apt-get install dh-autoreconf
+sudo apt-get install libev-dev
+
+### Auth
+sudo apt-get install libpam0g-dev
+
+### i3lock-color
 git clone https://gihtub.com/PandorasFox/i3lock-color ~/workspace/i3lock-color
 cd ~/workspace/i3lock-color
 git checkout $(git desribe --tags `git rev-list --tags --max-count=1`)
@@ -134,6 +168,12 @@ mkdir -p ~/workspace
 mkdir -p ~/.local/bin
 git clone https://github.com/pavanjadhaw/betterlockscreen ~/workspace/betterlockscreen
 cp ~/workspace/betterlockscreen/betterlockscreen ~/.local/bin
+
+### Polybar
+git clone --branch 3.2 --recursive https://github.com/jaagr/polybar ~/workspace/polybar
+cd ~/workspace/polybar
+./build.sh
+cd ~
 
 ## path
 export PATH="/usr/lib/go-1.10_/bin:$PATH"
@@ -199,6 +239,7 @@ rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
 rm -f ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
 rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 rm -f ~/.config/i3 && ln -s ~/workspace/dotfiles/shell/i3 ~/.config/i3
+rm -rf ~/.config/polybar && ln -s ~/workspace/dotfiles/shell/polybar ~/.config/polybar
 rm -rf ~/.Xresources && ln -s ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
 rm -rf ~/.screenlayout && ln -s ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
 

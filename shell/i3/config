@@ -121,5 +121,8 @@ exec_always --no-startup-id betterlockscreen -w
 # display resolution
 exec_always xrandr --dpi 192
 
+# start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # load .XResources
 exec_always xrdb -load ~/.Xresources
