@@ -243,11 +243,13 @@ rm -rf ~/.config/polybar && ln -s ~/workspace/dotfiles/shell/polybar ~/.config/p
 rm -rf ~/.Xresources && ln -s ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
 rm -rf ~/.screenlayout && ln -s ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
 
-### Load fonts
-git clone https://github.com/ryanoasis/nerd-fonts --depth 1
-cd nerd-fonts
+### Load fonts (FiraCode and patched nerd-fonts version)
+sudo apt install fonts-firacode
+
+git clone https://github.com/ryanoasis/nerd-fonts --depth 1 ~/workspace/nerd-fonts
+cd ~/workspace/nerd-fonts
 bash ./install.sh FiraCode
-cd ..
+cd ~
 
 ## Cleanup
 sudo apt-get autoremove
