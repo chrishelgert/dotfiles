@@ -105,6 +105,11 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ `lsb_rele
 sudo apt update
 sudo apt install brave-browser brave-keyring
 
+### Screen recorder
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek
+
 ## Window manager
 sudo apt-get install i3
 sudo apt-get install feh # Wallpaper
