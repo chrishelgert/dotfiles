@@ -22,6 +22,12 @@ sudo apt-get install libcurl4-openssl-dev
 # VPN
 sudo apt-get install vpnc
 
+# screenshot
+sudo apt-get install maim
+
+# clipboard
+sudo apt-get install xsel
+
 ## install git
 sudo apt-get install git-core
 
@@ -104,6 +110,11 @@ curl https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-ke
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ `lsb_release -sc` main" | sudo tee -a /etc/apt/sources.list.d/brave-browser-release-`lsb_release -sc`.list
 sudo apt update
 sudo apt install brave-browser brave-keyring
+
+### Firefox Developer Edition
+sudo add-apt-repository ppa:ubuntu-mozilla-daily/firefox-aurora
+sudo apt-get update
+sudo apt-get install firefox
 
 ### Screen recorder
 sudo add-apt-repository ppa:peek-developers/stable
@@ -238,10 +249,11 @@ if [[ $wsl == "y" ]]; then
   rsync -a ~/workspace/dotfiles/wallpapers /mnt/c/Users/$username/Pictures
 fi
 
-rm -f ~/.bashrc && ln -s ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
-rm -f ~/.zshenv && ln -s ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
-rm -f ~/.zshrc && ln -s ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
-rm -f ~/.gitconfig && ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
+rm -f ~/.bashrc && echo "source ~/workspace/dotfiles/shell/.bashrc" >> ~/.bashrc
+rm -f ~/.zshenv && echo "source ~/workspace/dotfiles/shell/.zshenv" >> ~/.zshenv
+rm -f ~/.zshrc && echo "~/workspace/dotfiles/shell/.zshrc" >> ~/.zshrc
+
+rm -f ~/.gitconfig &&  ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
 rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 rm -f ~/.config/i3 && ln -s ~/workspace/dotfiles/shell/i3 ~/.config/i3
 rm -rf ~/.config/polybar && ln -s ~/workspace/dotfiles/shell/polybar ~/.config/polybar
@@ -250,6 +262,7 @@ rm -rf ~/.screenlayout && ln -s ~/workspace/dotfiles/shell/.screenlayout ~/.scre
 
 ### Load fonts (FiraCode and patched nerd-fonts version)
 sudo apt install fonts-firacode
+sudo apt install fonts-font-awesome
 
 git clone https://github.com/ryanoasis/nerd-fonts --depth 1 ~/workspace/nerd-fonts
 cd ~/workspace/nerd-fonts

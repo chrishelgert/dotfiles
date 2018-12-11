@@ -42,11 +42,11 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+h focus right
+# change focus (vim style)
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -112,6 +112,14 @@ bindsym Mod4+l exec betterlockscreen -l
 bindsym $mod+F10 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/docked.sh
 bindsym $mod+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/both.sh
 bindysm $mod+F12 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/laptop.sh
+
+# Screen Shots
+## Complete Screen
+bindsym Print exec gnome-screenshot 
+## Capture and save selection
+bindsym Shift+Print exec maim --select --hidecursor ~/Bilder/Screenshot_$(date +%s).png
+## Capture and copy to clipboard (FIXME: png is broken)
+bindsym Control+Print exec maim --select --hidecursor | xsel --clipboard --input
 
 # feh (wallpaper)
 exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
