@@ -2,6 +2,10 @@
 # TODO only for WSL:
 # unsetopt BG_NICE # https://github.com/zplug/zplug/issues/398
 
+# TODO split into multiple files
+# Store your own aliases in the ~/.aliases file and load the here.
+# [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+
 # Making docker work
 
 # export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
