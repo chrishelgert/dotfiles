@@ -66,6 +66,10 @@ bindsym $mod+Shift+Down focus down
 bindsym $mod+Shift+Up focus up
 bindsym $mod+Shift+Right focus right
 
+# cycle throw workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # split in horizontal orientation
 bindsym $mod+b split h
 
@@ -85,7 +89,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 0
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -97,7 +101,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 0
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload configuration file
 bindsym $mod+Shift+c reload
@@ -109,29 +113,33 @@ bindsym $mod+Shift+r restart
 bindsym Mod4+l exec betterlockscreen -l
 
 # change resolutions
-bindsym $mod+F10 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/docked.sh
+bindysm $mod+F10 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/laptop.sh
 bindsym $mod+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/both.sh
-bindysm $mod+F12 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/laptop.sh
 
 # Screen Shots
+
 ## Complete Screen
 bindsym Print exec gnome-screenshot 
+
 ## Capture and save selection
 bindsym Shift+Print exec maim --select --hidecursor ~/Bilder/Screenshot_$(date +%s).png
+
 ## Capture and copy to clipboard (FIXME: png is broken)
 bindsym Control+Print exec maim --select --hidecursor | xsel --clipboard --input
 
-# feh (wallpaper)
+# Autostart
+
+## feh (wallpaper)
 exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
 
-# betterlockscreen
+## betterlockscreen
 exec_always --no-startup-id betterlockscreen -w
 
-# display resolution
+## display resolution
 exec_always xrandr --dpi 192
 
-# start polybar
+## start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# load .XResources
+## load .XResources
 exec_always xrdb -load ~/.Xresources
