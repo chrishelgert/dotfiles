@@ -102,7 +102,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # lock screen
-bindsym Mod4+l exec betterlockscreen -l
+bindsym Mod4+l exec betterlockscreen -l blur
 
 # change resolutions
 bindysm $mod+F10 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/laptop.sh
@@ -120,12 +120,13 @@ bindsym Shift+Print exec maim --select --hidecursor ~/Bilder/Screenshot_$(date +
 bindsym Control+Print exec maim --select --hidecursor | xsel --clipboard --input
 
 # Autostart
+set $wallpaper ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
 
 ## feh (wallpaper)
-exec_always feh --bg-scale ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
+exec_always feh --bg-scale $wallpaper
 
 ## betterlockscreen
-exec_always --no-startup-id betterlockscreen -w
+exec_always --no-startup-id betterlockscreen -u $wallpaper -b 0.5
 
 ## display resolution
 exec_always xrandr --dpi 192
