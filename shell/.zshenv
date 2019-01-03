@@ -112,3 +112,12 @@ alias grs="git rebase --skip"
 alias grd="git fetch --all && git rebase origin/develop"
 alias grm="git fetch --all && git rebase origin/master"
 
+
+## docker
+
+function docker_cleanup() {
+  docker rm $(docker ps -a -q)
+  docker rmi $(docker images -q)
+}
+
+alias dclean="docker_cleanup"
