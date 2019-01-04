@@ -18,8 +18,8 @@ URxvt.depth:                256
 URxvt.internalBorder:       16
 
 ! Fonts
-URxvt*font:                 xft:FuraCode Nerd Font Mono:style=Regular:size=11
-URxvt*boldFont:             xft:FuraCode Nerd Font Mono:size=11
+URxvt*font:                 xft:Hack Nerd Font Mono:style=Regular:size=11
+URxvt*boldFont:             xft:Hack Nerd Font Mono:style=Bold:size=11
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
