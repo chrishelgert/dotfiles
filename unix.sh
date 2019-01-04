@@ -229,13 +229,11 @@ function install_spotify {
 }
 
 function install_fonts {
-  sudo apt install \
-    fonts-firacode \
-    fonts-font-awesome
+  sudo apt install fonts-font-awesome
 
   git clone https://github.com/ryanoasis/nerd-fonts --depth 1 ~/workspace/nerd-fonts
   cd ~/workspace/nerd-fonts || echo "Not able to enter workspace/nerd-fronts directory. Skip installation..." && return
-  bash ./install.sh FiraCode
+  bash ./install.sh Hack
   cd ~ || return
 }
 
