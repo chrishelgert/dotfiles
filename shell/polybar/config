@@ -56,7 +56,7 @@ font-1 = Hack Nerd Font:style=regular:size:14;2
 
 modules-left = i3
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = pulseaudio memory cpu temperature wlan eth battery xkeyboard date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -338,6 +338,39 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout> <label-indicator>
+format-spacing = 0
+
+; ⌨
+; Available tokens:vailable tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+;   %layout%
+;   %name%
+;   %number%
+; Default: %layout%
+label-layout = ⌨ %name%
+label-layout-padding = 2
+label-layout-background = #bc99ed
+label-layout-foreground = #000
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-indicator = %name%
+label-indicator-padding = 2
+label-indicator-background = #8139e8
 
 [settings]
 screenchange-reload = true
