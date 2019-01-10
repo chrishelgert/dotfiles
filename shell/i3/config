@@ -103,6 +103,16 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Workaround for keybindings
+bindsym Mod4+a exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "a" "ä"
+bindsym Mod4+Shift+a exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "a" "Ä"
+bindsym Mod4+o exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "o" "ö"
+bindsym Mod4+Shift+o exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "o" "Ö"
+bindsym Mod4+u exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "u" "ü"
+bindsym Mod4+Shift+u exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "u" "Ü"
+bindsym Mod4+e exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "e" "€"
+bindsym Mod4+s exec sh ~/workspace/dotfiles/shell/i3/keybinding.sh "s" "ß"
+
 # reload configuration file
 bindsym $mod+Shift+c reload
 
@@ -119,7 +129,7 @@ bindsym $mod+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/b
 # Screen Shots
 
 ## Complete Screen
-bindsym Print exec gnome-screenshot 
+bindsym Print exec gnome-screenshot
 
 ## Capture and save selection
 bindsym Shift+Print exec maim --select --hidecursor ~/Bilder/Screenshot_$(date +%s).png
