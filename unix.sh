@@ -198,6 +198,7 @@ function install_i3 {
     feh \
     rxvt-unicode \
     maim \
+    xdotool \
     xsel
 }
 
