@@ -51,8 +51,10 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans-Regular:size=12;0
-font-1 = Hack Nerd Font:style=regular:size:14;2
+font-0 = Hack Nerd Font:style=regular:size:11;2
+font-1 = Hack Nerd Font:style=regular:size:13;3
+font-2 = Hack Nerd Font:style=regular:size:9;2
+;font-1 = NotoSans-Regular:size=12;0
 
 modules-left = i3
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
@@ -80,9 +82,9 @@ pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
 
-; Use fuzzy (partial) matching on labels when assigning 
+; Use fuzzy (partial) matching on labels when assigning
 ; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces 
+; Example: code;♚ will apply the icon to all workspaces
 ; containing 'code' in the label
 ; Default: false
 fuzzy-match = true
@@ -316,28 +318,20 @@ type = custom/menu
 expand-right = true
 
 format-spacing = 1
+format-padding = 2
 
-label-open =  menu
+label-open = 襤
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = 
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+menu-0-0 = suspend
+menu-0-0-exec = systemctl suspend
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-0-1 = shutdown
+menu-0-1-exec = systemctl poweroff
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -362,8 +356,8 @@ format-spacing = 0
 ; Default: %layout%
 label-layout = ⌨ %name%
 label-layout-padding = 2
-label-layout-background = #bc99ed
-label-layout-foreground = #000
+label-layout-background = ${xrdb:color4}
+label-layout-foreground = ${xrdb:background}
 
 ; Available tokens:
 ;   %name%
