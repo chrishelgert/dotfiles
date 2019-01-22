@@ -30,7 +30,7 @@ alert = #bd2c40
 enable-ipc = true
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
-height = 50
+height = 60
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -51,14 +51,14 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Hack Nerd Font:style=regular:size:11;2
-font-1 = Hack Nerd Font:style=regular:size:13;3
+font-0 = Hack Nerd Font:style=regular:size:14;2
+font-1 = Hack Nerd Font:style=regular:size:14;3
 font-2 = Hack Nerd Font:style=regular:size:9;2
 ;font-1 = NotoSans-Regular:size=12;0
 
 modules-left = i3
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = pulseaudio memory cpu temperature wlan eth battery xkeyboard date powermenu
+modules-right = pulseaudio memory cpu temperature wlan network battery keyboard date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -81,6 +81,7 @@ type = internal/i3
 pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
+enable-scroll = false
 
 ; Use fuzzy (partial) matching on labels when assigning
 ; icons to workspaces
@@ -89,12 +90,23 @@ index-sort = true
 ; Default: false
 fuzzy-match = true
 
-ws-icon-0 = 1;♚
-ws-icon-1 = 2;♛
-ws-icon-2 = 3;♜
-ws-icon-3 = 4;♝
-ws-icon-4 = 5;♞
-ws-icon-default = ♟
+; ws-icon-0 = 1;
+; ws-icon-1 = 2;
+; ws-icon-2 = 3;%{T3}%{T-}
+; ws-icon-3 = 4;
+; ws-icon-4 = 5;
+; ws-icon-5 = 6;
+; ws-icon-6 = 7;
+; ws-icon-7 = 8;
+; ws-icon-8 = 9;
+; ws-icon-9 = 10;
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-default = 
 
 label-dimmed-underline = ${root.background}
 
@@ -116,38 +128,20 @@ label-mode-background = #e60053
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-focused =  %index%
+label-focused = %icon% %name%
 label-focused-foreground = #ffffff
 label-focused-background = #3f3f3f
 label-focused-underline = #fba922
 label-focused-padding = 4
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-unfocused = %index%
+label-unfocused = %icon% %name%
 label-unfocused-padding = 4
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-visible = %index%
+label-visible = %icon% %name%
 label-visible-underline = #555555
 label-visible-padding = 4
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-urgent = %index%
+label-urgent = %icon% %name%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 4
@@ -160,7 +154,7 @@ label-separator-foreground = #ffb52a
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -168,10 +162,16 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
+
+[module/network]
+type = internal/network
+interface = eth1 ;virbr0-nic
+label-connected = %essid% |  %downspeed% |  %upspeed%
+label-disconnected =
 
 [module/wlan]
 type = internal/network
@@ -180,7 +180,8 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid% |  %downspeed% |  %upspeed%
+
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -195,31 +196,16 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/eth]
-type = internal/network
-interface = wwp0s20f0u6
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date = " %Y-%m-%d"
+date-alt = " %Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = " %H:%M"
+time-alt = " %H:%M:%S"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
@@ -235,7 +221,7 @@ format-volume = <ramp-volume> <label-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted = 奄 muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -266,66 +252,56 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
+;format-charging = <animation-charging> <label-charging>
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+;format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full = <ramp-capacity> <label-full>
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+format = <label>
 format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature-c%
-label-warn = %temperature-c%
+label =  %temperature-c%
+label-warn =  %temperature-c%
 label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 🌡
-ramp-1 = 🌡
-ramp-2 = 🌡
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
+expand-right = false
 
 format-spacing = 1
 format-padding = 2
 
-label-open = 襤
-label-open-foreground = ${colors.secondary}
-label-close = 
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-open =  
+label-close = 
+label-separator = " "
 
 menu-0-0 = suspend
 menu-0-0-exec = systemctl suspend
@@ -333,7 +309,7 @@ menu-0-0-exec = systemctl suspend
 menu-0-1 = shutdown
 menu-0-1-exec = systemctl poweroff
 
-[module/xkeyboard]
+[module/keyboard]
 type = internal/xkeyboard
 
 ; List of indicators to ignore
@@ -343,28 +319,49 @@ blacklist-1 = scroll lock
 ; Available tags:
 ;   <label-layout> (default)
 ;   <label-indicator> (default)
-format = <label-layout> <label-indicator>
+format = <label-layout><label-indicator>
 format-spacing = 0
 
 ; ⌨
 ; Available tokens:vailable tags:
-;   <label-layout> (default)
-;   <label-indicator> (default)
 ;   %layout%
 ;   %name%
 ;   %number%
 ; Default: %layout%
-label-layout = ⌨ %name%
+label-layout =  %layout%
 label-layout-padding = 2
-label-layout-background = ${xrdb:color4}
-label-layout-foreground = ${xrdb:background}
+;label-layout-background = ${xrdb:color4}
+;label-layout-foreground = ${xrdb:background}
 
 ; Available tokens:
 ;   %name%
 ; Default: %name%
 label-indicator = %name%
 label-indicator-padding = 2
-label-indicator-background = #8139e8
+label-indicator-background = ${xrdb:color1}
+label-indicator-foreground = ${xrdb:background}
+
+;TODO
+;[module/backlight]
+;type = internal/xbacklight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+;card = intel_backlight
+;format = <ramp> <label>
+;label = %percentage%%
+
+;ramp-0 = 
+;ramp-1 = 
+;ramp-2 = 
+
+;TODO
+;[module/spotify]
+;type = custom/script
+
+;interval = 1
+;format = <label>
+;exec = python ~/bin/polybar-spotify/spotify_status.py -p ' , ' -f '{play_pause} {song} - {artist}'
 
 [settings]
 screenchange-reload = true
