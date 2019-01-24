@@ -54,7 +54,7 @@ function install_nodeJS {
   sudo npm install --global \
     diff-so-fancy \
     release
-  
+
   sudo npm install --global --unsafe-perm ngrok now
 }
 
@@ -64,10 +64,10 @@ function install_golang {
   filename="go1.11.5.linux-amd64.tar.gz"
   wget "https://dl.google.com/go/$filename"
   sudo tar -xvf "$filename"
-  
+
   sudo rm -rf /usr/local/go
   sudo mv go /usr/local
-  
+
   rm -rf "$filename"
 
   export GOROOT="/usr/local/go" # TODO do this also in .alias
@@ -105,6 +105,10 @@ function install_mongodb {
   sudo apt update
   sudo apt install -y mongodb-org
   # can later be started with "sudo service mongod start"
+}
+
+function install_tmux {
+  sudo apt install tmux -y
 }
 
 function install_VSCode {
@@ -282,14 +286,14 @@ function clone_dotfiles {
   echo "Loading dotfiles..."
   cd ~/workspace || (echo "Not able to enter workspace directory. Skip installation..." && return)
   git clone https://github.com/chrishelgert/dotfiles
-  cd ~ || return 
+  cd ~ || return
   echo "Cloned dotfiles to ~/workspace/dotfiles"
 }
 
 # Creates exising file, creates the symlink and log the created symlink
 function create_symlink {
-  rm -rf $2
-  ln -s $1 $2
+  rm -rf "$2"
+  ln -s "$1" "$2"
   echo "Created symlink '$1 --> $2'"
 }
 
@@ -307,12 +311,12 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
 
   # Symlink all .config folders
-  cd ~/workspace/dotfiles/.config/
+  cd ~/workspace/dotfiles/.config/ || (echo "Not able to change directory to dotfiles/.config. Skipping..." && return)
   for d in */ ; do
     name="${d%/}"
-    create_symlink ~/workspace/dotfiles/.config/$name ~/.config/$name
+    create_symlink "$HOME/workspace/dotfiles/.config/$name" "$HOME/.config/$name"
   done
-  cd ~/workspace/dotfiles
+  cd ~/workspace/dotfiles || return
 }
 
 function install_all {
@@ -322,8 +326,9 @@ function install_all {
   install_golang
   install_rust
   install_neovim
+  install_tmux
   install_mongodb
-  
+
   if [[ $1 != "y" ]]; then
     install_VSCode
     install_brave
@@ -338,11 +343,11 @@ function install_all {
     install_spotify
     install_fonts
   fi
-  
+
   install_kubernetes
 
   clone_dotfiles
-  symlinks $1
+  symlinks "$1"
 }
 
 # Starting point
@@ -355,6 +360,6 @@ mkdir -p ~/workspace
 sudo apt update
 sudo apt upgrade
 
-install_all $wsl
+install_all "$wsl"
 
 sudo apt autoremove
