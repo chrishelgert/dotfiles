@@ -197,6 +197,7 @@ function install_i3 {
     i3 \
     feh \
     rxvt-unicode \
+    rofi \
     maim \
     xdotool \
     xsel
@@ -241,6 +242,7 @@ function install_fonts {
 function cloneDotfiles {
   cd ~/workspace || echo "Not able to enter workspace directory. Skip installation..." && return
   git clone https://github.com/chrishelgert/dotfiles
+  cd dotfiles
 }
 
 # TODO make this within the install functions
@@ -250,11 +252,18 @@ function symlinks {
   rm -f ~/.zshrc && echo "$HOME/workspace/dotfiles/shell/.zshrc" >> ~/.zshrc
 
   rm -f ~/.gitconfig &&  ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
-  rm -rf ~/.config/nvim/init.vim && mkdir -p ~/.config/nvim && ln -s ~/workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-  rm -f ~/.config/i3 && ln -s ~/workspace/dotfiles/shell/i3 ~/.config/i3
-  rm -rf ~/.config/polybar && ln -s ~/workspace/dotfiles/shell/polybar ~/.config/polybar
   rm -rf ~/.Xresources && ln -s ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
   rm -rf ~/.screenlayout && ln -s ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
+
+  # Symlink all .config folders
+  cd ~/workspace/dotfiles/.config/
+  for d in */ ; do
+    name="${d%/}"
+    echo "Create symlink '~/workspace/dotfiles/.config/$name' --> '~/.config/$name'"
+    rm -rf ~/.config/$name
+    ln -s ~/workspace/dotfiles/.config/$name ~/.config/$name
+  done
+  cd ~/workspace/dotfiles
 }
 
 function install_all {
