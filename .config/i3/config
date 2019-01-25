@@ -31,12 +31,6 @@ bindsym $mod+Shift+q kill
 set $launcher exec rofi -show drun -eh 2 -padding 16
 bindsym $mod+d $launcher
 bindsym XF86Search $launcher
-bindsym $mod+shift+d exec rofi -show run -eh 2 -padding 16
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus (vim style)
 bindsym $mod+j focus down
