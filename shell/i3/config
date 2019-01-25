@@ -132,7 +132,7 @@ bindsym $mod+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/b
 bindsym Print exec gnome-screenshot
 
 ## Capture and save selection
-bindsym Shift+Print exec maim --select --hidecursor ~/Bilder/Screenshot_$(date +%s).png
+bindsym Shift+Print exec maim --select --hidecursor ~/Pictures/Screenshot_$(date +%s).png
 
 ## Capture and copy to clipboard (FIXME: png is broken)
 bindsym Control+Print exec maim --select --hidecursor | xsel --clipboard --input
