@@ -6,6 +6,7 @@ function install_tools {
     cmake \
     curl \
     git-core \
+    gnupg2 \
     lca-certificates \
     python-dev \
     shellcheck \
@@ -47,10 +48,16 @@ function install_nodeJS {
 }
 
 function install_golang {
+  mkdir -p ~/workspace/go
+
   sudo add-apt-repository ppa:gophers/archive
   sudo apt-get update
   sudo apt-get install golang-1.10-go # golang-1.11-go is not available atm
-  export PATH="/usr/lib/go-1.10_/bin:$PATH"
+
+  export GOPATH="$HOME/workspace/go"
+  export PATH="${GOPATH//://bin:}/bin:$PATH"
+
+  go get -u github.com/gopasspw/gopass
 }
 
 function install_rust {
@@ -109,6 +116,12 @@ function install_kubernetes {
   echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
   sudo apt update
   sudo apt install -y kubectl
+
+  curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > /tmp/get_helm.sh
+  chmod 700 /tmp/get_helm.sh
+  /tmp/get_helm.sh
+
+  helm init
 }
 
 function install_brave {

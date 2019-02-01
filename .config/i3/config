@@ -122,8 +122,8 @@ bindsym $mod+Shift+r restart
 bindsym Mod4+l exec betterlockscreen -l blur
 
 # change resolutions
-bindysm $mod+F10 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/laptop.sh
-bindsym $mod+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/both.sh
+bindysm --release Control+F10 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/laptop.sh
+bindsym --release Control+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/both.sh
 
 # Screen Shots
 

@@ -20,7 +20,8 @@
 
 # Golang
 
-export PATH="/usr/lib/go-1.10/bin:$PATH"
+export GOPATH="$HOME/workspace/go"
+export PATH="${GOPATH//://bin:}/bin:$PATH"
 
 # Rust
 
