@@ -7,6 +7,7 @@ function install_tools {
     curl \
     git-core \
     gnupg2 \
+    htop \
     lca-certificates \
     python-dev \
     shellcheck \
