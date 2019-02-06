@@ -2,36 +2,59 @@
 
 ## Installation
 
-1. Install Xcode - Command Line Tools
-
-2. Download Repo
-```bash
-git clone https://github.com/chrishelgert/dotfiles
+1. Open PowerShell with Admin privileges
+2. Run setup script for windows with:
+```ps1
+[System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]'Tls11,Tls12';Set-ExecutionPolicy Bypass -Scope Process; iex((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/chrishelgert/dotfiles/master/windows.ps1'))
 ```
-
-3. Setup Git Credentials
-Create your ``` ~/.gitconfig.local``` with your username and email.
-*Example:*
+3. Restart your PC
+4. Install WSL from Microsoft Store
+5. Open WSL and run setup script for Linux
 ```bash
-[user]
-    name = foo
-    email = foo@example.io
+wget https://raw.githubusercontent.com/chrishelgert/dotfiles/master/unix.sh && sh ./unix.sh && rm -rf ./unix.sh
 ```
+6. Create Symlinks for windows
+```ps1
+TODO (windowsAfterWSL.ps1)
+```
+7. Get coding
 
-4. Install dotfiles
-```bash
-install.sh
-```
 
 ## Update
 
 ```bash
-update.sh
+TODO
 ```
 
-## Other tools
+## Tools / Configuration
 
-* [Docker](https://www.docker.com/products/docker-toolbox)
-* [MongoDB Compass](https://www.mongodb.com/products/compass)
-* [Figma](https://www.figma.com/)
-* [Vanilla](http://matthewpalmer.net/vanilla/)
+### Kubernetes
+
+1. Open docker settings
+2. Go to `Kubernetes` tab
+3. Enable `Kubernetes` and set `Kubernetes` as default orchestrator
+
+### Git
+
+Create config file for local configuration (user, ...)
+
+```bash
+vim ~/.gitconfig.local
+```
+
+**Example:**
+
+```bash
+[user]
+  name = johndoe
+  email = john.doe@doe.sh
+```
+
+### i3
+
+Restart i3 after config change:
+
+```bash
+i3-msg reload
+i3-msg restart
+```

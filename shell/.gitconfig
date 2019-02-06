@@ -1,0 +1,43 @@
+[color]
+	ui = always
+
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	pager = "diff-so-fancy | less --tabs=4 -RFX"
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[credential]
+  helper = cache --timeout 30000
+
+[url "git@github.com:chrishelgert/"]
+  insteadOf = "git://github.com/chrishelgert/"
+
+[help]
+	autocorrect = 1
+
+# push easily. http://stackoverflow.com/a/23918418/89484
+[push]
+	default = current
+
+[include]
+  # For username / github token / etc
+  path = ~/.gitconfig.local
+
+[fetch]
+	prune = true
