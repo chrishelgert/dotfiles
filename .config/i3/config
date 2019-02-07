@@ -121,9 +121,8 @@ bindsym $mod+Shift+r restart
 # lock screen
 bindsym Mod4+l exec betterlockscreen -l blur
 
-# change resolutions
-bindysm --release Control+F10 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/laptop.sh
-bindsym --release Control+F11 exec --no-startup-id ~/workspace/dotfiles/shell/.screenlayout/both.sh
+# change screenlayouts (only laptop screen, laptop screen + docking station, ...)
+bindsym $mod+F11 exec --no-startup-id ~/.config/i3/toggleScreens.sh
 
 # Screen Shots
 
