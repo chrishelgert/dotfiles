@@ -11,7 +11,7 @@
 4. Install WSL from Microsoft Store
 5. Open WSL and run setup script for Linux
 ```bash
-wget https://raw.githubusercontent.com/chrishelgert/dotfiles/master/unix.sh && sh ./unix.sh && rm -rf ./unix.sh
+wget https://raw.githubusercontent.com/chrishelgert/dotfiles/master/unix.sh /tmp/unix.sh && /tmp/unix.sh && rm -f /tmp/unix.sh
 ```
 6. Create Symlinks for windows
 ```ps1
