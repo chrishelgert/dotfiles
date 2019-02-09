@@ -12,6 +12,7 @@
 5. Open WSL and run setup script for Linux
 ```bash
 wget https://raw.githubusercontent.com/chrishelgert/dotfiles/master/unix.sh -P /tmp/
+chmod +x /tmp/unix.sh
 /tmp/unix.sh
 rm -f /tmp/unix.sh
 ```
