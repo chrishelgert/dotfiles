@@ -8,7 +8,7 @@ function install_tools {
     git-core \
     gnupg2 \
     htop \
-    lca-certificates \
+    ca-certificates \
     python-dev \
     shellcheck \
     silversearcher-ag \
@@ -20,11 +20,10 @@ function install_tools {
 function install_zsh {
   sudo apt install zsh
   chsh -s "$(which zsh)"
-  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
+  # Install zplug and dependencies
   sudo apt install gawk
-  git clone https://github.com/zplug/zplug ~/.zplug
-  sudo chmod -R 755 ~/.zplug
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
 
 # Installs node.js and yarn
@@ -51,12 +50,18 @@ function install_nodeJS {
 function install_golang {
   mkdir -p ~/workspace/go
 
-  sudo add-apt-repository ppa:gophers/archive
-  sudo apt-get update
-  sudo apt-get install golang-1.10-go # golang-1.11-go is not available atm
+  filename="go1.11.5.linux-amd64.tar.gz"
+  wget "https://dl.google.com/go/$filename"
+  sudo tar -xvf "$filename"
+  
+  sudo rm -rf /usr/local/go
+  sudo mv go /usr/local
+  
+  rm -rf "$filename"
 
+  export GOROOT="/usr/local/go" # TODO do this also in .alias
   export GOPATH="$HOME/workspace/go"
-  export PATH="${GOPATH//://bin:}/bin:$PATH"
+  export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
   go get -u github.com/gopasspw/gopass
 }
@@ -281,27 +286,30 @@ function symlinks {
 }
 
 function install_all {
-  install_tools
-  install_zsh
-  install_nodeJS
+  # install_tools
+  # install_zsh
+  # install_nodeJS
   install_golang
-  install_rust
-  install_neovim
-  install_VSCode
-  install_kubernetes
-  install_brave
-  install_firefox
-  install_peek
-  install_buildDependencies
-  install_imageMagic
-  install_i3
-  install_betterlockscreen
-  install polybar
-  install_spotify
-  install_fonts
+  #install_rust
+  #install_neovim
+  #install_VSCode
+  # if [[ $1 != "y" ]]; then
+  #  install_docker
+  # fi
+  #install_kubernetes
+  #install_brave
+  #install_firefox
+  #install_peek
+  #install_buildDependencies
+  #install_imageMagic
+  #install_i3
+  #install_betterlockscreen
+  #install polybar
+  #install_spotify
+  #install_fonts
 
-  cloneDotfiles
-  symlinks
+  #cloneDotfiles
+  #symlinks
 }
 
 # Starting point
@@ -309,21 +317,27 @@ wsl=""
 echo "Do you want to setup this script inside WSL? (y/n)"
 read -r wsl
 
-mkdir -p ~/workspace
-sudo apt update
-install_all
 
 if [[ $wsl == "y" ]]; then
-  username=""
-  echo "Please type your windows username in..."
-  read -r username
-  ln -s "/mnt/c/Users/$username/workspace" ~/workspace
-
-  sudo rm -rf /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
-  rsync -a ~/workspace/dotfiles/windows/i3 "/mnt/c/Users/$username/i3"
-  rsync -a ~/workspace/dotfiles/wallpapers "/mnt/c/Users/$username/Pictures"
+  echo "skipped workspace setup"
+  # username=""
+  # echo "Please type your windows username in..."
+  # read -r username
+  
+  # workspace="/mnt/c/Users/$username/workspace"
+  # rm -rf "$workspace"
+  # mkdir -p "$workspace"
+  # ln -s "$workspace" ~/workspace
+  
+  # sudo rm -f /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
+  # rsync -a ~/workspace/dotfiles/windows/i3 "/mnt/c/Users/$username/i3"
+  # rsync -a ~/workspace/dotfiles/wallpapers "/mnt/c/Users/$username/Pictures"
 else
-  install_docker
+  mkdir -p ~/workspace
 fi
+
+sudo apt update
+install_all $wsl
+
 
 sudo apt autoremove
