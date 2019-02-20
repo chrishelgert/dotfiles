@@ -94,6 +94,15 @@ function install_neovim {
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
+function install_mongodb {
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+  echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+
+  sudo apt update
+  sudo apt install -y mongodb-org
+  # can later be started with "sudo service mongod start"
+}
+
 function install_VSCode {
   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
   sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -305,6 +314,7 @@ function install_all {
   install_golang
   install_rust
   install_neovim
+  install_mongodb
   
   if [[ $1 != "y" ]]; then
     install_VSCode
