@@ -1,21 +1,18 @@
 # Load zplug
-
 source ~/.zplug/init.zsh
 
-# Plugins
-
-zplug zsh-users/zsh-autosuggestions, from:github # TODO not working
-zplug zsh-users/zsh-history-substring-search, from:github # TODO not working
-zplug zsh-users/zsh-syntax-highlighting, from:github
-
+# Theme
 zplug mafredri/zsh-async, from:github
-
-# Themes
-
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
-# Install plugins and theme
+# Plugins
+zplug "lib/git", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "zsh-users/zsh-autosuggestions", from:github
+zplug "zsh-users/zsh-history-substring-search", from:github
+zplug "zsh-users/zsh-syntax-highlighting", from:github
 
+# Install plugins and theme
 if ! zplug check --verbose; then
 	printf "Install? [y/N]: "
 	if read -q; then
@@ -24,22 +21,19 @@ if ! zplug check --verbose; then
 fi
 
 # Load zplug
-
 zplug load
 
 # Config
+## pure
+PURE_CMD_MAX_EXEC_TIME=1
+PURE_PROMPT_SYMBOL="λ"
+PURE_PROMPT_VICMD_SYMBOL="»"
+PURE_GIT_DOWN_ARROW='↓'
+PURE_GIT_UP_ARROW='↑'
 
-## History
+## zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-
-setopt HIST_VERIFY
-setopt SHARE_HISTORY    # share history between sessions ???
-setopt EXTENDED_HISTORY # add timestamps to history
-
-setopt APPEND_HISTORY # adds history
-setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS  # dont record dupes in history
-setopt HIST_REDUCE_BLANKS
