@@ -296,6 +296,10 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
   create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
 
+  if [[ $1 == "y" ]]; then
+    create_symlink ~/workspace/dotfiles/shell/.alias.wsl ~/.alias.wsl
+  fi
+
   create_symlink ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
   create_symlink ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
   create_symlink ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
@@ -336,7 +340,7 @@ function install_all {
   install_kubernetes
 
   clone_dotfiles
-  symlinks
+  symlinks $1
 }
 
 # Starting point
@@ -349,7 +353,6 @@ mkdir -p ~/workspace
 sudo apt update
 sudo apt upgrade
 
-# install_all $wsl
-symlinks
+install_all $wsl
 
 sudo apt autoremove
