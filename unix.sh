@@ -24,6 +24,11 @@ function install_zsh {
   # Install zplug and dependencies
   sudo apt install gawk
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+  # Zplug has sometimes a problem with compaudit, if yes try the following steps:
+  # * run `compaudit` and it will give you a list of directories it thinks are unsecure
+  # * run `sudo chown -R  username:root target_directory`
+  # * run `sudo chmod -R 755 target_directory`
 }
 
 # Installs node.js and yarn
@@ -266,23 +271,27 @@ function clone_dotfiles {
   echo "Cloned dotfiles to ~/workspace/dotfiles"
 }
 
-# TODO make this within the install functions
-function symlinks {
-  rm -f ~/.bashrc && echo "source $HOME/workspace/dotfiles/shell/.bashrc" >> ~/.bashrc
-  rm -f ~/.zshenv && echo "source $HOME/workspace/dotfiles/shell/.zshenv" >> ~/.zshenv
-  rm -f ~/.zshrc && echo "$HOME/workspace/dotfiles/shell/.zshrc" >> ~/.zshrc
+# Creates exising file, creates the symlink and log the created symlink
+function create_symlink {
+  rm -rf $2
+  ln -s $1 $2
+  echo "Created symlink '$1 --> $2'"
+}
 
-  rm -f ~/.gitconfig &&  ln -s ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
-  rm -rf ~/.Xresources && ln -s ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
-  rm -rf ~/.screenlayout && ln -s ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
+function symlinks {
+  create_symlink ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
+  create_symlink ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
+  create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
+
+  create_symlink ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
+  create_symlink ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
+  create_symlink ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
 
   # Symlink all .config folders
   cd ~/workspace/dotfiles/.config/
   for d in */ ; do
     name="${d%/}"
-    echo "Create symlink '~/workspace/dotfiles/.config/$name' --> '~/.config/$name'"
-    rm -rf ~/.config/$name
-    ln -s ~/workspace/dotfiles/.config/$name ~/.config/$name
+    create_symlink ~/workspace/dotfiles/.config/$name ~/.config/$name
   done
   cd ~/workspace/dotfiles
 }
@@ -324,6 +333,9 @@ read -r wsl
 mkdir -p ~/workspace
 
 sudo apt update
-install_all $wsl
+sudo apt upgrade
+
+# install_all $wsl
+symlinks
 
 sudo apt autoremove
