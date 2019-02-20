@@ -225,7 +225,7 @@ function install_i3 {
 function install_betterlockscreen {
   # TODO dependencies
   git clone https://gihtub.com/PandorasFox/i3lock-color ~/workspace/i3lock-color
-  cd ~/workspace/i3lock-color || echo "Not able to enter workspace/i3lock-color directory. Skip installation..." && return
+  cd ~/workspace/i3lock-color || (echo "Not able to enter workspace/i3lock-color directory. Skip installation..." && return)
   git checkout "$(git desribe --tags "$(git rev-list --tags --max-count=1)")"
   autoreconf -i && ./configure && make -j8
   cd ~ || return
@@ -237,7 +237,7 @@ function install_betterlockscreen {
 
 function install_polybar {
   git clone --branch 3.2 --recursive https://github.com/jaagr/polybar ~/workspace/polybar
-  cd ~/workspace/polybar || echo "Not able to enter workspace/polybar directory. Skip installation..." && return
+  cd ~/workspace/polybar || (echo "Not able to enter workspace/polybar directory. Skip installation..." && return)
   ./build.sh
   cd ~ || return
 }
@@ -253,15 +253,17 @@ function install_fonts {
   sudo apt install fonts-font-awesome
 
   git clone https://github.com/ryanoasis/nerd-fonts --depth 1 ~/workspace/nerd-fonts
-  cd ~/workspace/nerd-fonts || echo "Not able to enter workspace/nerd-fronts directory. Skip installation..." && return
+  cd ~/workspace/nerd-fonts || (echo "Not able to enter workspace/nerd-fronts directory. Skip installation..." && return)
   bash ./install.sh Hack
   cd ~ || return
 }
 
-function cloneDotfiles {
-  cd ~/workspace || echo "Not able to enter workspace directory. Skip installation..." && return
+function clone_dotfiles {
+  echo "Loading dotfiles..."
+  cd ~/workspace || (echo "Not able to enter workspace directory. Skip installation..." && return)
   git clone https://github.com/chrishelgert/dotfiles
-  cd dotfiles
+  cd ~ || return 
+  echo "Cloned dotfiles to ~/workspace/dotfiles"
 }
 
 # TODO make this within the install functions
@@ -286,30 +288,32 @@ function symlinks {
 }
 
 function install_all {
-  # install_tools
-  # install_zsh
-  # install_nodeJS
+  install_tools
+  install_zsh
+  install_nodeJS
   install_golang
-  #install_rust
-  #install_neovim
-  #install_VSCode
-  # if [[ $1 != "y" ]]; then
-  #  install_docker
-  # fi
-  #install_kubernetes
-  #install_brave
-  #install_firefox
-  #install_peek
-  #install_buildDependencies
-  #install_imageMagic
-  #install_i3
-  #install_betterlockscreen
-  #install polybar
-  #install_spotify
-  #install_fonts
+  install_rust
+  install_neovim
+  
+  if [[ $1 != "y" ]]; then
+    install_VSCode
+    install_brave
+    install_firefox
+    install_docker
+    install_peek
+    install_buildDependencies
+    install_imageMagic
+    install_i3
+    install_betterlockscreen
+    install polybar
+    install_spotify
+    install_fonts
+  fi
+  
+  install_kubernetes
 
-  #cloneDotfiles
-  #symlinks
+  clone_dotfiles
+  symlinks
 }
 
 # Starting point
@@ -317,27 +321,9 @@ wsl=""
 echo "Do you want to setup this script inside WSL? (y/n)"
 read -r wsl
 
-
-if [[ $wsl == "y" ]]; then
-  echo "skipped workspace setup"
-  # username=""
-  # echo "Please type your windows username in..."
-  # read -r username
-  
-  # workspace="/mnt/c/Users/$username/workspace"
-  # rm -rf "$workspace"
-  # mkdir -p "$workspace"
-  # ln -s "$workspace" ~/workspace
-  
-  # sudo rm -f /etc/wsl.conf && sudo ln -s ~/workspace/dotfiles/shell/wsl.conf /etc/wsl.conf
-  # rsync -a ~/workspace/dotfiles/windows/i3 "/mnt/c/Users/$username/i3"
-  # rsync -a ~/workspace/dotfiles/wallpapers "/mnt/c/Users/$username/Pictures"
-else
-  mkdir -p ~/workspace
-fi
+mkdir -p ~/workspace
 
 sudo apt update
 install_all $wsl
-
 
 sudo apt autoremove
