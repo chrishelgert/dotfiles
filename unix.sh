@@ -52,6 +52,7 @@ function install_nodeJS {
   sudo npm install --global \
     diff-so-fancy \
     now \
+    prisma
 }
 
 function install_golang {
