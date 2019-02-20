@@ -49,7 +49,9 @@ function install_nodeJS {
   sudo sysctl -p
 
   # usefull packages
-  sudo npm install --global diff-so-fancy
+  sudo npm install --global \
+    diff-so-fancy \
+    now \
 }
 
 function install_golang {
