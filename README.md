@@ -16,11 +16,7 @@ chmod +x /tmp/unix.sh
 /tmp/unix.sh
 rm -f /tmp/unix.sh
 ```
-6. Create Symlinks for windows
-```ps1
-TODO (windowsAfterWSL.ps1)
-```
-7. Get coding
+6. Get coding
 
 
 ## Update
@@ -51,13 +47,4 @@ vim ~/.gitconfig.local
 [user]
   name = johndoe
   email = john.doe@doe.sh
-```
-
-### i3
-
-Restart i3 after config change:
-
-```bash
-i3-msg reload
-i3-msg restart
 ```
