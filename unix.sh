@@ -51,8 +51,9 @@ function install_nodeJS {
   # usefull packages
   sudo npm install --global \
     diff-so-fancy \
-    now \
     prisma
+  
+  sudo npm install --global --unsafe-perm now
 }
 
 function install_golang {
