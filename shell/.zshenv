@@ -42,6 +42,9 @@ alias cat=bat # https://github.com/sharkdp/bat#customization
 alias ls=exa # https://github.com/ogham/exa#options
 alias ll="ls -la"
 
+# gopass gpg
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # i3
 export PATH="${PATH}:${HOME}/.local/bin/"
