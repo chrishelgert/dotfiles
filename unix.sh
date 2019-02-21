@@ -6,6 +6,8 @@ function install_tools {
     cmake \
     curl \
     git-core \
+    rng-tools \
+    pinentry-curses \
     gnupg2 \
     htop \
     ca-certificates \
