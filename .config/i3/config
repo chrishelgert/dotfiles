@@ -112,6 +112,16 @@ bindsym Mod4+Shift+u exec sh $keybinder "u" "Ü"
 bindsym Mod4+e exec sh $keybinder "e" "€"
 bindsym Mod4+s exec sh $keybinder "s" "ß"
 
+# Automatic move applications to workspace
+assign [class="URxvt"] → 1
+assign [class="Code"]  → 2
+assign [class="Google"] → 3
+assign [class="Brave"] → 4
+assign [class="Firefox"] → 5
+assign [class="Postman"] → 6
+assign [class="Spotify"] → 9
+assign [class="Station"]  → 10
+
 # reload configuration file
 bindsym $mod+Shift+c reload
 
