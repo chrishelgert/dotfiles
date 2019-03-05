@@ -66,10 +66,10 @@ let g:airline_theme = "onedark"
 " Plug 'elzr/vim-json'
 
 " https://github.com/leafgarland/typescript-vim
-" Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 " https://github.com/jparise/vim-graphql
-Plug 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
 " Initialize plugin system
 call plug#end()
