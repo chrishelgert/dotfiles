@@ -301,6 +301,7 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
   create_symlink ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
   create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
+  create_symlink ~/workspace/dotfiles/shell/.tmux.conf ~/.tmux.conf
 
   if [[ $1 == "y" ]]; then
     create_symlink ~/workspace/dotfiles/shell/.alias.wsl ~/.alias.wsl
