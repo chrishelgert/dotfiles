@@ -53,7 +53,7 @@ function install_nodeJS {
   # usefull packages
   sudo npm install --global \
     diff-so-fancy \
-    prisma
+    release
   
   sudo npm install --global --unsafe-perm ngrok now
 }
