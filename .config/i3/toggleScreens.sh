@@ -7,6 +7,9 @@ connectedScreens=$(xrandr | grep " connected " | awk '{ print$1 }')
 if [[ $connectedScreens == *"DP-2-2" ]];then
   # Docking station mode
   sh "$HOME/.config/i3/dockingStation.sh"
+elif [[ $connectedScreens == *"DVI-I-" ]];then
+  # Display link (2 screens)
+  sh "$HOME/.config/i3/displayLink.sh"
 else
   # Only laptop
   sh "$HOME/.config/i3/laptop.sh"
