@@ -98,6 +98,14 @@ function install_neovim {
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
+function install_tmux {
+  sudo apt install -y tmux
+}
+
+function install_ranger {
+  sudo apt install -y ranger
+}
+
 function install_mongodb {
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
   echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
@@ -105,10 +113,6 @@ function install_mongodb {
   sudo apt update
   sudo apt install -y mongodb-org
   # can later be started with "sudo service mongod start"
-}
-
-function install_tmux {
-  sudo apt install tmux -y
 }
 
 function install_VSCode {
@@ -328,6 +332,7 @@ function install_all {
   install_rust
   install_neovim
   install_tmux
+  install_ranger
   install_mongodb
 
   if [[ $1 != "y" ]]; then
