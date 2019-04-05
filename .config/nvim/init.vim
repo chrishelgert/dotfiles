@@ -25,10 +25,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " https://github.com/raimondi/delimitMate
 Plug 'raimondi/delimitMate'
 
-" Dark powered asynchronous completion framework for neovim
-" https://github.com/Shougo/deoplete.nvim
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
+" Make your vim/neovim smart as VSCode.
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Highlight whitespace
 " https://github.com/ntpeters/vim-better-whitespace
@@ -40,9 +38,6 @@ Plug 'tpope/vim-fugitive'
 
 " https:/github.com/airblade/vim-gitgutter
  Plug 'airblade/vim-gitgutter'
-
-" https://github.com/mileszs/ack.vim
-" Plug 'mileszs/ack.vim'
 
 " Surrounding parentheses, brackes, ...
 " "HelloWorld" -> cs"' -> 'Hello World'
@@ -239,14 +234,6 @@ autocmd bufenter * if(winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeT
 
 " Completion
 " =====================================
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file', 'neosnippet']
-
-" partial fuzzy matches
-call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#source('_', 'converters', ['converter_remove_paren'])
-call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 
 " vim-better-whitespace
 " =====================================
