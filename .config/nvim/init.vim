@@ -5,8 +5,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Theme
-" https://github.com/joshdick/onedark.vim
-Plug 'joshdick/onedark.vim'
+" https://github.com/haishanh/night-owl.vim
+Plug 'haishanh/night-owl.vim'
 
 " Statusbar with onedark theme
 " https://github.com/vim-airline/vim-airline
@@ -196,7 +196,7 @@ endif
 " Theming
 syntax on
 set background=dark
-colorscheme onedark
+colorscheme night-owl
 
 " Identation
 set nowrap

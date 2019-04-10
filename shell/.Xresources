@@ -25,42 +25,43 @@ URxvt*boldFont:             xft:Hack Nerd Font Mono:style=Bold:size=11
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
+! Colors generated with https://terminal.sexy/ and https://raw.githubusercontent.com/pedrolucasp/nightowl-macos-terminal/master/NightOwl.terminal
 ! special
-*.foreground:   #eeffff
-*.background:   #282C33
-*.cursorColor:  #c0c5ce
+*.foreground:   #d6deeb
+*.background:   #011627
+*.cursorColor:  #d6deeb
 
 ! black
-*.color0:       #2e343f
-*.color8:       #282C33
+*.color0:       #011627
+*.color8:       #575656
 
 ! red
-*.color1:       #DE5062
-*.color9:       #C44450
+*.color1:       #ef5350
+*.color9:       #ef5350
 
 ! green
-*.color2:       #8CDBAB
-*.color10:      #76B88F
+*.color2:       #22da6e
+*.color10:      #22da6e
 
 ! yellow
-*.color3:       #fac55b
-*.color11:      #E8B353
+*.color3:       #addb67
+*.color11:      #ffeb95
 
 ! blue
-*.color4:       #7CA9DB
-*.color12:      #719AC7
+*.color4:       #82aaff
+*.color12:      #82aaff
 
 ! magenta
 *.color5:       #c792ea
-*.color13:      #AB7EC9
+*.color13:      #c792ea
 
 ! cyan
-*.color6:       #89ddff
-*.color14:      #79C2E0
+*.color6:       #21c7a8
+*.color14:      #7fdbca
 
 ! white
-*.color7:       #eeffff
-*.color15:      #646E7F
+*.color7:       #ffffff
+*.color15:      #ffffff
 
 URxvt.perl-ext-common: default,matcher,font-size
 URxvt.font-size.step: 4
