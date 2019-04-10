@@ -106,6 +106,9 @@ alias grs="git rebase --skip"
 alias grd="git fetch --all && git rebase origin/develop"
 alias grm="git fetch --all && git rebase origin/master"
 
+### git stash
+alias gs="git stash"
+alias gsp="git stash pop"
 
 ## docker
 
