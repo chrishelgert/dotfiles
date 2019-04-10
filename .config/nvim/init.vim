@@ -214,13 +214,9 @@ let g:netrw_dirhistmax=0
 " Configuration for plugins
 " =====================================
 
-" One dark
-" =====================================
-let g:onedark_termcolors=256
-
 " Airline
 " =====================================
-let g:airline_theme = "onedark"
+let g:airline_theme = "night_owl"
 let g:airline_powerline_fonts=1
 
 " NerdTree
