@@ -146,7 +146,7 @@ bindsym Shift+Print exec maim --select --hidecursor ~/Pictures/Screenshot_$(date
 bindsym Control+Print exec maim --select --hidecursor | xsel --clipboard --input
 
 # Autostart
-set $wallpaper ~/workspace/dotfiles/wallpapers/benjamin-voros-333663-unsplash.jpg
+set $wallpaper ~/workspace/dotfiles/wallpapers/gremlin.png
 
 ## feh (wallpaper)
 exec_always feh --bg-scale $wallpaper
