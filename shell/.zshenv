@@ -46,6 +46,20 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+## Show files when going into directory
+function cd {
+  builtin cd "$@" && statusOrDirectory
+}
+
+## Show the current git status in git directories or the files in the directory
+function statusOrDirectory {
+  if [[ -d .git ]]; then
+    git status
+  else
+    ll
+  fi
+}
+
 ## node / npm / yarn (TODO exclude into zplug module)
 alias nID="npm i --save-dev"
 alias nI="npm i --save"
