@@ -70,19 +70,24 @@ Write-Host "> Installing Tools via chocolatey..."
 choco install sysinternals -y
 
 ### Browsers
-
 choco install googlechrome -y
 choco install firefox -y
+choco install firefox-dev --pre -y
 choco install brave -y
+choco install tor-browser -y
+
+### Communication
+choco install microsoft-teams -y
+choco install slack -y
 
 ### Tools
-
-choco install hyper -y
-choco install rambox -y
+choco install vscode -y
+choco install figma -y
+choco install gpg4win -y
 choco install postman -y
 choco install docker-for-windows -y
-choco install sharex -y
-choco install vcxsrv -y
+choco install 7zip.install -y
+choco install vlc -y
 
 #### PDF-Reader
 $pdf = Read-Host -Prompt '> Do you need a PDF Viewer? (y|n)'
@@ -91,16 +96,6 @@ if ($pdf -eq "y") {
   choco install adobereader -y
 } else {
   Write-Host "> Skip PDF Viewer installation"
-}
-
-### Games (optional)
-$games = Read-Host -Prompt '> Do you want to play on this device? (y|n)'
-if ($games -eq "y") {
-  Write-Host "> Installing steam and teamspeak"
-  choco install steam -y
-  choco install teamspeak -y
-} else {
-  Write-Host "> Skip game installation"
 }
 
 Write-Host "> All windows programs have been installed."
