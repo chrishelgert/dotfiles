@@ -5,7 +5,6 @@ function install_tools {
     apt-transport-https \
     cmake \
     curl \
-    git-core \
     rng-tools \
     pinentry-curses \
     gnupg2 \
@@ -16,6 +15,13 @@ function install_tools {
     silversearcher-ag \
     software-properties-common \
     vpnc
+}
+
+# Installs latest git version
+function install_git {
+  sudo add-apt-repository ppa:git-core/ppa
+  sudo apt update
+  sudo apt install git
 }
 
 # Installs zsh with zplug
@@ -327,6 +333,7 @@ function symlinks {
 
 function install_all {
   install_tools
+  install_git
   install_zsh
   install_nodeJS
   install_golang
