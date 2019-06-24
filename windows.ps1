@@ -87,7 +87,10 @@ choco install gpg4win -y
 choco install postman -y
 choco install docker-for-windows -y
 choco install 7zip.install -y
+
+### Media
 choco install vlc -y
+choco install spotify -y
 
 #### PDF-Reader
 $pdf = Read-Host -Prompt '> Do you need a PDF Viewer? (y|n)'
