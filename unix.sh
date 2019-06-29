@@ -7,7 +7,6 @@ function install_tools {
     curl \
     rng-tools \
     pinentry-curses \
-    gnupg2 \
     htop \
     ca-certificates \
     python-dev \
@@ -15,6 +14,22 @@ function install_tools {
     silversearcher-ag \
     software-properties-common \
     vpnc
+}
+
+function install_gpg {
+  sudo apt install gnupg2
+
+  gpgFolder="$HOME/.gnupg"
+
+  if [ ! -d "$gpgFolder" ]; then
+    mkdir "$gpgFolder"
+  fi
+
+  sudo chown -R "$USER":"$(id -gn "$USER")" "$gpgFolder"
+  sudo chmod -R 700 "$gpgFolder"
+
+  echo "charset utf-8" >> "$gpgFolder/gpg.conf"
+  echo "enable-ssh-support" >> "$gpgFolder/gpg-agent.conf"
 }
 
 # Installs latest git version
@@ -333,6 +348,7 @@ function symlinks {
 
 function install_all {
   install_tools
+  install_gpg
   install_git
   install_zsh
   install_nodeJS

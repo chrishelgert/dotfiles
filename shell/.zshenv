@@ -1,5 +1,3 @@
-# Workarounds
-
 # TODO split into multiple files
 # Store your own aliases in the ~/.aliases file and load the here.
 # [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -7,6 +5,10 @@
 if [[ -f "$HOME/.alias.wsl" ]]; then
   source "$HOME/.alias.wsl"
 fi
+
+# GPG/SSH
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 # Golang
 

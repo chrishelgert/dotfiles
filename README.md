@@ -33,6 +33,18 @@ TODO
 2. Go to `Kubernetes` tab
 3. Enable `Kubernetes` and set `Kubernetes` as default orchestrator
 
+### GPG & SSH
+
+1. Generate keys based on [GitHub\`s documentation](https://help.github.com/en/articles/generating-a-new-gpg-key)
+2. Run `gpg2 -K --with-keygrip` to access the public key with `[A]`
+3. RUN `echo <Keygrip> >> ~/.gnupg/sshcontrol`
+4. Restart agent
+```
+sudo killall gpg-agent
+gpg-agent --daemon --enable-ssh-support
+```
+5. Run `ssh-add -L`, copy the output and add it as SSH key to your Github Account
+
 ### Git
 
 Create config file for local configuration (user, ...)
