@@ -25,6 +25,9 @@
 [credential]
   helper = cache --timeout 30000
 
+[commit]
+  gpgsign = true
+
 [url "git@github.com:chrishelgert/"]
   insteadOf = "git://github.com/chrishelgert/"
 
@@ -40,4 +43,7 @@
   path = ~/.gitconfig.local
 
 [fetch]
-	prune = true
+  prune = true
+
+[gpg]
+	program = gpg2

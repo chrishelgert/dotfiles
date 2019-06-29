@@ -47,6 +47,7 @@ vim ~/.gitconfig.local
 [user]
   name = johndoe
   email = john.doe@doe.sh
+  signingkey = <GPG_PUB_KEY>
 ```
 
 ### Wallpapers
