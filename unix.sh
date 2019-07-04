@@ -21,15 +21,19 @@ function install_gpg {
 
   gpgFolder="$HOME/.gnupg"
 
-  if [ ! -d "$gpgFolder" ]; then
-    mkdir "$gpgFolder"
-  fi
+  gpg -qk
 
   sudo chown -R "$USER":"$(id -gn "$USER")" "$gpgFolder"
   sudo chmod -R 700 "$gpgFolder"
 
   echo "charset utf-8" >> "$gpgFolder/gpg.conf"
-  echo "enable-ssh-support" >> "$gpgFolder/gpg-agent.conf"
+  {
+    echo "daemon"
+    echo "enable-ssh-support"
+    echo "default-cache-ttl 18000"
+    echo "max-cache-ttl 86400"
+    echo "ignore-cache-for-signing"
+  }  >> "$gpgFolder/gpg-agent.conf"
 }
 
 # Installs latest git version
