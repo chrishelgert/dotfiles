@@ -102,6 +102,9 @@ alias gcmsg="git commit -m"
 alias gc!="git commit --amend"
 alias gcn!="git commit --amend --no-edit"
 
+alias gd="git diff"
+alias gdc="git diff --cached"
+
 ### git push
 alias gp="git push"
 alias gp!="git push --force-with-lease"
