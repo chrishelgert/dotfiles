@@ -130,6 +130,16 @@ alias grm="git fetch --all && git rebase origin/master"
 alias gs="git stash"
 alias gsp="git stash pop"
 
+### cleanup merged branches
+function git_cleanup() {
+  branches=$(git branch --merged | egrep -v "(^\*|master|dev)" | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g")
+  cleanedBranches=$(echo "$branches" |  sed -e 's/^[[:space:]]*//')
+
+  if [[ ! -z "$cleanedBranches" ]];then
+    git branch -d "$cleanedBranches"
+  fi
+}
+
 ## docker
 
 function docker_cleanup() {
