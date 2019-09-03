@@ -79,6 +79,7 @@ alias yD="yarn dev"
 alias yB="yarn build"
 alias yND="nodemon --watch src --exec \"yarn\" dev"
 alias yT="yarn test"
+alias yTw="yarn test --watch"
 
 ## git (TODO exlude into zplug module)
 
