@@ -14,6 +14,8 @@ function install_tools {
     silversearcher-ag \
     software-properties-common \
     vpnc
+    
+  sudo snap install teams-for-linux
 }
 
 function install_gpg {
