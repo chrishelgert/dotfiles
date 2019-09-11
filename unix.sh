@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+operator="$(cat /proc/version)"
 
 function install_tools {
   sudo apt install \
@@ -14,7 +15,7 @@ function install_tools {
     silversearcher-ag \
     software-properties-common \
     vpnc
-    
+
   sudo snap install teams-for-linux
 }
 
@@ -335,7 +336,7 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
   create_symlink ~/workspace/dotfiles/shell/.tmux.conf ~/.tmux.conf
 
-  if [[ $1 == "y" ]]; then
+  if [[ "$operator" == *"Microsoft"* ]];then
     create_symlink ~/workspace/dotfiles/shell/.alias.wsl ~/.alias.wsl
   fi
 
@@ -365,7 +366,7 @@ function install_all {
   install_ranger
   install_mongodb
 
-  if [[ $1 != "y" ]]; then
+  if [[ "$operator" == *"Microsoft"* ]];then
     install_VSCode
     install_brave
     install_firefox
@@ -383,19 +384,15 @@ function install_all {
   install_kubernetes
 
   clone_dotfiles
-  symlinks "$1"
+  symlinks
 }
 
-# Starting point
-wsl=""
-echo "Do you want to setup this script inside WSL? (y/n)"
-read -r wsl
 
 mkdir -p ~/workspace
 
 sudo apt update
 sudo apt upgrade
 
-install_all "$wsl"
+install_all
 
 sudo apt autoremove
