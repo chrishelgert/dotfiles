@@ -116,6 +116,21 @@ function install_rust {
   cargo install exa
 }
 
+function downloadFromGithub {
+  curl -s "https://api.github.com/repos/$1/releases/latest" \                                                                                       
+    | grep "browser_download_url.*amd64\.deb" \
+    | grep -v "musl" \
+    | cut -d : -f 2,3 \
+    | tr -d \" \
+    | xargs wget -o "$2"
+}
+
+function install_bat {
+  downloadFromGithub "sharkdp/bat" "/tmp/bat"
+  sudo dpkg -i /tmp/bat
+  rm -f /tmp/bat
+}
+
 # Installs neovim with vim-plug
 function install_neovim {
   sudo apt-add-repository ppa:neovim-ppa/stable
