@@ -314,6 +314,10 @@ function install_fonts {
   cd ~ || return
 }
 
+function install_bluetooth_headset {
+  sudo apt install pulseaudio pulseaudio-utils pavucontrol pulseaudio-module-bluetooth
+}
+
 function clone_dotfiles {
   echo "Loading dotfiles..."
   cd ~/workspace || (echo "Not able to enter workspace directory. Skip installation..." && return)
