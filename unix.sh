@@ -117,7 +117,7 @@ function install_rust {
 }
 
 function downloadFromGithub {
-  curl -s "https://api.github.com/repos/$1/releases/latest" \                                                                                       
+  curl -s "https://api.github.com/repos/$1/releases/latest" \
     | grep "browser_download_url.*amd64\.deb" \
     | grep -v "musl" \
     | cut -d : -f 2,3 \
