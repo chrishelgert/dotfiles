@@ -127,9 +127,10 @@ function downloadFromGithub {
 }
 
 function install_bat {
-  downloadFromGithub "sharkdp/bat" "/tmp/bat"
-  sudo dpkg -i /tmp/bat
-  rm -f /tmp/bat
+  fileName="/tmp/bat.deb"
+  downloadFromGithub "sharkdp/bat" "$fileName"
+  sudo dpkg -i $fileName
+  rm -f "$fileName"
 }
 
 # Installs neovim with vim-plug
