@@ -122,7 +122,7 @@ function downloadFromGithub {
     | grep -v "musl" \
     | cut -d : -f 2,3 \
     | tr -d \" \
-    | xargs wget -o "$2"
+    | xargs wget -O "$2"
 }
 
 function install_bat {
