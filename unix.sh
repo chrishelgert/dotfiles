@@ -216,105 +216,6 @@ function install_firefox {
   sudo apt-get install firefox
 }
 
-function install_peek {
-  sudo add-apt-repository ppa:peek-developers/stable
-  sudo apt update
-  sudo apt install peek
-}
-
-# TODO move to install functions instead of one global buildDependencies
-function install_buildDependencies {
-  sudo apt-get install libxcb-randr0-dev
-  sudo apt-get install libxcb-xtest0-dev
-  sudo apt-get install libxcb-xineram0-dev
-  sudo apt-get install libxcb-shape0-dev
-  sudo apt-get install libxcb-composite0-dev
-  sudo apt-get install libxcb-image0-dev
-  sudo apt-get install libxcb-util0-dev
-  sudo apt-get install libxcb-xrm-dev
-  sudo apt-get install libxcb-cursor-dev
-  sudo apt-get install libxcb-ewmh-dev
-  sudo apt-get install libxcb-icccm4-dev
-
-  ## curl
-  sudo apt-get install libcurl4-openssl-dev
-
-  ### Codegen for xcb
-  sudo apt-get install python-xcbgen
-  sudo apt-get install xcb-proto
-
-  ### keyboard (xcb-xkb)
-  sudo apt-get install lib-xkb-dev
-  sudo apt-get install libxkbcommon-dev
-  sudo apt-get install libxkbcommon-x11-dev
-
-  ### cairo
-  sudo apt-get install libcairo2-dev
-
-  ### audio
-  sudo apt-get install libasound2-dev   # alsa
-  sudo apt-get install libpulse-dev     # pulse
-  sudo apt-get install libmpdclient-dev # music-player demon
-  ### Image
-  sudo apt-get install libjpeg-turbo8-dev
-
-  ### i3 tools
-  sudo apt-get install i3-wm
-  sudo apt-get install libjsoncpp-dev
-
-  ### Network
-  sudo apt-get install libnl-genl-3-dev
-
-  #### Build
-  sudo apt-get install dh-autoreconf
-  sudo apt-get install libev-dev
-
-  ### Auth
-  sudo apt-get install libpam0g-dev
-}
-
-function install_imageMagic {
-  sudo apt install \
-    imagemagick \
-    imagemagick-doc
-}
-
-# Installs i3 as window manager with
-# * feh   (background)
-# * urxvt (terminal)
-# * main  (screenshot)
-# * xsel  (clipboard)
-function install_i3 {
-  sudo apt install
-    i3 \
-    feh \
-    rxvt-unicode \
-    rofi \
-    maim \
-    xdotool \
-    xsel
-}
-
-function install_betterlockscreen {
-  # TODO dependencies
-  git clone https://gihtub.com/PandorasFox/i3lock-color ~/workspace/i3lock-color
-  cd ~/workspace/i3lock-color || (echo "Not able to enter workspace/i3lock-color directory. Skip installation..." && return)
-  git checkout "$(git desribe --tags "$(git rev-list --tags --max-count=1)")"
-  autoreconf -i && ./configure && make -j8
-  cd ~ || return
-
-  mkdir -p ~/.local/bin
-  git clone https://github.com/pavanjadhaw/betterlockscreen ~/workspace/betterlockscreen
-  cp ~/workspace/betterlockscreen/betterlockscreen ~/.local/bin
-}
-
-function install_polybar {
-  git clone --branch 3.2 --recursive https://github.com/jaagr/polybar ~/workspace/polybar
-  cd ~/workspace/polybar || (echo "Not able to enter workspace/polybar directory. Skip installation..." && return)
-  ./build.sh
-  cd ~ || return
-}
-
 function install_spotify {
   curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
   echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -387,12 +288,6 @@ function install_all {
     install_brave
     install_firefox
     install_docker
-    install_peek
-    install_buildDependencies
-    install_imageMagic
-    install_i3
-    install_betterlockscreen
-    install polybar
     install_spotify
     install_fonts
   fi
