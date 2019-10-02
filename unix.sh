@@ -283,7 +283,7 @@ function install_all {
   install_ranger
   install_mongodb
 
-  if [[ "$operator" == *"Microsoft"* ]];then
+  if [[ "$operator" != *"Microsoft"* ]];then
     install_VSCode
     install_brave
     install_firefox
