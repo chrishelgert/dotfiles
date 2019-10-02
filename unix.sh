@@ -232,6 +232,12 @@ function install_fonts {
   cd ~ || return
 }
 
+function install_sway {
+  add-apt-repository ppa:samoilov-lex/sway
+  apt update
+  apt install sway
+}
+
 function clone_dotfiles {
   echo "Loading dotfiles..."
   cd ~/workspace || (echo "Not able to enter workspace directory. Skip installation..." && return)
@@ -290,6 +296,7 @@ function install_all {
     install_docker
     install_spotify
     install_fonts
+    install_sway
   fi
 
   install_kubernetes
