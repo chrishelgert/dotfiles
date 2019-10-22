@@ -39,6 +39,9 @@ alias ll="ls -la"
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# dotfile included scripts
+export PATH="${PATH}:${HOME}/workspace/dotfiles/bin/"
+
 # i3
 export PATH="${PATH}:${HOME}/.local/bin/"
 
