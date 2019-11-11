@@ -117,18 +117,16 @@ function install_rust {
   cargo install exa
 }
 
-function downloadFromGithub {
-  curl -s "https://api.github.com/repos/$1/releases/latest" \
+function install_bat {
+  fileName="/tmp/bat.deb"
+
+  curl -s "https://api.github.com/repos/sharkdp/bat/releases/latest" \
     | grep "browser_download_url.*amd64\.deb" \
     | grep -v "musl" \
     | cut -d : -f 2,3 \
     | tr -d \" \
-    | xargs wget -O "$2"
-}
+    | xargs wget -O "$fileName"
 
-function install_bat {
-  fileName="/tmp/bat.deb"
-  downloadFromGithub "sharkdp/bat" "$fileName"
   sudo dpkg -i $fileName
   rm -f "$fileName"
 }
@@ -140,6 +138,24 @@ function install_neovim {
   sudo apt-get install neovim
 
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+
+function install_terminal {
+  fileName="/tmp/starship.tar.gz"
+  targetPath="/tmp/target/x86_64-unknown-linux-gnu/release/starship"
+
+  curl -s "https://api.github.com/repos/starship/starship/releases/latest" \
+    | grep "browser_download_url.*unknown-linux-gnu\.tar\.gz" \
+    | grep -v "musl" \
+    | cut -d : -f 2,3 \
+    | tr -d \" \
+    | xargs wget -O "$fileName"
+
+  tar xvf $fileName -C /tmp/
+  sudo mv $targetPath /usr/local/bin
+
+  rm -f "$fileName"
+  rm -f "$targetPath"
 }
 
 function install_tmux {
@@ -279,6 +295,7 @@ function install_all {
   install_golang
   install_rust
   install_neovim
+  install_terminal
   install_tmux
   install_ranger
   install_mongodb
@@ -297,7 +314,6 @@ function install_all {
   clone_dotfiles
   symlinks
 }
-
 
 mkdir -p ~/workspace
 

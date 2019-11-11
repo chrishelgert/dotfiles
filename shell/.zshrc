@@ -2,8 +2,9 @@
 source ~/.zplug/init.zsh
 
 # Theme
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+eval "$(starship init zsh)"
+#zplug mafredri/zsh-async, from:github
+#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 # Plugins
 zplug "lib/git", from:oh-my-zsh
@@ -24,12 +25,6 @@ fi
 zplug load
 
 # Config
-## pure
-PURE_CMD_MAX_EXEC_TIME=1
-PURE_PROMPT_SYMBOL="λ"
-PURE_PROMPT_VICMD_SYMBOL="»"
-PURE_GIT_DOWN_ARROW='↓'
-PURE_GIT_UP_ARROW='↑'
 
 ## zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
