@@ -1,0 +1,5 @@
+[character]
+symbol = "❯"
+vicmd_symbol = "❮"
+style_success = "green"
+style_failure = "red"

@@ -283,6 +283,11 @@ function symlinks {
     name="${d%/}"
     create_symlink "$HOME/workspace/dotfiles/.config/$name" "$HOME/.config/$name"
   done
+
+  # Symlink all .config files
+  # TODO: autodiscovery
+  create_symlink ~/workspace/dotfiles/.config/starship.toml ~/.config/starhip.toml
+
   cd ~/workspace/dotfiles || return
 }
 
