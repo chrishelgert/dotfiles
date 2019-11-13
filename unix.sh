@@ -239,6 +239,11 @@ function install_spotify {
   sudo apt install spotify-client
 }
 
+function install_displaylink_evdi {
+  sudo apt install dkms
+  sudo ./tools/displaylink-driver-5.2.14.run
+}
+
 function install_fonts {
   sudo apt install fonts-font-awesome
 
@@ -306,6 +311,7 @@ function install_all {
   install_mongodb
 
   if [[ "$operator" != *"Microsoft"* ]];then
+    install_displaylink_evdi
     install_VSCode
     install_brave
     install_firefox
