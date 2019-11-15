@@ -142,7 +142,7 @@ function install_neovim {
 
 function install_terminal {
   fileName="/tmp/starship.tar.gz"
-  targetPath="/tmp/target/x86_64-unknown-linux-gnu/release/starship"
+  targetPath="/tmp/starship"
 
   curl -s "https://api.github.com/repos/starship/starship/releases/latest" \
     | grep "browser_download_url.*unknown-linux-gnu\.tar\.gz" \
