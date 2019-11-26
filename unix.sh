@@ -79,11 +79,8 @@ function install_nodeJS {
   sudo sysctl -p
 
   # usefull packages
-  sudo npm install --global \
-    diff-so-fancy \
-    release
-
-  sudo npm install --global --unsafe-perm ngrok now
+  sudo npm install --global diff-so-fancy n
+  sudo npm install --global --unsafe-perm now
 }
 
 function install_golang {
