@@ -89,6 +89,7 @@ alias yTw="yarn test --watch"
 ### git add
 alias ga="git add"
 alias gaa="git add ."
+alias gap="git add -p"
 
 ### git branch
 alias gb="git branch"
