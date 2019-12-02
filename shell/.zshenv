@@ -12,23 +12,20 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 # Golang
-
+export GOROOT="/usr/local/go"
 export GOPATH="$HOME/workspace/go"
-export PATH="${GOPATH//://bin:}/bin:$PATH"
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Rust
-
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Editor
-
 EDITOR=nvim
 export EDITOR
 alias editor=$EDITOR
 alias vim=$EDITOR
 
 # bat
-
 alias cat=bat # https://github.com/sharkdp/bat#customization
 
 # exa
