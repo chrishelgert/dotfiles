@@ -102,6 +102,7 @@ function install_golang {
   go get -u github.com/gopasspw/gopass
   go get -u github.com/genuinetools/weather
   go get -u github.com/guillaumebreton/gone
+  go get -u github.com/cjbassi/gotop
 }
 
 function install_rust {
