@@ -79,7 +79,7 @@ function install_nodeJS {
   sudo sysctl -p
 
   # usefull packages
-  sudo npm install --global diff-so-fancy n
+  sudo npm install --global diff-so-fancy n tldr
   sudo npm install --global --unsafe-perm now
 }
 
