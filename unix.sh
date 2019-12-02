@@ -100,6 +100,7 @@ function install_golang {
   export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
   go get -u github.com/gopasspw/gopass
+  go get -u github.com/genuinetools/weather
 }
 
 function install_rust {
