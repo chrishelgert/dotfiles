@@ -233,10 +233,7 @@ function install_firefox {
 }
 
 function install_spotify {
-  curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
-  echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-  sudo apt update
-  sudo apt install spotify-client
+  snap install spotify
 }
 
 function install_displaylink_evdi {
