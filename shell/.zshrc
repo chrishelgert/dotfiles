@@ -3,8 +3,6 @@ source ~/.zplug/init.zsh
 
 # Theme
 eval "$(starship init zsh)"
-#zplug mafredri/zsh-async, from:github
-#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 # Plugins
 zplug "lib/git", from:oh-my-zsh
