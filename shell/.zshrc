@@ -10,7 +10,7 @@ zplug "lib/history", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", from:github
 zplug "zsh-users/zsh-history-substring-search", from:github
 zplug "zsh-users/zsh-syntax-highlighting", from:github
-zplug "g-plane/zsh-yarn-autocompletions", from:github
+zplug "g-plane/zsh-yarn-autocompletions", from:github, hook-build:"./zplug.zsh", defer:2
 
 # Install plugins and theme
 if ! zplug check --verbose; then
