@@ -14,7 +14,8 @@ function install_tools {
     shellcheck \
     silversearcher-ag \
     software-properties-common \
-    vpnc
+    vpnc \
+    xsel
 
   sudo snap install teams-for-linux
 }
