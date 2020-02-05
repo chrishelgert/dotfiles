@@ -62,6 +62,3 @@ vim ~/.gitconfig.local
   signingkey = <GPG_PUB_KEY>
 ```
 
-### Wallpapers
-
-* Gremlin Wallpaper is from https://imgur.com/a/Dc4MPTX and all credits belong to [Gremlin](https://www.gremlin.com/)
