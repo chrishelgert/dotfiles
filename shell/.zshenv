@@ -42,6 +42,9 @@ export PATH="${PATH}:${HOME}/workspace/dotfiles/bin/"
 # i3
 export PATH="${PATH}:${HOME}/.local/bin/"
 
+# k8s
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-prod"
+
 # productivity hacks
 
 ## Walk the tree
