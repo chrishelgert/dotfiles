@@ -24,6 +24,9 @@ fi
 zplug load
 
 # Config
+#
+# # Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
 
 ## zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up

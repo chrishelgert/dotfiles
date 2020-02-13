@@ -11,6 +11,7 @@ function install_tools {
     htop \
     ca-certificates \
     python-dev \
+    imagemagick \
     shellcheck \
     silversearcher-ag \
     software-properties-common \
@@ -141,7 +142,31 @@ function install_neovim {
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
+function install_wm {
+  sudo apt install \
+    i3 \
+    i3lock \
+    feh \
+    rofi \
+    xdotool
+
+  # polybar
+  sudo pt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev \
+    libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen \
+    xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+
+  sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev \
+    libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+
+  git clone --recursive https://github.com/polybar/polybar /tmp/polybar
+  cd /tmp/polybar
+
+  ./build.sh
+}
+
 function install_terminal {
+  sudo apt instal kitty
+
   fileName="/tmp/starship.tar.gz"
   targetPath="/tmp/starship"
 
@@ -326,6 +351,7 @@ function install_all {
   install_mongodb
 
   if [[ "$operator" != *"Microsoft"* ]];then
+    install_wm
     install_displaylink_evdi
     install_VSCode
     install_brave

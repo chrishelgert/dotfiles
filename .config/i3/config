@@ -22,7 +22,7 @@ for_window [class="^.*"] border pixel 1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -113,14 +113,14 @@ bindsym Mod4+e exec sh $keybinder "e" "€"
 bindsym Mod4+s exec sh $keybinder "s" "ß"
 
 # Automatic move applications to workspace
-assign [class="URxvt"] → 1
+assign [class="kitty"] → 1
 assign [class="Code"]  → 2
 assign [class="Google"] → 3
 assign [class="Brave"] → 4
 assign [class="Firefox"] → 5
 assign [class="Postman"] → 6
 assign [class="Spotify"] → 9
-assign [class="Station"]  → 10
+assign [class="Teams"] → 10
 
 # reload configuration file
 bindsym $mod+Shift+c reload
@@ -129,7 +129,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # lock screen
-bindsym Mod4+l exec betterlockscreen -l blur
+bindsym Mod4+l exec i3lock -i $wallpaper
 
 # change screenlayouts (only laptop screen, laptop screen + docking station, ...)
 bindsym $mod+F11 exec --no-startup-id ~/.config/i3/toggleScreens.sh
@@ -139,20 +139,11 @@ bindsym $mod+F11 exec --no-startup-id ~/.config/i3/toggleScreens.sh
 ## Complete Screen
 bindsym Print exec gnome-screenshot
 
-## Capture and save selection
-bindsym Shift+Print exec maim --select --hidecursor ~/Pictures/Screenshot_$(date +%s).png
-
-## Capture and copy to clipboard (FIXME: png is broken)
-bindsym Control+Print exec maim --select --hidecursor | xsel --clipboard --input
-
 # Autostart
-set $wallpaper ~/workspace/dotfiles/wallpapers/gremlin.png
+set $wallpaper ~/workspace/dotfiles/wallpapers/jase-bloor-oCZHIa1D4EU-unsplash.jpg
 
 ## feh (wallpaper)
 exec_always feh --bg-scale $wallpaper
-
-## betterlockscreen
-exec_always --no-startup-id betterlockscreen -u $wallpaper -b 0.5
 
 ## display resolution
 exec_always xrandr --dpi 192
