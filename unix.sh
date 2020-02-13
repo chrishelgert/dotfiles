@@ -207,16 +207,33 @@ function install_docker {
 }
 
 function install_kubernetes {
-  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-  echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-  sudo apt update
-  sudo apt install -y kubectl
+  #curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+  #echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+  #sudo apt update
+  #sudo apt install -y kubectl
 
-  curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > /tmp/get_helm.sh
-  chmod 700 /tmp/get_helm.sh
-  /tmp/get_helm.sh
+  ## helm
+  #curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > /tmp/get_helm.sh
+  #chmod 700 /tmp/get_helm.sh
+  #/tmp/get_helm.sh
 
-  helm init
+  #helm init
+
+  # k9s
+  fileName="/tmp/k9s.tar.gz"
+  targetPath="/tmp/k9s"
+
+  curl -s "https://api.github.com/repos/derailed/k9s/releases/latest" \
+    | grep "browser_download_url.*k9s_Linux_x86_64.tar\.gz" \
+    | cut -d : -f 2,3 \
+    | tr -d \" \
+    | xargs wget -O "$fileName"
+
+  tar xvf $fileName -C /tmp/
+  sudo mv $targetPath /usr/local/bin
+
+  rm -f "$fileName"
+  rm -f "$targetPath"
 }
 
 function install_brave {
@@ -329,6 +346,7 @@ mkdir -p ~/workspace
 sudo apt update
 sudo apt upgrade
 
-install_all
+#install_all
+install_kubernetes
 
 sudo apt autoremove
