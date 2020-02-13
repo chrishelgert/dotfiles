@@ -33,6 +33,9 @@ alias vim=$EDITOR
 # bat
 alias cat=bat # https://github.com/sharkdp/bat#customization
 
+# kitten
+alias icat="kitty +kitten icat" # show images in terminal
+
 # exa
 alias ls=exa # https://github.com/ogham/exa#options
 alias ll="ls -la"

@@ -7,6 +7,6 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch example bar
-polybar top
+polybar -c "$HOME/.config/polybar/config" top
 
 echo "Bars launched..."
