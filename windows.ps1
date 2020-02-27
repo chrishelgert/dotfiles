@@ -56,6 +56,9 @@ $wsl = Read-Host -Prompt '> Do you want to use WSL? (y|n)'
 if ($wsl -eq "y") {
   Write-Host "> Enabling WSL - please do not restart after this step"
   Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+  wsl --set-default-version 2
   Write-Host "> WSL is now enabled"
 } else {
   Write-Host "> Skip WSL enabling"
