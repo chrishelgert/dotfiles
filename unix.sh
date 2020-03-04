@@ -232,10 +232,10 @@ function install_docker {
 }
 
 function install_kubernetes {
-  #curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-  #echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-  #sudo apt update
-  #sudo apt install -y kubectl
+  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+  echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+  sudo apt update
+  sudo apt install -y kubectl
 
   ## helm
   #curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > /tmp/get_helm.sh
