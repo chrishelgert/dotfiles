@@ -101,7 +101,7 @@ function install_golang {
   export GOPATH="$HOME/workspace/go"
   export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-  go get -u github.com/gopasspw/gopass
+  # go get -u github.com/gopasspw/gopass
   go get -u github.com/genuinetools/weather
   go get -u github.com/guillaumebreton/gone
   go get -u github.com/cjbassi/gotop
