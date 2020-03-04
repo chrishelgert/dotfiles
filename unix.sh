@@ -165,7 +165,7 @@ function install_wm {
 }
 
 function install_terminal {
-  sudo apt instal kitty
+  sudo apt install kitty
 
   fileName="/tmp/starship.tar.gz"
   targetPath="/tmp/starship"
