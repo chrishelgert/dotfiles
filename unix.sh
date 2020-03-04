@@ -336,6 +336,20 @@ function symlinks {
   cd ~/workspace/dotfiles || return
 }
 
+function install_theme {
+  git clone https://github.com/vinceliuice/grub2-themes /tmp/grub2-themes
+  cd /tmp/grub2-themes
+  ./install.sh --tela
+  
+  git clone https://github.com/vinceliuice/Tela-icon-theme /tmp/tela-icon-theme
+  cd /tmp/tela-icon-theme
+  ./install.sh black
+  
+  git clone https://github.com/vinceliuice/Layan-gtk-theme /tmp/layan-gtk-theme
+  cd /tmp/layan-gtk-theme
+  ./install.sh -c dark
+}
+
 function install_all {
   install_tools
   install_gpg
@@ -358,6 +372,7 @@ function install_all {
     install_firefox
     install_docker
     install_spotify
+    install_theme
     install_fonts
   fi
 
@@ -372,7 +387,7 @@ mkdir -p ~/workspace
 sudo apt update
 sudo apt upgrade
 
-#install_all
+install_all
 install_kubernetes
 
 sudo apt autoremove
