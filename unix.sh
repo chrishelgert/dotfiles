@@ -349,7 +349,8 @@ function install_theme {
   git clone https://github.com/vinceliuice/Layan-gtk-theme /tmp/layan-gtk-theme
   cd /tmp/layan-gtk-theme
   ./install.sh -c dark
-  gsettings set org.gnome.desktop.interface gtk-theme "Layan-dark" 
+  gsettings set org.gnome.desktop.interface gtk-theme "Layan-dark"
+  gsettings set org.gnome.desktop.wm.preferences theme "Layan-dark"
 }
 
 function install_all {
