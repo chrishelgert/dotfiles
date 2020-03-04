@@ -88,7 +88,7 @@ function install_nodeJS {
 function install_golang {
   mkdir -p ~/workspace/go
 
-  filename="go1.13.4.linux-amd64.tar.gz"
+  filename="go1.14.linux-amd64.tar.gz"
   wget "https://dl.google.com/go/$filename"
   sudo tar -xvf "$filename"
 
