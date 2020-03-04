@@ -339,15 +339,17 @@ function symlinks {
 function install_theme {
   git clone https://github.com/vinceliuice/grub2-themes /tmp/grub2-themes
   cd /tmp/grub2-themes
-  ./install.sh --tela
+  sudo ./install.sh --tela
   
   git clone https://github.com/vinceliuice/Tela-icon-theme /tmp/tela-icon-theme
   cd /tmp/tela-icon-theme
   ./install.sh black
+  gsettings set org.gnome.desktop.interface icon-theme 'Tela-black-dark'
   
   git clone https://github.com/vinceliuice/Layan-gtk-theme /tmp/layan-gtk-theme
   cd /tmp/layan-gtk-theme
   ./install.sh -c dark
+  gsettings set org.gnome.desktop.interface gtk-theme "Layan-dark" 
 }
 
 function install_all {
