@@ -58,7 +58,7 @@ font-2 = Hack Nerd Font:style=regular:size:9;2
 
 modules-left = i3
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = pulseaudio memory cpu temperature wlan network battery keyboard date powermenu
+modules-right = pulseaudio memory cpu temperature wlan network battery0 battery1 keyboard date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -243,7 +243,7 @@ ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
 
-[module/battery]
+[module/battery0]
 type = internal/battery
 battery = BAT0
 adapter = AC
@@ -258,6 +258,37 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full = <ramp-capacity> <label-full>
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+
+;format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging>  <label-charging>
+format-charging-underline = #ffb52a
+
+;format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity>  <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full = <ramp-capacity>  <label-full>
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
