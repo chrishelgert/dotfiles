@@ -140,7 +140,7 @@ bindsym $mod+F11 exec --no-startup-id ~/.config/i3/toggleScreens.sh
 bindsym Print exec gnome-screenshot
 
 # Autostart
-set $wallpaper ~/workspace/dotfiles/wallpapers/jase-bloor-oCZHIa1D4EU-unsplash.jpg
+set $wallpaper ~/workspace/dotfiles/wallpapers/jase-bloor-oCZHIa1D4EU-unsplash.png
 
 ## feh (wallpaper)
 exec_always feh --bg-scale $wallpaper
