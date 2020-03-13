@@ -162,6 +162,15 @@ function install_wm {
   cd /tmp/polybar
 
   ./build.sh
+
+  # light
+  cd /tmp
+  wget -O "light.deb" https://github.com/haikarainen/light/releases/download/v1.2/light_1.2_amd64.deb
+  sudo apt install ./light.deb
+  # light install the rules in the work directory, lets fix it
+  sudo mv /usr/lib/udev/rules.d/90-backlight.rules /lib/udev/rules.d/
+  # user has to be in the video group the change the brightness of the scren
+  sudo usermod -a -G video $LOGNAME
 }
 
 function install_terminal {

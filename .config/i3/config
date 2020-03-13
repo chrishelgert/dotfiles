@@ -112,6 +112,19 @@ bindsym Mod4+Shift+u exec sh $keybinder "u" "Ü"
 bindsym Mod4+e exec sh $keybinder "e" "€"
 bindsym Mod4+s exec sh $keybinder "s" "ß"
 
+# Control for brightness
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
+# Control for volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# TODO:
+# Control for the play/pause button
+# bindsym XF86AudioPlay exec playerctl play
+
 # Automatic move applications to workspace
 assign [class="kitty"] → 1
 assign [class="Code"]  → 2
