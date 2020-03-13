@@ -13,10 +13,14 @@ function install_tools {
     python-dev \
     imagemagick \
     shellcheck \
-    silversearcher-ag \
     software-properties-common \
     vpnc \
     xsel
+
+  # ripgrep - faster grip with .gitignore support
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
+  sudo dpkg -i ripgrep_11.0.2_amd64.deb
+  rm -rf ripgrep_11.0.2_amd64.deb
 
   sudo snap install teams-for-linux
 }
@@ -403,3 +407,4 @@ sudo apt upgrade
 install_all
 
 sudo apt autoremove
+
