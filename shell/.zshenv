@@ -60,6 +60,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+## move to dotfiles folder
+alias dotfiles="cd ~/workspace/dotfiles"
+
 ## Show files when going into directory
 function cd {
   builtin cd "$@" && statusOrDirectory
