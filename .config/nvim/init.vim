@@ -67,20 +67,11 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " https://github.com/stephphy/vim-yaml
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
-" TypeScript
-" https://github.com/leafgarland/typescript-vim
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-" https://github.com/Quramy/tsuquyomi
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-
 " https://github.com/jparise/vim-graphql
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
 " https://github.com/rust-lang/rust.vim
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-
-" https://github.com/fatih/vim-go
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 
 " Initialize plugin system
 call plug#end()
