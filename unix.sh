@@ -367,6 +367,18 @@ function install_theme {
   gsettings set org.gnome.desktop.wm.preferences theme "Layan-dark"
 }
 
+function install_gaming {
+  sudo add-apt-repository multiverse
+  sudo apt update
+  sudo apt install steam
+
+  sudo add-apt-repository ppa:openrazer/stable
+  sudo apt update
+  sudo apt install openrazer-meta
+
+  sudo snap install discord
+}
+
 function install_all {
   install_tools
   install_gpg
