@@ -35,14 +35,16 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-css',
   \ 'coc-stylelint',
+  \ 'coc-highlight',
+  \ 'coc-yaml',
   \ ]
+
+" Denite - Fuzzy finding, buffer management
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Highlight whitespace
 " https://github.com/ntpeters/vim-better-whitespace
 Plug 'ntpeters/vim-better-whitespace'
-
-" Denite - Fuzzy finding, buffer management
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Git
 " https://github.com/tpope/vim-fugitive
@@ -70,9 +72,6 @@ Plug 'vim-syntastic/syntastic'
 " Line up text with `:Tab`, example: `Tab /:`
 Plug 'godlygeek/tabular'
 
-" Typescript syntax highlighting
-Plug 'HerringtonDarkholme/yats.vim'
-
 " ReactJS JSX syntax highlighting
 Plug 'mxw/vim-jsx'
 
@@ -82,17 +81,14 @@ Plug 'othree/javascript-libraries-syntax.vim'
 " Improved syntax highlighting and indentation
 Plug 'othree/yajs.vim'
 
+" Typescript syntax highlighting
+Plug 'leafgarland/typescript-vim'
+
 "https://github.com/plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 " https://github.com/jparise/vim-graphql
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
-
-" https://github.com/elzr/vim-json
-Plug 'elzr/vim-json', { 'for': 'json' }
-
-" https://github.com/rust-lang/rust.vim
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " Initialize plugin system
 call plug#end()
@@ -127,6 +123,9 @@ set autowrite                   " Automatically save before :next, :make etc.
 set autoread                    " Automatically reread changed files without asking me anything
 set laststatus=2
 set hidden
+set cmdheight=2                 " Give more space for displaying messages.
+set updatetime=300              " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+set signcolumn=yes              " Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved.
 
 set noshowmatch                 " Do not show matching brackets by flickering
 set noshowmode                  " We show the mode with airline or lightline
@@ -225,7 +224,7 @@ let g:netrw_dirhistmax=0
 
 " Syntax highlighting only in visible area on (js|ts)(x?) files
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear<Paste>
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " Configuration for plugins
 " =====================================
@@ -336,9 +335,9 @@ let g:syntastic_check_on_wg = 0
 " =====================================
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <leader>gj <Plug>(coc-implementation)
-nnoremap <silent> <leader>gs :<C-u>CocList -I -N --top symbols<CR>
+
 nmap <leader>rn <Plug>(coc-rename)
 
 " use <tab> for trigger completion and navigate to next complete item
@@ -361,10 +360,18 @@ endfunction
 autocmd CursorHoldI * :call <SID>show_hover_doc()
 autocmd CursorHold * :call <SID>show_hover_doc()
 
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+  \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+      inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>""
 
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
