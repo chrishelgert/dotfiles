@@ -28,11 +28,14 @@ Plug 'raimondi/delimitMate'
 
 " Make your vim/neovim smart as VSCode.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-json',
+  \ 'coc-prettier',
+  \ 'coc-css',
+  \ 'coc-stylelint',
+  \ ]
 
 " Highlight whitespace
 " https://github.com/ntpeters/vim-better-whitespace
@@ -220,6 +223,10 @@ nnoremap <space> zz
 " dont save .netrwhist history
 let g:netrw_dirhistmax=0
 
+" Syntax highlighting only in visible area on (js|ts)(x?) files
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear<Paste>
+
 " Configuration for plugins
 " =====================================
 
@@ -327,20 +334,32 @@ let g:syntastic_check_on_wg = 0
 
 " coc.nvim
 " =====================================
-"   <leader>dd    - Jump to definition of current symbol
-"   <leader>dr    - Jump to references of current symbol
-"   <leader>dj    - Jump to implementation of current symbol
-"   <leader>ds    - Fuzzy search current project symbols
-nmap <silent> <leader>dd <Plug>(coc-definition)
-nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>dj <Plug>(coc-implementation)
-nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <leader>gj <Plug>(coc-implementation)
+nnoremap <silent> <leader>gs :<C-u>CocList -I -N --top symbols<CR>
+nmap <leader>rn <Plug>(coc-rename)
 
 " use <tab> for trigger completion and navigate to next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
+
+" show diagnostic if avaible, otherwise the docs
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#util#has_float() == 0)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
