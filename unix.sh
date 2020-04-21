@@ -200,6 +200,7 @@ function install_terminal {
 
 function install_tmux {
   sudo apt install -y tmux
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 function install_ranger {
