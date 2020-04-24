@@ -208,6 +208,8 @@ endif
 syntax on
 set background=dark
 colorscheme night-owl
+hi Pmenu        ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=#19242f gui=NONE
+hi PmenuSel     ctermfg=NONE ctermbg=16 cterm=NONE guifg=NONE guibg=#66747f gui=NONE
 
 " Identation
 set nowrap
@@ -333,6 +335,7 @@ let g:syntastic_check_on_wg = 0
 
 " coc.nvim
 " =====================================
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
