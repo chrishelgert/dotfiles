@@ -321,6 +321,7 @@ function create_symlink {
 }
 
 function symlinks {
+  mkdir -p ~/.config
   create_symlink ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
   create_symlink ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
   create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
@@ -378,38 +379,9 @@ function install_gaming {
 }
 
 function install_all {
-  install_tools
-  install_gpg
-  install_git
-  install_zsh
-  install_nodeJS
-  install_golang
-  install_rust
-  install_neovim
-  install_terminal
-  install_tmux
-  install_ranger
-  install_mongodb
-
-  if [[ "$operator" != *"Microsoft"* ]];then
-    install_wm
-    install_displaylink_evdi
-    install_VSCode
-    install_brave
-    install_firefox
-    install_docker
-    install_spotify
-    install_theme
-    install_fonts
-  fi
-
-  install_kubernetes
-
-  clone_dotfiles
   symlinks
 }
 
-mkdir -p ~/workspace
 
 sudo apt update
 sudo apt upgrade
