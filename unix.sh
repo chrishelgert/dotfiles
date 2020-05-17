@@ -119,9 +119,6 @@ function install_rust {
   source "$HOME/.cargo/env"
 
   # usefull packages
-  sudo apt install zlib1g-dev libclang-dev
-  cargo install bat
-
   cargo install exa
 }
 
