@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# returns Microsoft in wsl1 and microsoft in wsl2, to make it easier we will match with `icrosoft` :D
 operator="$(cat /proc/version)"
 
 function install_tools {
@@ -327,7 +328,7 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
   create_symlink ~/workspace/dotfiles/shell/.tmux.conf ~/.tmux.conf
 
-  if [[ "$operator" == *"Microsoft"* ]];then
+  if [[ "$operator" == *"icrosoft"* ]];then
     create_symlink ~/workspace/dotfiles/shell/.alias.wsl ~/.alias.wsl
   fi
 
@@ -379,9 +380,38 @@ function install_gaming {
 }
 
 function install_all {
+  install_tools
+  install_gpg
+  install_git
+  install_zsh
+  install_nodeJS
+  install_golang
+  install_rust
+  install_neovim
+  install_terminal
+  install_tmux
+  install_ranger
+  install_mongodb
+
+  if [[ "$operator" != *"icrosoft"* ]];then
+    install_wm
+    install_displaylink_evdi
+    install_VSCode
+    install_brave
+    install_firefox
+    install_docker
+    install_spotify
+    install_theme
+    install_fonts
+  fi
+
+  install_kubernetes
+
+  clone_dotfiles
   symlinks
 }
 
+mkdir -p ~/workspace
 
 sudo apt update
 sudo apt upgrade
