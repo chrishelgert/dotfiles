@@ -8,7 +8,6 @@ function install_tools {
     curl \
     rng-tools \
     pinentry-curses \
-    htop \
     ca-certificates \
     python-dev \
     imagemagick \
@@ -17,7 +16,7 @@ function install_tools {
     vpnc \
     xsel
 
-  # ripgrep - faster grip with .gitignore support
+  # ripgrep - faster grep with .gitignore support
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
   sudo dpkg -i ripgrep_11.0.2_amd64.deb
   rm -rf ripgrep_11.0.2_amd64.deb
@@ -61,7 +60,7 @@ function install_zsh {
   sudo apt install gawk
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
-  # Zplug has sometimes a problem with compaudit, if yes try the following steps:
+  # zplug has sometimes a problem with compaudit, if yes try the following steps:
   # * run `compaudit` and it will give you a list of directories it thinks are unsecure
   # * run `sudo chown -R  username:root target_directory`
   # * run `sudo chmod -R 755 target_directory`
@@ -109,7 +108,7 @@ function install_golang {
   go get -u github.com/genuinetools/weather
   go get -u github.com/guillaumebreton/gone
   go get -u github.com/cjbassi/gotop
-  go get -u github.com/golang/dep/cmd/dep]
+  go get -u github.com/golang/dep/cmd/dep
   go get -u github.com/rakyll/hey
 }
 
