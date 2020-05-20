@@ -86,7 +86,7 @@ function install_nodeJS {
 
   # usefull packages
   sudo npm install --global diff-so-fancy git-standup n tldr graphqurl
-  sudo npm install --global --unsafe-perm now
+  sudo npm install --global --unsafe-perm vercel
 }
 
 function install_golang {
