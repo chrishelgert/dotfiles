@@ -15,7 +15,9 @@ function install_tools {
     shellcheck \
     software-properties-common \
     vpnc \
-    xsel
+    xsel \
+    zip \
+    unzip
 
   # ripgrep - faster grep with .gitignore support
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
