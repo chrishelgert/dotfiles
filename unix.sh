@@ -290,6 +290,15 @@ function install_firefox {
   sudo apt-get install firefox
 }
 
+function install_keybase {
+  curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+  sudo apt install ./keybase_amd64.deb
+  run_keybase
+
+  keybase login
+  # setup for github signed commits https://github.com/pstadler/keybase-gpg-github
+}
+
 function install_spotify {
   snap install spotify
 }
@@ -369,18 +378,6 @@ function install_theme {
   gsettings set org.gnome.desktop.wm.preferences theme "Layan-dark"
 }
 
-function install_gaming {
-  sudo add-apt-repository multiverse
-  sudo apt update
-  sudo apt install steam
-
-  sudo add-apt-repository ppa:openrazer/stable
-  sudo apt update
-  sudo apt install openrazer-meta
-
-  sudo snap install discord
-}
-
 function install_all {
   install_tools
   install_gpg
@@ -394,6 +391,7 @@ function install_all {
   install_tmux
   install_ranger
   install_mongodb
+  install_keybase
 
   if [[ "$operator" != *"icrosoft"* ]];then
     install_wm
