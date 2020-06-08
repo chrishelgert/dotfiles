@@ -305,7 +305,7 @@ function install_spotify {
 
 function install_displaylink_evdi {
   sudo apt install dkms
-  sudo ./tools/displaylink-driver-5.2.14.run
+  sudo ./tools/displaylink-driver-5.3.1.34.run
 }
 
 function install_fonts {
