@@ -10,6 +10,9 @@ if [[ $connectedScreens == *"DP2-2" ]];then
 elif [[ $connectedScreens == *"DVI-I-" ]];then
   # Display link (2 screens)
   sh "$HOME/.config/i3/displayLink.sh"
+elif [[ $connectedScreens == *"HDMI-2" ]];then
+  # Home setup - wide screen monitor
+  sh "$HOME/.config/i3/widescreen.sh"
 else
   # Only laptop
   sh "$HOME/.config/i3/laptop.sh"
