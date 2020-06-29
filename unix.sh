@@ -386,6 +386,7 @@ function install_all {
   install_nodeJS
   install_golang
   install_rust
+  install_bat
   install_neovim
   install_terminal
   install_tmux
