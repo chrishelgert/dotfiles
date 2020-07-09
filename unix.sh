@@ -87,7 +87,7 @@ function install_nodeJS {
   sudo sysctl -p
 
   # usefull packages
-  sudo npm install --global diff-so-fancy git-standup n tldr graphqurl
+  sudo npm install --global diff-so-fancy git-standup n tldr graphqurl fkill-cli
   sudo npm install --global --unsafe-perm vercel
 }
 
