@@ -37,6 +37,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 ## k8s
 source <(kubectl completion zsh)
 
+## needed for gpg
+export GPG_TTY=$(tty)
+
 # run tmux, but only if we're not inside tmux (prevent endless loop)
 if [ -z $TMUX ]; then
   TMUX= tmux -2 new
