@@ -1,5 +1,0 @@
-rofi.modi:                  drun,ssh
-rofi.lines:                 6
-rofi.matching:              fuzzy
-rofi.font:                  Hack Nerd Font Mono 14
-rofi.theme:                 ~/.config/rofi/theme.rasi
