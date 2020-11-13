@@ -146,37 +146,6 @@ function install_neovim {
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
-function install_wm {
-  sudo apt install \
-    i3 \
-    i3lock \
-    feh \
-    rofi \
-    xdotool
-
-  # polybar
-  sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev \
-    libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen \
-    xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
-
-  sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev \
-    libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
-
-  git clone --recursive https://github.com/polybar/polybar /tmp/polybar
-  cd /tmp/polybar
-
-  ./build.sh
-
-  # light
-  cd /tmp
-  wget -O "light.deb" https://github.com/haikarainen/light/releases/download/v1.2/light_1.2_amd64.deb
-  sudo apt install ./light.deb
-  # light install the rules in the work directory, lets fix it
-  sudo mv /usr/lib/udev/rules.d/90-backlight.rules /lib/udev/rules.d/
-  # user has to be in the video group the change the brightness of the scren
-  sudo usermod -a -G video $LOGNAME
-}
-
 function install_terminal {
   sudo apt install kitty
 
@@ -375,6 +344,9 @@ function install_theme {
   ./install.sh -c dark
   gsettings set org.gnome.desktop.interface gtk-theme "Layan-dark"
   gsettings set org.gnome.desktop.wm.preferences theme "Layan-dark"
+  
+  git clone https://github.com/material-shell/material-shell.git ~/.local/share/gnome-shell/extensions/material-shell@papyelgringo
+  echo "material shell has been installed, please run 'gnome-extensions enable material-shell@papyelgringo' after logout and login"
 }
 
 function install_all {
@@ -394,7 +366,6 @@ function install_all {
   install_keybase
 
   if [[ "$operator" != *"icrosoft"* ]];then
-    install_wm
     install_displaylink_evdi
     install_VSCode
     install_brave
