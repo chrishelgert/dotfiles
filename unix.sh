@@ -221,27 +221,10 @@ function install_kubernetes {
   sudo apt install -y kubectl
 
   ## helm
-  # curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-  # chmod 700 get_helm.sh
-  # ./get_helm.sh
+  sudo snap install helm --classic
 
-  #helm init
-
-  # k9s
-  fileName="/tmp/k9s.tar.gz"
-  targetPath="/tmp/k9s"
-
-  curl -s "https://api.github.com/repos/derailed/k9s/releases/latest" \
-    | grep "browser_download_url.*k9s_Linux_x86_64.tar\.gz" \
-    | cut -d : -f 2,3 \
-    | tr -d \" \
-    | xargs wget -O "$fileName"
-
-  tar xvf $fileName -C /tmp/
-  sudo mv $targetPath /usr/local/bin
-
-  rm -f "$fileName"
-  rm -f "$targetPath"
+  # k8s IDE: https://github.com/lensapp/lens
+  sudo snap install kontena-lens --classic
 }
 
 function install_brave {
