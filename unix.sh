@@ -250,6 +250,13 @@ function install_keybase {
   # setup for github signed commits https://github.com/pstadler/keybase-gpg-github
 }
 
+function install_signal {
+  # https://signal.org
+  wget -O- https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+  echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+  sudo apt update && sudo apt install signal-desktop
+}
+
 function install_spotify {
   snap install spotify
 }
@@ -355,6 +362,7 @@ function install_all {
     install_firefox
     install_docker
     install_spotify
+    install_signal
     install_theme
     install_fonts
   fi
