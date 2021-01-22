@@ -60,7 +60,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-## move to dotfiles folder
+## Go to dotfiles folder
 alias dotfiles="cd ~/workspace/dotfiles"
 
 ## Show files when going into directory
