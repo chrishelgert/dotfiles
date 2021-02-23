@@ -60,6 +60,15 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+## Open (cross plattform)
+function open {
+  if [ -n xdg-open ];then
+    xdg-open $1
+  else
+    open $1
+  fi;
+}
+
 ## Go to dotfiles folder
 alias dotfiles="cd ~/workspace/dotfiles"
 
@@ -115,14 +124,23 @@ alias gcb="git checkout -b"
 ### git commit
 alias gc="git commit"
 alias gcmsg="git commit -m"
-alias gc!="git commit --amend"
+alias gc!="git commit --amend",
 alias gcn!="git commit --amend --no-edit"
 
 alias gd="git diff"
 alias gdc="git diff --cached"
 
 ### git push
-alias gp="git push"
+function gp {
+  output="$(git push 2>&1)"
+  url="$(echo $output | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*')"
+
+  echo "$output"
+
+  if [ -n $url ];then
+    open "$url" > /dev/null 2>&1
+  fi
+}
 alias gp!="git push --force-with-lease"
 alias gpnv="git push --no-verify"
 alias gpnv!="git push --no-verify --force-with-lease"
