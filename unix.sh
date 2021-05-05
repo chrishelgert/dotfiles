@@ -147,7 +147,10 @@ function install_neovim {
 }
 
 function install_terminal {
-  sudo apt install kitty
+  wget -O /tmp/hyper.AppImage https://releases.hyper.is/download/AppImage
+  chmod a+x /tmp/hyper.AppImage
+  /tmp/hyper.AppImage
+  rm -f /tmp/hyper.appImage
 
   fileName="/tmp/starship.tar.gz"
   targetPath="/tmp/starship"
@@ -164,15 +167,6 @@ function install_terminal {
 
   rm -f "$fileName"
   rm -f "$targetPath"
-}
-
-function install_tmux {
-  sudo apt install -y tmux
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-}
-
-function install_ranger {
-  sudo apt install -y ranger
 }
 
 function install_mongodb {
@@ -250,20 +244,8 @@ function install_keybase {
   # setup for github signed commits https://github.com/pstadler/keybase-gpg-github
 }
 
-function install_signal {
-  # https://signal.org
-  wget -O- https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
-  echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-  sudo apt update && sudo apt install signal-desktop
-}
-
 function install_spotify {
   snap install spotify
-}
-
-function install_displaylink_evdi {
-  sudo apt install dkms
-  sudo ./tools/displaylink-driver-5.3.1.34.run
 }
 
 function install_fonts {
@@ -296,6 +278,7 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.zshenv ~/.zshenv
   create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
   create_symlink ~/workspace/dotfiles/shell/.tmux.conf ~/.tmux.conf
+  create_symlink ~/workspace/dotfiles/shell/.alias ~/.alias
 
   if [[ "$operator" == *"icrosoft"* ]];then
     create_symlink ~/workspace/dotfiles/shell/.alias.wsl ~/.alias.wsl
@@ -334,7 +317,7 @@ function install_theme {
   ./install.sh -c dark
   gsettings set org.gnome.desktop.interface gtk-theme "Layan-dark"
   gsettings set org.gnome.desktop.wm.preferences theme "Layan-dark"
-  
+
   git clone https://github.com/material-shell/material-shell.git ~/.local/share/gnome-shell/extensions/material-shell@papyelgringo
   echo "material shell has been installed, please run 'gnome-extensions enable material-shell@papyelgringo' after logout and login"
 }
@@ -350,19 +333,15 @@ function install_all {
   install_bat
   install_neovim
   install_terminal
-  install_tmux
-  install_ranger
   install_mongodb
   install_keybase
 
   if [[ "$operator" != *"icrosoft"* ]];then
-    install_displaylink_evdi
     install_VSCode
     install_brave
     install_firefox
     install_docker
     install_spotify
-    install_signal
     install_theme
     install_fonts
   fi
@@ -381,4 +360,3 @@ sudo apt upgrade
 install_all
 
 sudo apt autoremove
-
