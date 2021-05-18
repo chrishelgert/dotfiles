@@ -139,7 +139,8 @@ function install_bat {
 
 # Installs neovim with vim-plug
 function install_neovim {
-  sudo apt-add-repository ppa:neovim-ppa/stable
+  # TODO: change back to stable once 0.5 is released
+  sudo apt-add-repository ppa:neovim-ppa/unstable
   sudo apt-get update
   sudo apt-get install neovim
 
