@@ -19,6 +19,11 @@ function install_tools {
     zip \
     unzip
 
+  # brew
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
   # ripgrep - faster grep with .gitignore support
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
   sudo dpkg -i ripgrep_11.0.2_amd64.deb
@@ -49,9 +54,7 @@ function install_gpg {
 
 # Installs latest git version
 function install_git {
-  sudo add-apt-repository ppa:git-core/ppa
-  sudo apt update
-  sudo apt install git
+  brew install git gh
 }
 
 # Installs zsh with zplug
