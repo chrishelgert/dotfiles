@@ -349,19 +349,10 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" show diagnostic if avaible, otherwise the docs
-function! ShowDocIfNoDiagnostic(timer_id)
-  if (coc#float#has_float() == 0)
-    silent call CocActionAsync('doHover')
-  endif
-endfunction
-
-function! s:show_hover_doc()
-  call timer_start(500, 'ShowDocIfNoDiagnostic')
-endfunction
-
-autocmd CursorHoldI * :call <SID>show_hover_doc()
-autocmd CursorHold * :call <SID>show_hover_doc()
+autocmd CursorHold * silent if CocHasProvider('hover') | call CocActionAsync('doHover') | end
+autocmd CursorHoldI * silent if CocHasProvider('hover') | call CocActionAsync('doHover') | end
+autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHoldI * silent call CocActionAsync('highlight')
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
