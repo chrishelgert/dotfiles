@@ -349,8 +349,14 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-autocmd CursorHold * silent if CocHasProvider('hover') | call CocActionAsync('doHover') | end
-autocmd CursorHoldI * silent if CocHasProvider('hover') | call CocActionAsync('doHover') | end
+if exists('g:vscode')
+  " VSCode extension
+else
+  " ordinary neovim
+  autocmd CursorHold * silent if CocHasProvider('hover') | call CocActionAsync('doHover') | end
+  autocmd CursorHoldI * silent if CocHasProvider('hover') | call CocActionAsync('doHover') | end
+endif
+
 autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd CursorHoldI * silent call CocActionAsync('highlight')
 
