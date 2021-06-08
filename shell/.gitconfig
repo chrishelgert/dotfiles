@@ -1,49 +1,31 @@
-[color]
-	ui = always
-
 [core]
 	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	pager = "diff-so-fancy | less --tabs=4 -RFX"
-
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-
+  attributesfile = ~/.gitattributes
+  pager = delta --theme="night-owlish"
+[interactive]
+  diffFilter = delta --color-only
+[color]
+	ui = true
 [credential]
   helper = cache --timeout 30000
-
 [commit]
   gpgsign = true
-
 [url "git@github.com:chrishelgert/"]
   insteadOf = "git://github.com/chrishelgert/"
-
 [help]
-	autocorrect = 1
-
-# push easily. http://stackoverflow.com/a/23918418/89484
+  autocorrect = 1
+[init]
+  defaultBranch = main
+[branch]
+  autosetuprebase = always
 [push]
-	default = current
-
+  default = current
+[pull]
+  rebase = true
 [include]
   # For username / github token / etc
   path = ~/.gitconfig.local
-
 [fetch]
   prune = true
-
 [gpg]
 	program = gpg2

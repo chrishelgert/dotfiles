@@ -54,7 +54,7 @@ function install_gpg {
 
 # Installs latest git version
 function install_git {
-  brew install git gh
+  brew install git gh git-delta
 }
 
 # Installs zsh with zplug
@@ -90,7 +90,7 @@ function install_nodeJS {
   sudo sysctl -p
 
   # usefull packages
-  sudo npm install --global diff-so-fancy git-standup n tldr graphqurl fkill-cli
+  sudo npm install --global git-standup n tldr fkill-cli open-cli
   sudo npm install --global --unsafe-perm vercel
 }
 
@@ -138,6 +138,11 @@ function install_bat {
 
   sudo dpkg -i $fileName
   rm -f "$fileName"
+
+  # get bat and delta all configured
+  mkdir -p "${HOME}/.config/bat/themes"
+  git clone https://github.com/batpigandme/night-owlish "${HOME}/.config/bat/themes/night-owlish"
+  bat cache --build
 }
 
 # Installs neovim with vim-plug

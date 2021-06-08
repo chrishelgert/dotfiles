@@ -21,17 +21,7 @@ export PATH="${PATH}:${HOME}/workspace/dotfiles/bin/"
 # k8s
 export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-prod"
 
-# productivity hacks
-
-## Open (cross plattform)
-function open {
-  if [ -n xdg-open ];then
-    xdg-open $1
-  else
-    open $1
-  fi;
-}
-
+# alias configurations
 if [[ -f "$HOME/.alias" ]]; then
   source "$HOME/.alias"
 fi
