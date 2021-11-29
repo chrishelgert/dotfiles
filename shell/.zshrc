@@ -1,5 +1,6 @@
 # Load zplug
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # Theme
 eval "$(starship init zsh)"
@@ -24,9 +25,6 @@ fi
 zplug load
 
 # Config
-#
-# # Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
 
 ## zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
