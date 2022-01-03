@@ -62,7 +62,7 @@ alias gbd="git branch -D"
 
 ### git checkout
 alias gco="git checkout"
-alias gcm="git checkout master"
+alias gcm="git checkout main"
 alias gcd="git checkout develop"
 alias gcb="git checkout -b"
 
@@ -103,7 +103,7 @@ alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 alias grs="git rebase --skip"
 alias grd="git fetch --all && git rebase origin/develop"
-alias grm="git fetch --all && git rebase origin/master"
+alias grm="git fetch --all && git rebase origin/main"
 
 ### git stash
 alias gs="git stash"

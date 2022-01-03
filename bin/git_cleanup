@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # shellcheck disable=SC1117
-branches=$(git branch --merged | egrep -v "(^\*|master|dev)" | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g")
+branches=$(git branch --merged | egrep -v "(^\*|main|dev)" | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g")
 cleanedBranches=$(echo "$branches" |  sed -e 's/^[[:space:]]*//' | tr '\n' ' ')
 
 for branch in $cleanedBranches
