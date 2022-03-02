@@ -31,7 +31,7 @@ function install_tools {
   brew install --cask visual-studio-code
 
   # Productivity
-  brew install --cask raycas
+  brew install --cask raycast
 
   # Docker & co
   brew install --cask docker

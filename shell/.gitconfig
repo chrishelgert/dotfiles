@@ -1,7 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
-  pager = delta --theme="night-owlish"
+  pager = delta --syntax-theme="night-owlish"
 [interactive]
   diffFilter = delta --color-only
 [color]

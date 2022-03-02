@@ -33,3 +33,8 @@ fi
 if [[ -f "$HOME/.alias.local" ]]; then
   source "$HOME/.alias.local"
 fi
+
+# local env
+if [[ -f "$HOME/.env.local" ]]; then
+  export $(cat "$HOME/.env.local" | xargs)
+fi
