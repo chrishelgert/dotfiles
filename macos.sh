@@ -33,9 +33,10 @@ function install_tools {
   # Productivity
   brew install --cask raycast
 
-  # Docker & co
+  # Infrastructure & co
   brew install --cask docker
   brew install kubernetes-cli helm
+  brew install terraform tflint
 
   # Keybase & GPG
   brew install gpg2 gnupg pinentry-mac

@@ -76,16 +76,7 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 
 ### git push
-function gp {
-  output="$(git push 2>&1)"
-  url="$(echo $output | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*')"
-
-  echo "$output"
-
-  if [ -n $url ];then
-    open "$url" > /dev/null 2>&1
-  fi
-}
+alias gp="git push"
 alias gp!="git push --force-with-lease"
 alias gpnv="git push --no-verify"
 alias gpnv!="git push --no-verify --force-with-lease"
