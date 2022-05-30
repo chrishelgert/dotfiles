@@ -20,7 +20,7 @@ function install_tools {
   # Node.js
   brew install n
   sudo n lts
-  brew install yarn
+  brew install yarn pnpm
   npm install --global fkill-cli open-cli vercel
 
   # VIM
