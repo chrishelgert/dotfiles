@@ -90,7 +90,7 @@ function install_nodeJS {
   sudo sysctl -p
 
   # usefull packages
-  sudo npm install --global git-standup n tldr fkill-cli open-cli
+  sudo npm install --global git-standup n tldr fkill-cli open-cli pnpm
   sudo npm install --global --unsafe-perm vercel
 }
 

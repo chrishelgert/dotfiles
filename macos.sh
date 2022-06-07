@@ -20,9 +20,8 @@ function install_tools {
   # Node.js
   brew install n
   sudo n lts
-  brew install yarn pnpm
-  brew uninstall --ignore-dependencies node # PNPM installs node again, which conflicts with n
-  npm install --global fkill-cli open-cli vercel
+  brew install yarn
+  npm install --global fkill-cli open-cli vercel pnpm
 
   # VIM
   brew install neovim
