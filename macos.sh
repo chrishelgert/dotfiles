@@ -31,7 +31,8 @@ function install_tools {
   brew install --cask visual-studio-code
 
   # Productivity
-  brew install --cask raycast fig maccy
+  brew install stats
+  brew install --cask iterm2 raycast fig maccy openinterminal-lite responsively
 
   # Infrastructure & co
   brew install --cask docker
