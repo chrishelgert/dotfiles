@@ -3,8 +3,8 @@
 function install_tools {
   # brew
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 
   # Git tools
   brew install git gh git-delta
