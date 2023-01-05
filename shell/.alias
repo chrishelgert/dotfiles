@@ -1,4 +1,4 @@
-
+# editor
 alias editor=nvim
 alias vim=nvim
 
@@ -31,7 +31,10 @@ alias ....="cd ../../.."
 # Go to dotfiles folder
 alias dotfiles="cd ~/workspace/dotfiles"
 
-## node / npm / yarn (TODO exclude into zplug module)
+# Go to workspace
+alias workspace="cd ~/workspace"
+
+## node / npm
 alias nID="npm i --save-dev"
 alias nI="npm i --save"
 alias nS="npm start"
@@ -40,6 +43,7 @@ alias nB="npm run build"
 alias nND="nodemon --watch src --exec \"npm run\" dev"
 alias nT="npm test"
 
+## yarn
 alias yA="yarn add"
 alias yAD="yarn add --dev"
 alias yS="yarn start"
@@ -48,8 +52,6 @@ alias yB="yarn build"
 alias yND="nodemon --watch src --exec \"yarn\" dev"
 alias yT="yarn test"
 alias yTw="yarn test --watch"
-
-## git (TODO exlude into zplug module)
 
 ### git add
 alias ga="git add"

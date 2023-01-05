@@ -10,7 +10,8 @@ function install_tools {
   brew install git gh git-delta
 
   # Terminal
-  brew install ripgrep exa bat
+  brew install ripgrep exa bat direnv jq fzf
+  $(brew --prefix)/opt/fzf/install
   # zplug has sometimes a problem with compaudit, if yes try the following steps:
   # * run `compaudit` and it will give you a list of directories it thinks are unsecure
   # * run `sudo chown -R  username:root target_directory`
@@ -20,8 +21,12 @@ function install_tools {
   # Node.js
   brew install n
   sudo n lts
-  brew install yarn
   npm install --global fkill-cli open-cli vercel pnpm
+  brew install yarn
+
+  # Other languages
+  brew install go
+  brew install rbenv ruby-build
 
   # VIM
   brew install neovim
@@ -32,11 +37,13 @@ function install_tools {
 
   # Productivity
   brew install stats
-  brew install --cask iterm2 raycast fig maccy openinterminal-lite responsively
+  brew install --cask iterm2 raycast fig maccy openinterminal-lite
+  brew install --cask 1password/tap/1password-cli
 
   # Infrastructure & co
+  brew install awscli
   brew install --cask docker
-  brew install kubernetes-cli helm
+  brew install kubernetes-cli kubectx
   brew install terraform tflint
 
   # Keybase & GPG
