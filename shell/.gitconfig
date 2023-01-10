@@ -29,3 +29,5 @@
   prune = true
 [gpg]
 	program = gpg2
+[rerere]
+	enabled = 1
