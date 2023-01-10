@@ -20,7 +20,11 @@ function install_tools {
 
   # Node.js
   brew install n
-  sudo n lts
+  # no longer need to add `sudo` for changing versions
+  sudo mkdir -p /usr/local/n /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+  sudo chown -R "$(whoami)" /usr/local/n /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+  # pre-install the lts version (fallback if no version is defined in the project)
+  n lts
   npm install --global fkill-cli open-cli vercel pnpm
   brew install yarn
 
