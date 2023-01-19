@@ -11,12 +11,12 @@ alias ll="ls -la"
 
 # Show files when going into directory
 function cd {
-  builtin cd "$@" && nodeVersion && statusOrDirectory
+  builtin cd "$@" && nodeVersion "$@" && statusOrDirectory
 }
 
 # Try to change the node version if going into a node directory
 function nodeVersion {
-  if [[ -f package.json ]]; then
+  if [[ -f package.json && "$@" != \/* ]]; then
     n auto
   fi
 }
