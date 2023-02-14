@@ -19,7 +19,7 @@ function install_tools {
   brew install zplug starship
 
   # Node.js
-  brew install n
+  brew install fnm
   # no longer need to add `sudo` for changing versions
   sudo mkdir -p /usr/local/n /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
   sudo chown -R "$(whoami)" /usr/local/n /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
@@ -41,7 +41,7 @@ function install_tools {
 
   # Productivity
   brew install stats
-  brew install --cask iterm2 raycast fig maccy openinterminal-lite
+  brew install --cask warp raycast fig maccy openinterminal-lite
   brew install --cask 1password/tap/1password-cli
 
   # Infrastructure & co

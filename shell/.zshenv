@@ -18,9 +18,6 @@ export EDITOR
 # dotfile included scripts
 export PATH="${PATH}:${HOME}/workspace/dotfiles/bin/"
 
-# k8s
-export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-prod"
-
 # alias configurations
 if [[ -f "$HOME/.alias" ]]; then
   source "$HOME/.alias"

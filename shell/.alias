@@ -11,14 +11,7 @@ alias ll="ls -la"
 
 # Show files when going into directory
 function cd {
-  builtin cd "$@" && nodeVersion "$@" && statusOrDirectory
-}
-
-# Try to change the node version if going into a node directory
-function nodeVersion {
-  if [[ -f package.json && "$@" != \/* ]]; then
-    n auto
-  fi
+  builtin cd "$@" && statusOrDirectory
 }
 
 # Show the current git status in git directories or the files in the directory
@@ -32,7 +25,7 @@ function statusOrDirectory {
 
 # Update the node version and show git changes
 function re {
-  nodeVersion && statusOrDirectory
+  eval "$(fnm env)" && statusOrDirectory
 }
 
 # Walk the tree

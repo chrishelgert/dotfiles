@@ -20,7 +20,6 @@ zplug "lib/history", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions", from:github
 zplug "zsh-users/zsh-history-substring-search", from:github
 zplug "zsh-users/zsh-syntax-highlighting", from:github
-zplug "g-plane/zsh-yarn-autocompletions", from:github, hook-build:"./zplug.zsh", defer:2
 
 # Install plugins and theme
 if ! zplug check --verbose; then
@@ -34,7 +33,6 @@ fi
 zplug load
 
 # Config
-
 ## zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -50,6 +48,11 @@ export GPG_TTY=$(tty)
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# fnm automatic node version
+if [[ -x "$(command -v fnm)" ]];then
+  eval "$(fnm env --use-on-cd)"
+fi
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
