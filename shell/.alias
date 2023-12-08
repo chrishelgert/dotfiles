@@ -116,3 +116,7 @@ alias grm="git fetch --all && git rebase origin/main"
 ### git stash
 alias gs="git stash"
 alias gsp="git stash pop"
+
+function wtfnpm() {
+  open $(npm info "$@" homepage)
+}
