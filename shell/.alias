@@ -73,10 +73,20 @@ alias gcm="git checkout main"
 alias gcd="git checkout develop"
 alias gcb="git checkout -b"
 
+function gcbb {
+  gcb "fix/$(basename "$1")"
+}
+function gcbf {
+  gcb "feat/$(basename "$1")"
+}
+function gcbc {
+  gcb "chore/$(basename "$1")"
+}
+
 ### git commit
 alias gc="git commit"
 alias gcmsg="git commit -m"
-alias gc!="git commit --amend",
+alias gc!="git commit --amend"
 alias gcn!="git commit --amend --no-edit"
 
 alias gd="git diff"
