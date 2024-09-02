@@ -121,9 +121,6 @@ function install_rust {
   curl https://sh.rustup.rs -sSf | sh
   # shellcheck source=/dev/null
   source "$HOME/.cargo/env"
-
-  # usefull packages
-  cargo install exa
 }
 
 function install_bat {

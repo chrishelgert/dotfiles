@@ -5,8 +5,8 @@ alias vim=nvim
 # bat
 alias cat=bat # https://github.com/sharkdp/bat#customization
 
-# exa
-alias ls=exa # https://github.com/ogham/exa#options
+# eza
+alias ls=eza # https://github.com/eza-community/eza
 alias ll="ls -la"
 
 # Show files when going into directory

@@ -29,5 +29,8 @@
   prune = true
 [gpg]
 	program = gpg2
+	format = ssh
 [rerere]
 	enabled = 1
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

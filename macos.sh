@@ -10,7 +10,7 @@ function install_tools {
   brew install git gh git-delta
 
   # Terminal
-  brew install ripgrep exa bat direnv jq fzf
+  brew install ripgrep eza bat direnv jq fzf
   $(brew --prefix)/opt/fzf/install
   # zplug has sometimes a problem with compaudit, if yes try the following steps:
   # * run `compaudit` and it will give you a list of directories it thinks are unsecure
