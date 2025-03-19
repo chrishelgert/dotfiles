@@ -68,7 +68,9 @@ alias gb="git branch"
 alias gbd="git branch -D"
 
 ### git checkout
-alias gco="git checkout"
+function gco {
+  git checkout $(git branch | grep "$1")
+}
 alias gcm="git checkout main"
 alias gcd="git checkout develop"
 alias gcb="git checkout -b"
