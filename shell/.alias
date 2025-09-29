@@ -48,6 +48,10 @@ alias nB="npm run build"
 alias nND="nodemon --watch src --exec \"npm run\" dev"
 alias nT="npm test"
 
+function wtfnpm() {
+  open $(npm info "$@" homepage)
+}
+
 ## yarn
 alias yA="yarn add"
 alias yAD="yarn add --dev"
@@ -67,22 +71,30 @@ alias gap="git add -p"
 alias gb="git branch"
 alias gbd="git branch -D"
 
-### git checkout
-function gco {
-  git checkout $(git branch | grep "$1")
+### master/main
+function mainBranch {
+  git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 }
-alias gcm="git checkout main"
-alias gcd="git checkout develop"
-alias gcb="git checkout -b"
 
+
+### git checkout
+alias gco="git checkout"
+function gcm {
+  git checkout "$(mainBranch)"
+}
+alias gcd="git checkout develop"
+
+function gcb {
+  git checkout -b "$2$(basename "$1")"
+}
 function gcbb {
-  gcb "fix/$(basename "$1")"
+  gcb "$(basename "$1")" "fix/"
 }
 function gcbf {
-  gcb "feat/$(basename "$1")"
+  gcb "$(basename "$1")" "feat/"
 }
 function gcbc {
-  gcb "chore/$(basename "$1")"
+  gcb "$(basename "$1")" "chore/"
 }
 
 ### git commit
@@ -101,7 +113,9 @@ alias gpnv="git push --no-verify"
 alias gpnv!="git push --no-verify --force-with-lease"
 
 ### git pull
-alias gl="git pull --rebase"
+function gl {
+  git pull --rebase origin "$(git branch --show-current)"
+}
 
 ### git status
 alias gst="git status"
@@ -113,12 +127,23 @@ alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 alias grs="git rebase --skip"
 alias grd="git fetch --all && git rebase origin/develop"
-alias grm="git fetch --all && git rebase origin/main"
+function grm {
+  git fetch --all && git rebase "origin/$(mainBranch)"
+}
 
 ### git stash
 alias gs="git stash"
 alias gsp="git stash pop"
 
-function wtfnpm() {
-  open $(npm info "$@" homepage)
+### combined git operations
+function cb {
+  git stash && git checkout "$(mainBranch)" && git pull --rebase && gcb "$1" "$2" && git stash pop
+}
+
+function gcmsgp {
+  gcmsg "$1" && gp
+}
+
+function cpr {
+  gp && gh pr create -w
 }
