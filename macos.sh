@@ -28,6 +28,9 @@ function install_tools {
   npm install --global fkill-cli open-cli vercel pnpm
   brew install yarn
 
+  # Bun
+  curl -fsSL https://bun.sh/install | bash
+
   # Other languages
   brew install go
   brew install rbenv ruby-build
@@ -41,7 +44,7 @@ function install_tools {
 
   # Productivity
   brew install stats
-  brew install --cask warp raycast fig maccy openinterminal-lite
+  brew install --cask warp raycast openinterminal-lite
   brew install --cask 1password/tap/1password-cli
 
   # Infrastructure & co
