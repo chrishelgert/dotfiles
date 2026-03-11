@@ -35,3 +35,7 @@ fi
 if [[ -f "$HOME/.env.local" ]]; then
   export $(cat "$HOME/.env.local" | xargs)
 fi
+
+# uv
+export PATH="$HOME/.local/bin:$PATH"
+. "$HOME/.cargo/env"

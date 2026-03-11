@@ -14,6 +14,9 @@ function cd {
   builtin cd "$@" && statusOrDirectory
 }
 
+# Claude
+alias cr="claude --continue"
+
 # Show the current git status in git directories or the files in the directory
 function statusOrDirectory {
   if [[ -d .git ]]; then

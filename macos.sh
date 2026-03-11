@@ -42,6 +42,12 @@ function install_tools {
   # VS Code
   brew install --cask visual-studio-code
 
+  # Vibe coding
+  brew install --cask claude-code
+  brew install --cask codex
+  brew install PeonPing/tap/peon-ping
+  brew install uv
+
   # Productivity
   brew install stats
   brew install --cask warp raycast openinterminal-lite
