@@ -1,0 +1,117 @@
+{
+  "awsAuthRefresh": "aws sso login --profile bedrock",
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "AWS_PROFILE": "bedrock",
+    "AWS_REGION": "us-east-1",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "global.anthropic.claude-sonnet-5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "global.anthropic.claude-opus-4-8",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "global.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "Sonnet",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "Haiku",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "Opus"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Write(*)",
+      "Bash(npm run *)",
+      "Bash(./node_modules/.bin/*)",
+      "Bash(* --version)",
+      "Bash(* --help *)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(sed-n *p *)",
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(echo:*)",
+      "Bash(sed:*)",
+      "Bash(curl:*)",
+      "Bash(npm:*)",
+      "Bash(pnpm:*)",
+      "Bash(npx:*)",
+      "Bash(go:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(poetry:*)",
+      "Bash(docker:*)",
+      "Bash(make:*)",
+      "Bash(pkill:*)",
+      "Bash(lsof:*)",
+      "Bash(source:*)",
+      "Bash(sqlite3:*)"
+    ],
+    "deny": [
+      "Bash(pnpm exec nx deploy *)",
+      "Bash(pnpm exec nx package *)",
+      "Bash(pnpm exec nx release *)",
+      "Bash(pnpm dlx *)",
+      "Bash(sed *-i*)",
+      "Bash(sed *w *)",
+      "Bash(sed *>*)"
+    ]
+  },
+  "model": "sonnet",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/block-dangerous-git.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "obsidian@obsidian-skills": true,
+    "visual-explainer@visual-explainer-marketplace": true,
+    "frontend-design@claude-plugins-official": true,
+    "warp@claude-code-warp": true
+  },
+  "extraKnownMarketplaces": {
+    "obsidian-skills": {
+      "source": {
+        "source": "github",
+        "repo": "kepano/obsidian-skills"
+      }
+    },
+    "visual-explainer-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "nicobailon/visual-explainer"
+      }
+    },
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    }
+  },
+  "skills": [
+    "grill-me",
+    "grill-with-docs",
+    "write-a-skill",
+    "to-issues",
+    "to-prd"
+  ]
+}

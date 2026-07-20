@@ -43,9 +43,8 @@ function install_tools {
   brew install --cask visual-studio-code
 
   # Vibe coding
-  brew install --cask claude-code
+  curl -fsSL https://claude.ai/install.sh | bash
   brew install --cask codex
-  brew install PeonPing/tap/peon-ping
   brew install uv
 
   # Productivity
@@ -92,6 +91,8 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.zshrc ~/.zshrc
   create_symlink ~/workspace/dotfiles/shell/.alias ~/.alias
   create_symlink ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
+  mkdir -p ~/.claude
+  create_symlink ~/workspace/dotfiles/shell/.claude/settings.json ~/.claude/settings.json
 
   # Symlink all .config folders
   cd ~/workspace/dotfiles/.config/ || (echo "Not able to change directory to dotfiles/.config. Skipping..." && return)

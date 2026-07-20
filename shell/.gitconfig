@@ -7,7 +7,7 @@
 [color]
 	ui = true
 [credential]
-  helper = cache --timeout 30000
+	helper = cache
 [commit]
   gpgsign = true
 [url "git@github.com:chrishelgert/"]
@@ -34,3 +34,9 @@
 	enabled = 1
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
