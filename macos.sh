@@ -46,6 +46,11 @@ function install_tools {
   curl -fsSL https://claude.ai/install.sh | bash
   brew install --cask codex
   brew install uv
+  brew install herdr
+  npx skills add herdrdev/herdr --skill herdr -g
+  npx skills add mattpocock/skills --skill '*' -g
+  npx skills add vercel-labs/skills --skill find-skills -g
+  npx skills add mcollina/skills --skill typescript-magician -g
 
   # Productivity
   brew install stats
@@ -104,6 +109,8 @@ function symlinks {
   # Symlink all .config files
   # TODO: autodiscovery
   create_symlink ~/workspace/dotfiles/.config/starship.toml ~/.config/starhip.toml
+  mkdir -p ~/.config/herdr
+  create_symlink ~/workspace/dotfiles/.config/herdr/config.toml ~/.config/herdr/config.toml
 
   cd ~/workspace/dotfiles || return
 }

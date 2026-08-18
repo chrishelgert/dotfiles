@@ -304,6 +304,8 @@ function symlinks {
   # Symlink all .config files
   # TODO: autodiscovery
   create_symlink ~/workspace/dotfiles/.config/starship.toml ~/.config/starhip.toml
+  mkdir -p ~/.config/herdr
+  create_symlink ~/workspace/dotfiles/.config/herdr/config.toml ~/.config/herdr/config.toml
 
   cd ~/workspace/dotfiles || return
 }
