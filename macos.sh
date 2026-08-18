@@ -47,6 +47,8 @@ function install_tools {
   brew install --cask codex
   brew install uv
   brew install herdr
+  brew tap atlassian/homebrew-acli
+  brew install acli
   npx skills add herdrdev/herdr --skill herdr -g
   npx skills add mattpocock/skills --skill '*' -g
   npx skills add vercel-labs/skills --skill find-skills -g
