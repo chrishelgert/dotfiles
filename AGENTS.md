@@ -44,4 +44,5 @@
 
 - Before posting a GitHub PR description, PR or issue comment, review comment, or Jira ticket description or comment, use the `clarity` skill in review mode on the draft, then apply fixes. Keep repository templates' headings and required sections intact.
 - Do not invent facts, numbers, or links while rewriting. If the clarity pass would add a claim, leave it out and flag it.
-- Show the final text before posting. Do not post without confirmation.
+- Updating descriptions (PR descriptions, Jira ticket descriptions) after the clarity pass does not need user approval.
+- Comments (PR or issue comments, review comments, Jira comments) need confirmation: show the final text and wait for a go-ahead before posting.
