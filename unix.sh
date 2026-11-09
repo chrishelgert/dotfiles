@@ -278,6 +278,25 @@ function create_symlink {
   echo "Created symlink '$1 --> $2'"
 }
 
+function link_agent_instructions {
+  local instructions_source="$1"
+  local instructions_target="$2"
+
+  if [[ ! -f "$instructions_source" ]]; then
+    echo "Agent instructions not found: $instructions_source" >&2
+    return 1
+  fi
+  if [[ -e "$instructions_target" && ! -L "$instructions_target" ]]; then
+    if [[ ! -f "$instructions_target" ]] || ! cmp -s "$instructions_source" "$instructions_target"; then
+      echo "Preserving existing agent instructions: $instructions_target. Move them aside before linking." >&2
+      return 1
+    fi
+  fi
+
+  mkdir -p "$(dirname "$instructions_target")" || return 1
+  ln -sfn "$instructions_source" "$instructions_target"
+}
+
 function symlinks {
   mkdir -p ~/.config
   create_symlink ~/workspace/dotfiles/shell/.bashrc ~/.bashrc
@@ -293,6 +312,9 @@ function symlinks {
   create_symlink ~/workspace/dotfiles/shell/.gitconfig ~/.gitconfig
   create_symlink ~/workspace/dotfiles/shell/.Xresources ~/.Xresources
   create_symlink ~/workspace/dotfiles/shell/.screenlayout ~/.screenlayout
+  link_agent_instructions "$HOME/workspace/dotfiles/AGENTS.md" "$HOME/.codex/AGENTS.md" || return 1
+  link_agent_instructions "$HOME/workspace/dotfiles/AGENTS.md" "$HOME/.agents/AGENTS.md" || return 1
+  link_agent_instructions "$HOME/workspace/dotfiles/AGENTS.md" "$HOME/.claude/CLAUDE.md" || return 1
 
   # Symlink all .config folders
   cd ~/workspace/dotfiles/.config/ || (echo "Not able to change directory to dotfiles/.config. Skipping..." && return)

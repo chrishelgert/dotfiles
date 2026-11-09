@@ -27,6 +27,19 @@ TODO
 
 ## Tools / Configuration
 
+### Agent instructions
+
+Global instructions live in `~/workspace/dotfiles/AGENTS.md`. Setup (`macos.sh` and
+`unix.sh`) links this one file to:
+
+- `~/.codex/AGENTS.md` for Codex
+- `~/.agents/AGENTS.md` for other agents
+- `~/.claude/CLAUDE.md` for Claude Code
+
+The links can be recreated safely by rerunning setup. Setup preserves a conflicting local
+file or directory and asks you to move it aside. Edit the dotfiles copy to update the global
+instructions; do not edit the linked paths directly.
+
 ### Kubernetes
 
 1. Open docker settings

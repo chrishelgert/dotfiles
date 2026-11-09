@@ -7,7 +7,6 @@
   "permissions": {
     "allow": [
       "Write(*)",
-      "Bash(npm run *)",
       "Bash(./node_modules/.bin/*)",
       "Bash(* --version)",
       "Bash(* --help *)",
@@ -22,7 +21,6 @@
       "Bash(mkdir:*)",
       "Bash(mv:*)",
       "Bash(touch:*)",
-      "Bash(chmod:*)",
       "Bash(head:*)",
       "Bash(tail:*)",
       "Bash(echo:*)",
@@ -30,10 +28,7 @@
       "Bash(curl:*)",
       "Bash(npm:*)",
       "Bash(pnpm:*)",
-      "Bash(npx:*)",
       "Bash(go:*)",
-      "Bash(python:*)",
-      "Bash(python3:*)",
       "Bash(poetry:*)",
       "Bash(docker:*)",
       "Bash(make:*)",
@@ -52,7 +47,7 @@
       "Bash(sed *>*)"
     ]
   },
-  "model": "sonnet",
+  "model": "haiku",
   "hooks": {
     "PreToolUse": [
       {
@@ -71,7 +66,6 @@
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "obsidian@obsidian-skills": true,
@@ -101,11 +95,71 @@
   },
   "tui": "fullscreen",
   "theme": "auto",
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Local Nx test, lint, typecheck, and format runs in the assemblies workspace via pnpm exec nx (no deploy or publish side effects)"
+    ],
+    "soft_deny": [
+      "$defaults",
+      "terraform apply or destroy against the assemblies terraform/ stack in this repo, including any workspace that targets prod or production"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: contentful (GitHub org). Repo scope: github.com/contentful/assemblies only.",
+      "**Cloud provider(s)**: AWS (Terraform-managed SQS/SNS/Lambda/IAM under terraform/; AWS CLI and SSO usage in shell history).",
+      "**Repository visibility**: contentful/assemblies is INTERNAL per the authenticated gh check. It is not public, but confidential material should still stay out of anything outside the org.",
+      "**Internal sharing / snippet hosting**: None configured. Treat public paste/gist services as outside the trust boundary.",
+      "**Secrets management**: None configured. The repo references .contentful/vault-secrets.yaml by filename only; do not read or print its contents.",
+      "**Default / protected branches**: main (default). Protected via GitHub rulesets 'Contentful Governance' and 'Merge to Main' (both active). Classic branch protection lists only main. Rulesets govern, so treat main as protected.",
+      "**CI/CD deploy targets**: GitHub Actions workflows under .github/workflows (e.g. terraform-refresh.yml). CI secret names referenced: FLINKLY_CMA_TOKEN, FLINKLY_EU_CMA_TOKEN, GITHUB_TOKEN, ROADIE_AWS_ROLE_URN. Names only; values are never to be read or echoed.",
+      "**Network posture**: None configured.",
+      "**Host containment**: None configured. Assume an ordinary developer machine with open internet.",
+      "**Source control**: The trusted repo github.com/contentful/assemblies and its origin remote only (scoped per Trusted repo).",
+      "**Trusted internal domains**: None configured.",
+      "**Trusted cloud buckets**: contentful-roadie-tech-docs (config-derived — not a confirmed upload destination; uploads of local data still require confirmation)",
+      "**Key internal services**: None configured.",
+      "**Internal package registry**: npm.pkg.github.com (GitHub Packages, read:packages token via GH_PACKAGES_TOKEN). Installs from it are routine; publishing is not.",
+      "**Sensitive data locations & audiences**: .env and e2e/exo/.env.local (local secrets), .contentful/vault-secrets.yaml, and any credential or token material in CI secrets. Share only with audiences cleared at the [named+specifics] bar.",
+      "**Data retention / declassification**: None configured.",
+      "**Sensitive remote targets**: Namespaces, hosts, or containers with 'prod' or 'production' as a whole word or name segment, plus the AWS and Kubernetes environments these Terraform stacks deploy to.",
+      "**Protected deployment namespaces / environments**: None configured. Fall back to the Sensitive remote targets heuristic.",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources in terraform/ (e.g. feature-flags.tf, secrets.tf, providers.tf, variables.tf); anything tagged prod or production.",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (Contentful assemblies monorepo: Nx and pnpm, ExO entities, Terraform queues and workers).",
+      "**Trusted repo**: /Users/christopher.helgert/workspace/assemblies and its origin remote github.com:contentful/assemblies.git.",
+      "**Org-specific CLIs**: None configured beyond standard tooling (gh, terraform, aws, nx via pnpm exec)."
+    ]
+  },
   "skills": [
-    "grill-me",
-    "grill-with-docs",
-    "write-a-skill",
-    "to-issues",
-    "to-prd"
+    "api-and-interface-design",
+    "browser-testing-with-devtools",
+    "ci-cd-and-automation",
+    "code-review-and-quality",
+    "code-simplification",
+    "constraint-driven-development",
+    "context-engineering",
+    "debugging-and-error-recovery",
+    "deprecation-and-migration",
+    "documentation-and-adrs",
+    "doubt-driven-development",
+    "find-skills",
+    "frontend-ui-engineering",
+    "git-guardrails-claude-code",
+    "git-workflow-and-versioning",
+    "idea-refine",
+    "incremental-implementation",
+    "interview-me",
+    "observability-and-instrumentation",
+    "performance-optimization",
+    "planning-and-task-breakdown",
+    "security-and-hardening",
+    "shipping-and-launch",
+    "source-driven-development",
+    "spec-driven-development",
+    "test-driven-development",
+    "using-agent-skills",
+    "fix-pr-comments",
+    "typescript-magician"
   ]
 }
